@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<schema name="modulestep" version="1.5">
-    <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
-      or Solr won't start. _version_ and update log are required for SolrCloud
-   -->
+
+<schema name="template" version="1.5">
+
     <field name="_version_" type="long" indexed="true" stored="true"/>
 
     <!-- points to the root document of a block of nested documents. Required for nested
@@ -16,56 +15,32 @@
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
-
-    <field name="module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="step_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="step_name" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="sequence" type="int" indexed="true" stored="true" omitNorms="true"/>
-
-
-    <field name="module" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_module_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_location" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="process" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="template_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_steps" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_requirements" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="process_equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="add_date" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="standard" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="amount_of_files" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="keywords" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="remark" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="instructions" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="group" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="group_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="tag" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="tag_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
 
     <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
@@ -75,25 +50,6 @@
         leading wildcard queries. -->
     <field name="text_rev" type="text_general_rev" indexed="true" stored="false" multiValued="true"/>
 
-
-    <!--
-     Some fields such as popularity and manu_exact could be modified to
-     leverage doc values:
-     <field name="popularity" type="int" indexed="true" stored="true" docValues="true" />
-     <field name="manu_exact" type="string" indexed="false" stored="false" docValues="true" />
-     <field name="cat" type="string" indexed="true" stored="true" docValues="true" multiValued="true"/>
-
-
-     Although it would make indexing slightly slower and the index bigger, it
-     would also make the index faster to load, more memory-efficient and more
-     NRT-friendly.
-     -->
-
-    <!-- Dynamic field definitions allow using convention over configuration
-       for fields via the specification of patterns to match field names.
-       EXAMPLE:  name="*_i" will match any field ending in _i (like myid_i, z_i)
-       RESTRICTION: the glob-like pattern in the name attribute must have
-       a "*" only at the start or the end.  -->
 
     <dynamicField name="*_i" type="int" indexed="true" stored="true"/>
     <dynamicField name="*_is" type="int" indexed="true" stored="true" multiValued="true"/>
@@ -298,6 +254,14 @@
     </fieldType>
     -->
 
+    <fieldType name="string_ci" class="solr.TextField"
+               sortMissingLast="true" omitNorms="true">
+        <analyzer>
+            <tokenizer class="solr.KeywordTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+    </fieldType>
+
     <!-- A text field that only splits on whitespace for exact matching of words -->
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
         <analyzer>
@@ -333,14 +297,6 @@
             <tokenizer class="solr.StandardTokenizerFactory"/>
             <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
             <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter class="solr.LowerCaseFilterFactory"/>
-        </analyzer>
-    </fieldType>
-
-    <fieldType name="string_ci" class="solr.TextField"
-               sortMissingLast="true" omitNorms="true">
-        <analyzer>
-            <tokenizer class="solr.KeywordTokenizerFactory"/>
             <filter class="solr.LowerCaseFilterFactory"/>
         </analyzer>
     </fieldType>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="processmodule" version="1.5">
+<schema name="process_module" version="1.5">
 
     <field name="_version_" type="long" indexed="true" stored="true"/>
 
@@ -15,18 +15,20 @@
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
-    <field name="processmodule_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="processmodule_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="processmodule_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
+    <field name="process_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true"
            omitNorms="true"/>
-    <field name="processmodule_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_process_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="main_process" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="main_process_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_process_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_library" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_library_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_library_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_family" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_family_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_family_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="process_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
@@ -37,7 +39,7 @@
     <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="add_date" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_of_module_step" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_template_step" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_run_step" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true"/>
