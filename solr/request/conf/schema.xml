@@ -2,7 +2,6 @@
 
 <schema name="request" version="1.5">
 
-
     <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
       or Solr won't start. _version_ and update log are required for SolrCloud
    -->
@@ -33,8 +32,6 @@
     <field name="frequency_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="add_date" type="date" indexed="true" stored="true" omitNorms="true"/>
-    <field name="start_date" type="date" indexed="true" stored="true" omitNorms="true"/>
-    <field name="end_date" type="date" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_granted" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_granted_text" type="string" indexed="true" stored="true" omitNorms="true"/>

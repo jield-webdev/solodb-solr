@@ -9,6 +9,7 @@ ADD solr/monitor_step /opt/solr/server/solr/configsets/monitor_step
 ADD solr/request /opt/solr/server/solr/configsets/request
 ADD solr/reservation /opt/solr/server/solr/configsets/reservation
 ADD solr/file /opt/solr/server/solr/configsets/file
+ADD solr/consumable /opt/solr/server/solr/configsets/consumable
 ADD solr/template /opt/solr/server/solr/configsets/template
 ADD solr/template_step /opt/solr/server/solr/configsets/template_step
 ADD solr/process /opt/solr/server/solr/configsets/process
