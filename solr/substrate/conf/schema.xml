@@ -48,6 +48,9 @@
     <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="property_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
 
+    <dynamicField name="property_array_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true" multiValued="true"/>
+
     <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
     <field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
