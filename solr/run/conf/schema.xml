@@ -63,16 +63,6 @@
     <field name="group_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-
-    <field name="main_process" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="main_process_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="main_process_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
-    <field name="process_library" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="process_library_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
-    <field name="process_library_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
     <field name="process" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="process_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
