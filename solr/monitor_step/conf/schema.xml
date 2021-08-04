@@ -20,9 +20,11 @@
 
 
     <field name="monitor_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="step_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="step_name" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="step_number" type="int" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="sequence" type="int" indexed="true" stored="true" omitNorms="true"/>
 
 

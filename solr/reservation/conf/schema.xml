@@ -106,8 +106,17 @@
     <field name="recurring_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_recurring" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_recurring_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="has_recurring_link" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="is_preventive_maintenance" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_preventive_maintenance_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="preventive_maintenance_title" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="preventive_maintenance_status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="preventive_maintenance_description" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="preventive_maintenance_is_planned" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="preventive_maintenance_is_executed" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+
 
 
     <!-- catchall field, containing all other searchable text fields (implemented

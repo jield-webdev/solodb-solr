@@ -21,9 +21,11 @@
 
 
     <field name="run_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="step_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="step_name" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="step_number" type="int" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="sequence" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
@@ -58,8 +60,7 @@
     <field name="process_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="step_name" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="step_number" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="parts" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 

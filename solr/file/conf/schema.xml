@@ -22,7 +22,7 @@
     <field name="file_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="name" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="docref" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="original" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="extension" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="mime_type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_image" type="boolean" indexed="true" stored="true" omitNorms="true"/>
