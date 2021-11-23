@@ -1,6 +1,8 @@
-FROM solr:8
+FROM solr:latest
 LABEL maintainer="info@jield.nl"
 LABEL org.opencontainers.image.source="https://github.com/jield-webdev/solodb-solr/solr"
+
+ENV SOLR_OPTS="-XX:-UseLargePages"
 
 ADD --chown=solr:solr solr/consumable /var/solr/data/consumable
 
