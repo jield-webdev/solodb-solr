@@ -6,6 +6,7 @@ ENV SOLR_OPTS="-XX:-UseLargePages"
 
 USER root
 RUN apt-get update && apt-get install nano
+USER solr
 
 ADD --chown=solr:solr solr/consumable /var/solr/data/consumable
 
