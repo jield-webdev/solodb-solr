@@ -4,6 +4,9 @@ LABEL org.opencontainers.image.source="https://github.com/jield-webdev/solodb-so
 
 ENV SOLR_OPTS="-XX:-UseLargePages"
 
+USER root
+RUN apt-get update && apt-get install nano
+
 ADD --chown=solr:solr solr/consumable /var/solr/data/consumable
 
 ADD --chown=solr:solr solr/equipment /var/solr/data/equipment
@@ -31,3 +34,4 @@ ADD --chown=solr:solr solr/substrate /var/solr/data/substrate
 
 ADD --chown=solr:solr solr/template /var/solr/data/template
 ADD --chown=solr:solr solr/template_step /var/solr/data/template_step
+
