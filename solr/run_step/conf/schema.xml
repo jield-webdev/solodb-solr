@@ -43,8 +43,14 @@
     <field name="facility_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="user_finish" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_finish_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_finish_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_finish_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="process_category_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_number" type="int" indexed="true" stored="true" omitNorms="true"/>
