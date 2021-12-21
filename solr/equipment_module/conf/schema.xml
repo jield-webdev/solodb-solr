@@ -83,6 +83,14 @@
     <field name="trained_users" type="int" indexed="true" stored="true" multiValued="true"/>
     <field name="role_users" type="int" indexed="true" stored="true" multiValued="true"/>
 
+    <field name="run_steps_on_module_total" type="int" indexed="true" stored="true" />
+    <field name="run_steps_on_module_finished" type="int" indexed="true" stored="true" />
+    <field name="run_steps_on_module_upcoming" type="int" indexed="true" stored="true" />
+    <field name="template_steps_on_module" type="int" indexed="true" stored="true" />
+    <field name="monitor_process_steps_on_module" type="int" indexed="true" stored="true" />
+    <field name="recipes_on_module" type="int" indexed="true" stored="true" />
+    <field name="process_module_on_module" type="int" indexed="true" stored="true"/>
+
 
     <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
