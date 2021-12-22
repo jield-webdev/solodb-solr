@@ -27,16 +27,36 @@
     <field name="active" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="type" type="string" indexed="true" stored="true" omitNorms="true" />
+    <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" />
-    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true" />
+    <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
 
     <field name="status" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="amount_of_equipment" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_equipment_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment" dest="equipment_search"/>
+
+    <field name="equipment_module_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="amount_of_equipment_module" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_equipment_module" type="boolean" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="has_equipment_module_text" type="string" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+    <field name="equipment_module_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+
+    <copyField source="equipment_module" dest="equipment_module_search"/>
 
     <copyField source="status" dest="status_sort"/>
 
