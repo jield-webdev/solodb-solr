@@ -1,6 +1,6 @@
 FROM solr:latest
 LABEL maintainer="info@jield.nl"
-LABEL org.opencontainers.image.source="https://github.com/jield-webdev/solodb-solr/solr"
+LABEL org.opencontainers.image.source="https://github.com/jield-webdev/solodb/solr"
 
 ENV SOLR_OPTS="-XX:-UseLargePages"
 
