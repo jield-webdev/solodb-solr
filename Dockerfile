@@ -8,6 +8,11 @@ USER root
 RUN apt-get update && apt-get install nano
 USER solr
 
+ADD --chown=solr:solr solr/building /var/solr/data/building
+
+ADD --chown=solr:solr solr/chemical /var/solr/data/chemical
+ADD --chown=solr:solr solr/chemical_container /var/solr/data/chemical_container
+
 ADD --chown=solr:solr solr/consumable /var/solr/data/consumable
 
 ADD --chown=solr:solr solr/equipment /var/solr/data/equipment
@@ -35,4 +40,7 @@ ADD --chown=solr:solr solr/substrate /var/solr/data/substrate
 
 ADD --chown=solr:solr solr/template /var/solr/data/template
 ADD --chown=solr:solr solr/template_step /var/solr/data/template_step
+
+ADD --chown=solr:solr solr/zone /var/solr/data/zone
+ADD --chown=solr:solr solr/zone_reservation /var/solr/data/zone_reservation
 
