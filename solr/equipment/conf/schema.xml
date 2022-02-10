@@ -36,6 +36,18 @@
     <field name="default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="default_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="serial_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="serial_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="serial_number" dest="serial_number_sort"/>
+    <copyField source="serial_number" dest="serial_number_search"/>
+
+    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="vendor" dest="vendor_sort"/>
+    <copyField source="vendor" dest="vendor_search"/>
+
     <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
