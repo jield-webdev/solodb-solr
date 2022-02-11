@@ -20,44 +20,6 @@
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
     <field name="module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="mes_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="mes_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="default_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_number" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_number_sort" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_number_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="equipment_mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_mes_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_mes_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
-           omitNorms="true"/>
-    <field name="equipment_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_default_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="active_in_mes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="reservation_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="reservation_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="training_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_of_process_module" type="int" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
@@ -69,8 +31,8 @@
     <field name="module_mes_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_mes_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="module_name" dest="module_mes_name_sort" />
-    <copyField source="module_name" dest="module_mes_name_search" />
+    <copyField source="module_mes_name" dest="module_mes_name_sort" />
+    <copyField source="module_mes_name" dest="module_mes_name_search" />
 
     <field name="module_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -110,6 +72,18 @@
 
     <copyField source="equipment_default_name" dest="equipment_default_name_sort" />
     <copyField source="equipment_default_name" dest="equipment_default_name_search" />
+
+
+    <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="active_in_mes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="training_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_process_module" type="int" indexed="true" stored="true" omitNorms="true"/>
+
 
     <field name="facility_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name" type="string" indexed="true" stored="true" omitNorms="true"/>
