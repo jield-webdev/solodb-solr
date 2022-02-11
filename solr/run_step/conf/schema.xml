@@ -45,7 +45,8 @@
     <field name="area_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="equipment" dest="equipment_search" />
+    <copyField source="area" dest="area_sort" />
+    <copyField source="area" dest="area_search" />
 
     <field name="facility_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility" type="string" indexed="true" stored="true" omitNorms="true"/>
