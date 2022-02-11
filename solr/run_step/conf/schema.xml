@@ -27,44 +27,69 @@
     <field name="step_number" type="int" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="sequence" type="int" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment" dest="equipment_search" />
+
     <field name="equipment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_module_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_module_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment_module" dest="equipment_module_search" />
+
     <field name="area_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="area" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment" dest="equipment_search" />
+
     <field name="facility_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="facility" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="facility" dest="facility_sort" />
+    <copyField source="facility" dest="facility_search" />
+
+    <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="user" dest="user_search" />
+
+    <field name="user_finish_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_finish" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_finish_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_finish_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="user_finish_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="user_finish" dest="user_finish_search" />
 
     <field name="process_category_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_number" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_category_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_name_full" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="process_category_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="process_category_name" dest="process_category_search" />
+    <copyField source="process_category_name" dest="process_category_sort" />
+
     <field name="process_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_number" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name_full" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="process_name" dest="process_name_search" />
+    <copyField source="process_name" dest="process_name_sort" />
 
     <field name="process_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
@@ -80,14 +105,24 @@
     <field name="group" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="group_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="group" dest="group_search" />
+
+
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="label" dest="label_search" />
 
     <field name="tag" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="tag_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
+    <copyField source="tag" dest="tag_search" />
+
     <field name="amount_of_files" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="equipment_trained_users" type="int" indexed="true" stored="true" multiValued="true"/>
+    <field name="equipment_role_users" type="int" indexed="true" stored="true" multiValued="true"/>
 
     <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
