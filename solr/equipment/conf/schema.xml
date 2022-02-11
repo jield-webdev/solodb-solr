@@ -23,18 +23,30 @@
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="name" dest="name_sort"/>
+    <copyField source="name" dest="name_search"/>
+
     <field name="mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="mes_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="mes_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="mes_name" dest="mes_name_sort"/>
+    <copyField source="mes_name" dest="mes_name_search"/>
 
     <field name="number" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="number_sort" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="number_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="number" dest="number_sort"/>
+    <copyField source="number" dest="number_search"/>
 
     <field name="default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="default_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="default_name" dest="default_name_sort"/>
+    <copyField source="default_name" dest="default_name_search"/>
 
     <field name="serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="serial_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -115,24 +127,37 @@
     <field name="facility_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="facility_name" dest="facility_name_sort" />
+    <copyField source="facility_name" dest="facility_name_search" />
+
     <field name="facility_label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="facility_label" dest="facility_label_sort" />
+    <copyField source="facility_label" dest="facility_label_search" />
 
     <field name="area_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="area_name" dest="area_name_sort" />
+    <copyField source="area_name" dest="area_name_search" />
+
     <field name="area_label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="area_label" dest="area_label_sort" />
+    <copyField source="area_label" dest="area_label_search" />
 
-    <field name="add_date" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="status" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="status" dest="status_sort" />
+    <copyField source="status" dest="status_search" />
 
     <field name="trained_users" type="int" indexed="true" stored="true" multiValued="true"/>
     <field name="role_users" type="int" indexed="true" stored="true" multiValued="true"/>

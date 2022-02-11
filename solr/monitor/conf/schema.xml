@@ -39,7 +39,7 @@
     <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="add_date" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="standard" type="string" indexed="true" stored="true" omitNorms="true"/>

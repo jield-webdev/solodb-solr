@@ -52,6 +52,9 @@
     <field name="updated_by_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="updated_by_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="updated_by" dest="updated_by_sort" />
+    <copyField source="updated_by" dest="updated_by_search" />
+
     <field name="forecast_up" type="date" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
@@ -59,36 +62,63 @@
     <field name="module_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="module_name" dest="module_name_sort" />
+    <copyField source="module_name" dest="module_name_search" />
+
     <field name="module_mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_mes_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_mes_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="module_name" dest="module_mes_name_sort" />
+    <copyField source="module_name" dest="module_mes_name_search" />
 
     <field name="module_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_default_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
            omitNorms="true"/>
 
+    <copyField source="module_default_name" dest="module_default_name_sort" />
+    <copyField source="module_default_name" dest="module_default_name_search" />
+
     <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment_name" dest="equipment_name_sort" />
+    <copyField source="equipment_name" dest="equipment_name_search" />
+
     <field name="equipment_number" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_number_sort" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_number_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment_number" dest="equipment_number_sort" />
+    <copyField source="equipment_number" dest="equipment_number_search" />
 
     <field name="equipment_mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_mes_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_mes_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
            omitNorms="true"/>
+
+    <copyField source="equipment_mes_name" dest="equipment_mes_name_sort" />
+    <copyField source="equipment_mes_name" dest="equipment_mes_name_search" />
+
     <field name="equipment_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_default_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
            omitNorms="true"/>
 
+    <copyField source="equipment_default_name" dest="equipment_default_name_sort" />
+    <copyField source="equipment_default_name" dest="equipment_default_name_search" />
+
     <field name="facility_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="facility_name" dest="facility_name_sort" />
+    <copyField source="facility_name" dest="facility_name_search" />
+
     <field name="facility_label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
@@ -97,9 +127,16 @@
     <field name="area_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="area_name" dest="area_name_sort" />
+    <copyField source="area_name" dest="area_name_search" />
+
     <field name="area_label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="area_label" dest="area_label_sort" />
+    <copyField source="area_label" dest="area_label_search" />
 
     <field name="room_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_name" type="string" indexed="true" stored="true" omitNorms="true"/>

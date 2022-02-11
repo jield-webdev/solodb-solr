@@ -70,7 +70,7 @@
 
     <field name="parts" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
-    <field name="add_date" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="start_date" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="finish_date" type="date" indexed="true" stored="true" omitNorms="true"/>
