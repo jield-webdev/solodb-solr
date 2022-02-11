@@ -73,6 +73,17 @@
     <copyField source="equipment_default_name" dest="equipment_default_name_sort" />
     <copyField source="equipment_default_name" dest="equipment_default_name_search" />
 
+    <field name="equipment_serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_serial_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_serial_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="equipment_serial_number" dest="equipment_serial_number_sort"/>
+    <copyField source="equipment_serial_number" dest="equipment_serial_number_search"/>
+
+    <field name="equipment_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="equipment_vendor" dest="equipment_vendor_sort"/>
+    <copyField source="equipment_vendor" dest="equipment_vendor_search"/>
 
     <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -132,18 +143,13 @@
 
     <copyField source="room_description" dest="room_description_search" />
 
-    <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_code" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="site_name" dest="site_name_sort" />
-    <copyField source="site_name" dest="site_name_search" />
-
     <field name="building_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_code_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="building_code" dest="building_code_sort" />
+    <copyField source="building_code" dest="building_code_search" />
 
     <field name="building" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -151,6 +157,21 @@
 
     <copyField source="building" dest="building_sort" />
     <copyField source="building" dest="building_search" />
+
+    <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_code" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_code_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="site_code" dest="site_code_sort" />
+    <copyField source="site_code" dest="site_code_search" />
+
+    <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="site_name" dest="site_name_sort" />
+    <copyField source="site_name" dest="site_name_search" />
 
     <field name="category_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="category" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
