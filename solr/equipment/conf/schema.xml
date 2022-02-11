@@ -48,6 +48,59 @@
     <copyField source="vendor" dest="vendor_sort"/>
     <copyField source="vendor" dest="vendor_search"/>
 
+    <field name="room_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="room_name" dest="room_name_sort" />
+    <copyField source="room_name" dest="room_name_search" />
+
+    <field name="room_code" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_code_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="room_code" dest="room_code_sort" />
+    <copyField source="room_code" dest="room_code_search" />
+
+    <field name="room_description" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="room_description" dest="room_description_search" />
+
+    <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_code" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="site_name" dest="site_name_sort" />
+    <copyField source="site_name" dest="site_name_search" />
+
+    <field name="building_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_code" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="building" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="building" dest="building_sort" />
+    <copyField source="building" dest="building_search" />
+
+    <field name="category_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="category" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="category_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <copyField source="category" dest="category_search" />
+
+    <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <copyField source="type" dest="type_search" />
+
+
     <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
