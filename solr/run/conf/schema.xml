@@ -110,9 +110,12 @@
     <field name="priority_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="priority" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="priority_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="priority_sequence" type="int" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="priority" dest="priority_sort"/>
+
+    <field name="priority_order" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+
 
     <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
