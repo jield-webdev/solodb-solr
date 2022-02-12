@@ -21,7 +21,7 @@
     <field name="label" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="label" dest="label_search" />
+    <copyField source="label" dest="label_search"/>
 
     <field name="label_sub_sort" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_year" type="int" indexed="true" stored="true" omitNorms="true"/>
@@ -32,13 +32,13 @@
     <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="name" dest="name_sort" />
-    <copyField source="name" dest="name_search" />
+    <copyField source="name" dest="name_sort"/>
+    <copyField source="name" dest="name_search"/>
 
     <field name="motivation" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="motivation_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="motivation" dest="motivation_search" />
+    <copyField source="motivation" dest="motivation_search"/>
 
     <field name="objective" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="method" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
@@ -62,33 +62,37 @@
     <field name="last_finished_step_date" type="date" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="last_finished_step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_finished_step_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_finished_step_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
     <field name="last_finished_step_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="last_finished_step_name" dest="last_finished_step_name_search" />
-    <copyField source="last_finished_step_name" dest="last_finished_step_name_sort" />
+    <copyField source="last_finished_step_name" dest="last_finished_step_name_search"/>
+    <copyField source="last_finished_step_name" dest="last_finished_step_name_sort"/>
 
     <field name="last_finished_step_process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="last_finished_step_equiment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_equiment_name" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_equiment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_finished_step_equiment_module_name" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_finished_step_equiment_module_name" type="string_ci" indexed="true" stored="true"
+           omitNorms="true"/>
 
 
     <field name="first_unfinished_step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="first_unfinished_step_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="first_unfinished_step_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
+           omitNorms="true"/>
     <field name="first_unfinished_step_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="first_unfinished_step_name" dest="first_unfinished_step_name_search" />
-    <copyField source="first_unfinished_step_name" dest="first_unfinished_step_name_sort" />
+    <copyField source="first_unfinished_step_name" dest="first_unfinished_step_name_search"/>
+    <copyField source="first_unfinished_step_name" dest="first_unfinished_step_name_sort"/>
 
     <field name="first_unfinished_step_process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="first_unfinished_step_equiment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_equiment_name" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_equiment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="first_unfinished_step_equiment_module_name" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="first_unfinished_step_equiment_module_name" type="string_ci" indexed="true" stored="true"
+           omitNorms="true"/>
 
     <field name="first_unfinished_step_recipe_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_recipe_name" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -101,67 +105,72 @@
     <field name="hold_code" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="hold_code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="hold_code" dest="hold_code_sort" />
+    <copyField source="hold_code" dest="hold_code_sort"/>
 
     <field name="priority_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="priority" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="priority_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="priority_sequence" type="int" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="priority" dest="priority_sort" />
+    <copyField source="priority" dest="priority_sort"/>
 
     <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="user" dest="user_sort" />
-    <copyField source="user" dest="user_search" />
+    <copyField source="user" dest="user_sort"/>
+    <copyField source="user" dest="user_search"/>
 
     <field name="project_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="project" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="project" dest="project_sort" />
-    <copyField source="project" dest="project_search" />
+    <copyField source="project" dest="project_sort"/>
+    <copyField source="project" dest="project_search"/>
 
     <field name="team" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="team_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="team" dest="team_search" />
+    <copyField source="team" dest="team_search"/>
 
     <field name="group" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="group_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="group" dest="group_search" />
+    <copyField source="group" dest="group_search"/>
 
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="process_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="process" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="process_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="process_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
     <field name="process_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
-    <copyField source="process" dest="process_search" />
-    <copyField source="process" dest="process_sort" />
+    <copyField source="process" dest="process_search"/>
+    <copyField source="process" dest="process_sort"/>
 
     <field name="process_module_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
     <field name="equipment_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
-    <copyField source="equipment" dest="equipment_search" />
-    <copyField source="equipment" dest="equipment_sort" />
+    <copyField source="equipment" dest="equipment_search"/>
+    <copyField source="equipment" dest="equipment_sort"/>
 
     <field name="equipment_module_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="equipment_module_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="equipment_module_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_module_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+    <field name="equipment_module_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
 
-    <copyField source="equipment_module" dest="equipment_module_search" />
-    <copyField source="equipment_module" dest="equipment_module_sort" />
+    <copyField source="equipment_module" dest="equipment_module_search"/>
+    <copyField source="equipment_module" dest="equipment_module_sort"/>
 
     <field name="involved_users" type="int" indexed="true" stored="true" multiValued="true"/>
 
