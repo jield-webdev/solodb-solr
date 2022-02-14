@@ -61,6 +61,7 @@
 
     <field name="last_finished_step_date" type="date" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="last_finished_step_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
            omitNorms="true"/>
@@ -78,6 +79,7 @@
            omitNorms="true"/>
 
 
+    <field name="first_unfinished_step_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
            omitNorms="true"/>
@@ -114,8 +116,6 @@
     <copyField source="priority" dest="priority_sort"/>
 
     <field name="priority_order" type="int" indexed="true" stored="true" omitNorms="true"/>
-
-
 
     <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
