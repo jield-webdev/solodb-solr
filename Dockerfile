@@ -17,6 +17,7 @@ ADD --chown=solr:solr solr/chemical_container /var/solr/data/chemical_container
 ADD --chown=solr:solr solr/consumable /var/solr/data/consumable
 
 ADD --chown=solr:solr solr/equipment /var/solr/data/equipment
+ADD --chown=solr:solr solr/equipment_reservation /var/solr/data/equipment_reservation
 ADD --chown=solr:solr solr/equipment_module /var/solr/data/equipment_module
 ADD --chown=solr:solr solr/equipment_module_issue /var/solr/data/equipment_module_issue
 
@@ -32,7 +33,7 @@ ADD --chown=solr:solr solr/process_module /var/solr/data/process_module
 ADD --chown=solr:solr solr/process_module_recipe /var/solr/data/process_module_recipe
 
 ADD --chown=solr:solr solr/request /var/solr/data/request
-ADD --chown=solr:solr solr/reservation /var/solr/data/reservation
+
 
 ADD --chown=solr:solr solr/run /var/solr/data/run
 ADD --chown=solr:solr solr/run_step /var/solr/data/run_step
