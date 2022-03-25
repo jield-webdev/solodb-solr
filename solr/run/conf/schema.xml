@@ -48,7 +48,11 @@
 
     <field name="amount_of_steps" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_finished_steps" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_unfinished_steps" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_requirements" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="has_finished_steps" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_unfinished_steps" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="keywords" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
