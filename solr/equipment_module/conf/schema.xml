@@ -86,6 +86,20 @@
     <copyField source="equipment_vendor" dest="equipment_vendor_sort"/>
     <copyField source="equipment_vendor" dest="equipment_vendor_search"/>
 
+    <field name="equipment_category_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_category" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_category_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+
+    <copyField source="equippment_category" dest="equipment_category_search"/>
+
+    <field name="equipoment_type_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipoment_type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipoment_type_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+
+    <copyField source="equipoment_type" dest="equipoment_type_search"/>
+
     <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
