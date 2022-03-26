@@ -75,9 +75,12 @@
     <field name="has_zones_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="amount_of_trained_users" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_trained_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="trained_users_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="trained_users_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <field name="amount_of_role_users" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_role_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="role_users_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="role_users_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
