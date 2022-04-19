@@ -88,8 +88,8 @@
     <copyField source="equipment_name" dest="equipment_name_sort" />
     <copyField source="equipment_name" dest="equipment_name_search" />
 
-    <field name="equipment_number" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_number_sort" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_number_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_number_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="equipment_number" dest="equipment_number_sort" />

@@ -34,8 +34,8 @@
     <copyField source="mes_name" dest="mes_name_sort"/>
     <copyField source="mes_name" dest="mes_name_search"/>
 
-    <field name="number" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="number_sort" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="number_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="number" dest="number_sort"/>

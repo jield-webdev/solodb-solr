@@ -27,7 +27,6 @@
 
     <field name="sequence" type="int" indexed="true" stored="true" omitNorms="true"/>
 
-
     <field name="module" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -37,10 +36,12 @@
     <field name="equipment_module_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_location" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="area_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="area" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="facility" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
