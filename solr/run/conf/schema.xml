@@ -76,10 +76,10 @@
 
     <field name="last_finished_step_process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="last_finished_step_equiment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_finished_step_equiment_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_finished_step_equiment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_finished_step_equiment_module_name" type="string" indexed="true" stored="true"
+    <field name="last_finished_step_equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_finished_step_equipment_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_finished_step_equipment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_finished_step_equipment_module_name" type="string" indexed="true" stored="true"
            omitNorms="true"/>
 
 
@@ -94,10 +94,10 @@
 
     <field name="first_unfinished_step_process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="first_unfinished_step_equiment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="first_unfinished_step_equiment_name" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="first_unfinished_step_equiment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="first_unfinished_step_equiment_module_name" type="string_ci" indexed="true" stored="true"
+    <field name="first_unfinished_step_equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="first_unfinished_step_equipment_name" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="first_unfinished_step_equipment_module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="first_unfinished_step_equipment_module_name" type="string_ci" indexed="true" stored="true"
            omitNorms="true"/>
 
     <field name="first_unfinished_step_recipe_id" type="int" indexed="true" stored="true" omitNorms="true"/>
