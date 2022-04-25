@@ -185,6 +185,14 @@
     <copyField source="building_name" dest="building_name_sort"/>
     <copyField source="building_name" dest="building_name_search"/>
 
+    <field name="zone_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="zone_name" dest="zone_name_sort"/>
+    <copyField source="zone_name" dest="zone_name_search"/>
+
     <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
