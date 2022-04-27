@@ -57,8 +57,8 @@
     <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" />
     <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true" />
 
-    <field name="type_can_be_subsrate" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_can_be_subsrate_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_can_be_substrate" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_can_be_substrate_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
