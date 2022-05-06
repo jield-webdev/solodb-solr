@@ -65,6 +65,7 @@
 
     <field name="last_finished_step_date" type="date" indexed="true" stored="true" omitNorms="true"/>
 
+
     <field name="last_finished_step_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
@@ -75,6 +76,7 @@
     <copyField source="last_finished_step_name" dest="last_finished_step_name_sort"/>
 
     <field name="last_finished_step_process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_finished_step_label" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="last_finished_step_equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_equipment_name" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -93,6 +95,7 @@
     <copyField source="first_unfinished_step_name" dest="first_unfinished_step_name_sort"/>
 
     <field name="first_unfinished_step_process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="first_unfinished_step_label" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="first_unfinished_step_equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_equipment_name" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
