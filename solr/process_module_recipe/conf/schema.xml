@@ -22,7 +22,7 @@
     <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="name" dest="name_search"/>
-    <copyField source="process_module_name" dest="name_sort"/>
+    <copyField source="name" dest="name_sort"/>
 
     <field name="has_versions" type="boolean" indexed="true" stored="true" omitNorms="true" multiValued="false"/>
 
