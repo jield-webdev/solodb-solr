@@ -76,6 +76,8 @@
     <field name="process_category_number" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_name_full" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_category_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_category_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="process_category_name" dest="process_category_sort"/>
     <copyField source="process_category_name_full" dest="process_category_search"/>
