@@ -63,6 +63,10 @@
     <copyField source="process_name" dest="process_name_sort"/>
     <copyField source="process_name_full" dest="process_name_search"/>
 
+    <field name="is_process_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_process_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_process_private" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_process_private_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>

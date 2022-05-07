@@ -128,10 +128,9 @@
     <field name="amount_of_monitor_step" type="int" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="public_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_private" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="private_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
+    <field name="is_private_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
