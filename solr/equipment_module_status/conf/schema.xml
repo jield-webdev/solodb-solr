@@ -19,6 +19,8 @@
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
+    <field name="equipment_module_status_id" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="description" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
@@ -640,8 +642,6 @@
       users normally should not need to know about them.
      -->
     <fieldType name="point" class="solr.PointType" dimension="2" subFieldSuffix="_d"/>
-
-
 
 
     <!-- An alternative geospatial field type new to Solr 4.  It supports multiValued and polygon shapes.

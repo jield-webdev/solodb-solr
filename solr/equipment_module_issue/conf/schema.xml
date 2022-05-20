@@ -19,6 +19,8 @@
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
+    <field name="issue_id" type="int" indexed="true" stored="true" required="true" multiValued="false"/>
+
     <field name="description" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
