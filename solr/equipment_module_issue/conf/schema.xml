@@ -225,7 +225,7 @@
     <field name="site_code_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="site_code" dest="site_code_sort" />
-    <copyField source="site_code" dest="site_name_search" />
+    <copyField source="site_code" dest="site_code_search" />
 
     <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -307,16 +307,24 @@
     <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
     <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
 
-    <!--
-     Numeric field types that index each value at various levels of precision
-     to accelerate range queries when the number of values between the range
-     endpoints is large. See the javadoc for NumericRangeQuery for internal
-     implementation details.
+    <fieldType name="string_ci" class="solr.TextField"
+               sortMissingLast="true" omitNorms="true">
+        <analyzer>
+            <tokenizer class="solr.KeywordTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+    </fieldType>
 
-     Smaller precisionStep values (specified in bits) will lead to more tokens
-     indexed per value, slightly larger index size, and faster range queries.
-     A precisionStep of 0 disables indexing at different precision levels.
-    -->
+    <fieldType name="text_general_edge_ngram" class="solr.TextField" positionIncrementGap="100">
+        <analyzer type="index">
+            <tokenizer class="solr.LowerCaseTokenizerFactory"/>
+            <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="15"/>
+        </analyzer>
+        <analyzer type="query">
+            <tokenizer class="solr.LowerCaseTokenizerFactory"/>
+        </analyzer>
+    </fieldType>
+
     <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" positionIncrementGap="0"/>
     <fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" positionIncrementGap="0"/>
     <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" positionIncrementGap="0"/>
@@ -386,28 +394,10 @@
     </fieldType>
     -->
 
-    <fieldType name="string_ci" class="solr.TextField"
-               sortMissingLast="true" omitNorms="true">
-        <analyzer>
-            <tokenizer class="solr.KeywordTokenizerFactory"/>
-            <filter class="solr.LowerCaseFilterFactory"/>
-        </analyzer>
-    </fieldType>
-
     <!-- A text field that only splits on whitespace for exact matching of words -->
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
         <analyzer>
             <tokenizer class="solr.WhitespaceTokenizerFactory"/>
-        </analyzer>
-    </fieldType>
-
-    <fieldType name="string_ci" class="solr.TextField" positionIncrementGap="100">
-        <analyzer type="index">
-            <tokenizer class="solr.LowerCaseTokenizerFactory"/>
-            <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="15"/>
-        </analyzer>
-        <analyzer type="query">
-            <tokenizer class="solr.LowerCaseTokenizerFactory"/>
         </analyzer>
     </fieldType>
 

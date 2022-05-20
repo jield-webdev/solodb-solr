@@ -191,7 +191,7 @@
     <field name="site_code_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="site_code" dest="site_code_sort"/>
-    <copyField source="site_code" dest="site_name_search"/>
+    <copyField source="site_code" dest="site_code_search"/>
 
     <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>

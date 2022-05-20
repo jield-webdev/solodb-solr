@@ -200,7 +200,7 @@
     <field name="site_code_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="site_code" dest="site_code_sort"/>
-    <copyField source="site_code" dest="site_name_search"/>
+    <copyField source="site_code" dest="site_code_search"/>
 
     <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
@@ -376,7 +376,7 @@
         </analyzer>
     </fieldType>
 
-    <fieldType name="string_ci" class="solr.TextField" positionIncrementGap="100">
+    <fieldType name="text_general_edge_ngram" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
             <tokenizer class="solr.LowerCaseTokenizerFactory"/>
             <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="15"/>

@@ -28,7 +28,7 @@
 
     <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="type_id" type="integer" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
@@ -36,7 +36,7 @@
     <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
 
-    <field name="source_id" type="integer" indexed="true" stored="true" omitNorms="true"/>
+    <field name="source_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="source" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="source_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="source_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
@@ -53,7 +53,7 @@
 
     <field name="run_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="run_number" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="run_label" type="text" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="run_label_sort" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="run_label_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
