@@ -21,13 +21,26 @@
 
     <field name="description" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="description" dest="description_search" />
+
+
     <field name="issue" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="issue_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="issue_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="issue" dest="issue_search" />
+
+
     <field name="actions" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="actions_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="actions_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="actions" dest="actions_search" />
 
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="status" dest="status_sort" />
+
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_closed" type="boolean" indexed="true" stored="true" omitNorms="true"/>
@@ -35,24 +48,29 @@
 
     <field name="issue_type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="issue_type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="issue_type" dest="issue_type_sort" />
+
     <field name="is_default" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_default_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="is_priority" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_priority_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="is_escalation" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_escalation_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="owner_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="owner" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="owner_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="owner_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="owner_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="owner_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="owner" dest="owner_search" />
+
+    <field name="updated_by_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="updated_by" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="updated_by_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="updated_by_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="updated_by_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="updated_by_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="updated_by" dest="updated_by_sort" />
     <copyField source="updated_by" dest="updated_by_search" />
 
     <field name="forecast_up" type="date" indexed="true" stored="true" omitNorms="true"/>
@@ -60,21 +78,21 @@
     <field name="module_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="module_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="module_name" dest="module_name_sort" />
     <copyField source="module_name" dest="module_name_search" />
 
     <field name="module_mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_mes_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="module_mes_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_mes_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="module_name" dest="module_mes_name_sort" />
     <copyField source="module_name" dest="module_mes_name_search" />
 
     <field name="module_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="module_default_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
+    <field name="module_default_name_search" type="string_ci" indexed="true" stored="true"
            omitNorms="true"/>
 
     <copyField source="module_default_name" dest="module_default_name_sort" />
@@ -83,7 +101,7 @@
     <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="equipment_name" dest="equipment_name_sort" />
     <copyField source="equipment_name" dest="equipment_name_search" />
@@ -97,7 +115,7 @@
 
     <field name="equipment_mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_mes_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_mes_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
+    <field name="equipment_mes_name_search" type="string_ci" indexed="true" stored="true"
            omitNorms="true"/>
 
     <copyField source="equipment_mes_name" dest="equipment_mes_name_sort" />
@@ -105,7 +123,7 @@
 
     <field name="equipment_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_default_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_default_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
+    <field name="equipment_default_name_search" type="string_ci" indexed="true" stored="true"
            omitNorms="true"/>
 
     <copyField source="equipment_default_name" dest="equipment_default_name_sort" />
@@ -113,39 +131,39 @@
 
     <field name="equipment_serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_serial_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_serial_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_serial_number_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <copyField source="equipment_serial_number" dest="equipment_serial_number_sort"/>
     <copyField source="equipment_serial_number" dest="equipment_serial_number_search"/>
 
     <field name="equipment_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <copyField source="equipment_vendor" dest="equipment_vendor_sort"/>
     <copyField source="equipment_vendor" dest="equipment_vendor_search"/>
 
     <field name="facility_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="facility_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="facility_name" dest="facility_name_sort" />
     <copyField source="facility_name" dest="facility_name_search" />
 
     <field name="facility_label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="facility_label_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="area_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="area_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="area_name" dest="area_name_sort" />
     <copyField source="area_name" dest="area_name_search" />
 
     <field name="area_label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="area_label_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="area_label" dest="area_label_sort" />
     <copyField source="area_label" dest="area_label_search" />
@@ -153,20 +171,20 @@
     <field name="room_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="room_name" dest="room_name_sort" />
     <copyField source="room_name" dest="room_name_search" />
 
     <field name="room_code" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_code_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_code_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="room_code" dest="room_code_sort" />
     <copyField source="room_code" dest="room_code_search" />
 
     <field name="room_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_description_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="room_description" dest="room_description_search" />
 
@@ -180,7 +198,7 @@
 
     <field name="building_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="building_name" dest="building_name_sort"/>
     <copyField source="building_name" dest="building_name_search"/>
@@ -188,7 +206,7 @@
     <field name="zone_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="zone_name" dest="zone_name_sort"/>
     <copyField source="zone_name" dest="zone_name_search"/>
@@ -196,7 +214,7 @@
     <field name="zone_group_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_group_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="zone_group_name" dest="zone_group_name_sort"/>
     <copyField source="zone_group_name" dest="zone_group_name_search"/>
@@ -204,27 +222,27 @@
     <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_code_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_code_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="site_code" dest="site_code_sort" />
     <copyField source="site_code" dest="site_name_search" />
 
     <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_name_search" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="site_name" dest="site_name_sort" />
     <copyField source="site_name" dest="site_name_search" />
 
     <field name="category_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="category" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="category_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="category_search" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <copyField source="category" dest="category_search" />
 
     <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="type_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type_search" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <copyField source="type" dest="type_search" />
 
@@ -383,7 +401,7 @@
         </analyzer>
     </fieldType>
 
-    <fieldType name="text_general_edge_ngram" class="solr.TextField" positionIncrementGap="100">
+    <fieldType name="string_ci" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
             <tokenizer class="solr.LowerCaseTokenizerFactory"/>
             <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="15"/>
