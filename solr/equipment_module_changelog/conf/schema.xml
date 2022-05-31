@@ -220,12 +220,12 @@
 
     <copyField source="category" dest="category_search"/>
 
-    <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="type_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+    <field name="category_type_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="category_type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="category_type_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
-    <copyField source="type" dest="type_search"/>
+    <copyField source="category_type" dest="category_type_search"/>
 
 
     <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
