@@ -22,7 +22,8 @@ ADD --chown=solr:solr solr/equipment_module /var/solr/data/equipment_module
 ADD --chown=solr:solr solr/equipment_module_status /var/solr/data/equipment_module_status
 ADD --chown=solr:solr solr/equipment_module_issue /var/solr/data/equipment_module_issue
 ADD --chown=solr:solr solr/equipment_module_ecn /var/solr/data/equipment_module_ecn
-ADD --chown=solr:solr solr/equipment_module_changelog /var/solr/data/equipment_module_changelog
+
+#ADD --chown=solr:solr solr/equipment_module_changelog /var/solr/data/equipment_module_changelog
 
 ADD --chown=solr:solr solr/facility /var/solr/data/facility
 
