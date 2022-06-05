@@ -19,7 +19,7 @@
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
-    <field name="changelog_id" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="changelog_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="message" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="message_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
