@@ -1,4 +1,4 @@
-name: SoloDB Solr Image
+name: Solr - Deploy to Github
 
 on:
   push:
