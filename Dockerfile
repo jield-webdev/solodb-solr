@@ -37,4 +37,4 @@ ADD --chown=solr:solr solr/template_step /var/solr/data/template_step
 ADD --chown=solr:solr solr/zone /var/solr/data/zone
 ADD --chown=solr:solr solr/zone_reservation /var/solr/data/zone_reservation
 
-RUN mkdir /var/solr/cache && chown solr:solr /var/solr/cache
+RUN mkdir /var/solr/cache && chown -R solr:solr /var/solr/cache
