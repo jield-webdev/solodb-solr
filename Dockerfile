@@ -38,3 +38,33 @@ ADD --chown=solr:solr solr/zone /var/solr/data/zone
 ADD --chown=solr:solr solr/zone_reservation /var/solr/data/zone_reservation
 
 RUN mkdir /var/solr/cache && chown -R solr:solr /var/solr/cache
+
+
+RUN rm -f /var/solr/cache/solodb_building/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_room/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_chemical/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_chemical_container/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_consumable/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_equipment/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_equipment_reservation/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_equipment_module/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_equipment_module_status/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_equipment_module_issue/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_equipment_module_ecn/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_equipment_module_changelog/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_facility/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_file/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_monitor/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_monitor_step/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_process/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_process_module/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_process_module_recipe/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_request/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_run/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_run_changelog/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_run_step/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_substrate/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_template/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_template_step/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_zone/data/index/write.lock
+RUN rm -f /var/solr/cache/solodb_zone_reservation/data/index/write.lock
