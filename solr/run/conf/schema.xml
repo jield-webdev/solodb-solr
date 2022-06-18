@@ -65,7 +65,6 @@
 
     <field name="last_finished_step_date" type="date" indexed="true" stored="true" omitNorms="true"/>
 
-
     <field name="last_finished_step_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_finished_step_name_search" type="text_general_edge_ngram" indexed="true" stored="true"
@@ -109,6 +108,15 @@
     <field name="first_unfinished_step_checklist_total_steps" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_checklist_executed_steps" type="int" indexed="true" stored="true"
            omitNorms="true"/>
+
+    <field name="last_move_step_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_move_date" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_move_user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_move_user_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_move_user_initials" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_move_source" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_move_type" type="string" indexed="true" stored="true" omitNorms="true"/>
+
 
     <field name="hold_code_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="hold_code" type="string" indexed="true" stored="true" omitNorms="true"/>
