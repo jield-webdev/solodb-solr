@@ -124,6 +124,8 @@
 
     <copyField source="hold_code" dest="hold_code_sort"/>
 
+    <field name="hold_code_description" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="priority_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="priority" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="priority_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
