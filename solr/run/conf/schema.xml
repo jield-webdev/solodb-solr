@@ -117,7 +117,6 @@
     <field name="last_move_source" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_move_type" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-
     <field name="hold_code_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="hold_code" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="hold_code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
