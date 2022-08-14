@@ -23,21 +23,37 @@
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="label" dest="label_sort"/>
+    <copyField source="label" dest="label_search"/>
+
     <field name="name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="name" dest="name_sort"/>
+    <copyField source="name" dest="name_search"/>
+
     <field name="description" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_steps" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_requirements" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_runs" type="int" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="project_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="project" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="project" dest="project_sort"/>
+    <copyField source="project" dest="project_search"/>
+
+    <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="user" dest="user_search"/>
 
     <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
@@ -45,6 +61,41 @@
     <field name="standard" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="keywords" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="process_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="process" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="process_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+    <field name="process_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <copyField source="process" dest="process_search"/>
+    <copyField source="process" dest="process_sort"/>
+
+    <field name="process_module_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+    <field name="equipment_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <copyField source="equipment" dest="equipment_search"/>
+    <copyField source="equipment" dest="equipment_sort"/>
+
+    <field name="equipment_module_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_module_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+    <field name="equipment_module_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+
+    <copyField source="equipment_module" dest="equipment_module_search"/>
+    <copyField source="equipment_module" dest="equipment_module_sort"/>
+
+    <field name="involved_users" type="int" indexed="true" stored="true" multiValued="true"/>
+
+    <field name="equipment_trained_users" type="int" indexed="true" stored="true" multiValued="true"/>
+    <field name="equipment_role_users" type="int" indexed="true" stored="true" multiValued="true"/>
 
 
     <!-- catchall field, containing all other searchable text fields (implemented
