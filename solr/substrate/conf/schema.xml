@@ -64,14 +64,7 @@
     <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
 
     <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="property_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
-
-    <copyField source="property_*" dest="property_search_*"/>
-
     <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true" multiValued="true"/>
-
-    <copyField source="property_array_*" dest="property_array_search_*"/>
 
     <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
