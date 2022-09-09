@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="consumable" version="1.5">
+<schema name="sensor" version="1.5">
     <field name="_version_" type="long" indexed="true" stored="true"/>
 
     <!-- points to the root document of a block of nested documents. Required for nested
@@ -14,19 +14,15 @@
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
-    <field name="consumable_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sensor_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="number" dest="number_sort"/>
+    <field name="identifier" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="identifier_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="identifier_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="label" dest="label_search"/>
-    <copyField source="label" dest="label_sort"/>
+    <copyField source="identifier" dest="identifier_search"/>
+    <copyField source="identifier" dest="identifier_sort"/>
 
     <field name="information" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
@@ -57,16 +53,18 @@
 
     <copyField source="user" dest="user_search"/>
 
-    <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+
+    <copyField source="type" dest="type_sort"/>
+    <copyField source="type" dest="type_search"/>
 
     <field name="type_can_be_substrate" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_can_be_substrate_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="type" dest="type_sort"/>
-    <copyField source="type" dest="type_search"/>
 
     <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
 
