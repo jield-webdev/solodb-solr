@@ -53,6 +53,14 @@
 
     <copyField source="user" dest="user_search"/>
 
+    <field name="type_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="type" dest="type_sort"/>
+    <copyField source="type" dest="type_search"/>
+
     <field name="project_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="project" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
