@@ -75,9 +75,9 @@
     <dynamicField name="property_min_*" type="int" indexed="true" stored="true"/>
     <dynamicField name="property_max_*" type="int" indexed="true" stored="true"/>
 
-    <dynamicField name="property_visible_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="property_visible_search_*" type="string_ci" indexed="true" stored="true"/>
-    <copyField source="property_visible_*" dest="property_visible_search_*"/>
+    <dynamicField name="property_friendly_value_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_friendly_value_search_*" type="string_ci" indexed="true" stored="true"/>
+    <copyField source="property_friendly_value_*" dest="property_friendly_value_search_*"/>
 
     <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
