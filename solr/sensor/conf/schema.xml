@@ -33,13 +33,13 @@
     <copyField source="full_label" dest="full_label_search"/>
     <copyField source="full_label" dest="full_label_sort"/>
 
-    <field name="location_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="location" dest="location_sort"/>
-    <copyField source="location" dest="location_search"/>
+    <copyField source="site" dest="site_sort"/>
+    <copyField source="site" dest="site_search"/>
 
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_text" type="string" indexed="true" stored="true" omitNorms="true"/>
