@@ -35,7 +35,7 @@
     <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
 
-    <field name="status" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
