@@ -97,7 +97,7 @@
     <field name="first_unfinished_step_label" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="first_unfinished_step_equipment_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="first_unfinished_step_equipment_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="first_unfinished_step_equipment_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="first_unfinished_step_equipment_module_name" type="text_general" indexed="true" stored="true"
            omitNorms="true"/>
