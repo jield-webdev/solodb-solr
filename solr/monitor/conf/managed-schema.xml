@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="monitor" version="1.5">
+<schema name="monitor" version="1.6">
 
 
     <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml

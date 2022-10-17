@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="process_module" version="1.5">
+<schema name="process_module" version="1.6">
 
     <field name="_version_" type="plong" indexed="true" stored="true"/>
 
