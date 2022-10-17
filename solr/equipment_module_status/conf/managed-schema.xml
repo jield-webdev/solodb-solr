@@ -220,50 +220,6 @@
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
-    <!-- catchall field, containing all other searchable text fields (implemented
-        via copyField further on in this schema  -->
-    <field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
-
-    <!-- catchall text field that indexes tokens both normally and in reverse for efficient
-        leading wildcard queries. -->
-    <field name="text_rev" type="text_general_rev" indexed="true" stored="false" multiValued="true"/>
-
-    <dynamicField name="*_i" type="pint" indexed="true" stored="true"/>
-    <dynamicField name="*_is" type="pint" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="*_s" type="string" indexed="true" stored="true"/>
-    <dynamicField name="*_ss" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="*_l" type="plong" indexed="true" stored="true"/>
-    <dynamicField name="*_ls" type="plong" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="*_t" type="text_general" indexed="true" stored="true"/>
-    <dynamicField name="*_txt" type="text_general" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="*_en" type="text_en" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="*_b" type="boolean" indexed="true" stored="true"/>
-    <dynamicField name="*_bs" type="boolean" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="*_f" type="float" indexed="true" stored="true"/>
-    <dynamicField name="*_fs" type="float" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="*_d" type="double" indexed="true" stored="true"/>
-    <dynamicField name="*_ds" type="double" indexed="true" stored="true" multiValued="true"/>
-
-    <!-- Type used to index the lat and lon components for the "location" FieldType -->
-    <dynamicField name="*_coordinate" type="tdouble" indexed="true" stored="false"/>
-
-    <dynamicField name="*_dt" type="pdate" indexed="true" stored="true"/>
-    <dynamicField name="*_dts" type="pdate" indexed="true" stored="true" multiValued="true"/>
-
-
-    <!-- some trie-coded dynamic fields for faster range queries -->
-    <dynamicField name="*_ti" type="tint" indexed="true" stored="true"/>
-    <dynamicField name="*_tl" type="tlong" indexed="true" stored="true"/>
-    <dynamicField name="*_tf" type="tfloat" indexed="true" stored="true"/>
-    <dynamicField name="*_td" type="tdouble" indexed="true" stored="true"/>
-    <dynamicField name="*_tdt" type="tdate" indexed="true" stored="true"/>
-
-    <dynamicField name="*_c" type="currency" indexed="true" stored="true"/>
-
-    <dynamicField name="ignored_*" type="ignored" multiValued="true"/>
-    <dynamicField name="attr_*" type="text_general" indexed="true" stored="true" multiValued="true"/>
-
-    <dynamicField name="random_*" type="random"/>
 
     <uniqueKey>id</uniqueKey>
 
