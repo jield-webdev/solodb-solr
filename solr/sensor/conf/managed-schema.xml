@@ -89,6 +89,8 @@
     <field name="latest_calibration_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="latest_calibration_type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="latest_calibration_date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+    <field name="latest_calibration_date_calibrated" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+    <field name="latest_calibration_date_valid" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
