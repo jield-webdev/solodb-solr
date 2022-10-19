@@ -22,14 +22,14 @@
 
     <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="description_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="description" dest="description_sort"/>
     <copyField source="description" dest="description_search"/>
 
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
@@ -37,7 +37,7 @@
     <field name="chemical_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="chemical_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="chemical_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="chemical_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="chemical_name" dest="chemical_name_sort"/>
     <copyField source="chemical_name" dest="chemical_name_search"/>
@@ -54,7 +54,7 @@
 
     <field name="cas_number" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="cas_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="cas_number_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="cas_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="cas_number" dest="cas_number_sort" />
     <copyField source="cas_number" dest="cas_number_search" />
@@ -62,7 +62,7 @@
     <field name="main_chemical_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="main_chemical" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="main_chemical_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_chemical_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="main_chemical_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="main_chemical" dest="main_chemical_sort" />
     <copyField source="main_chemical" dest="main_chemical_search" />
@@ -72,14 +72,14 @@
 
     <field name="location_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="location_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="location_name" dest="location_name_sort" />
     <copyField source="location_name" dest="location_name_search" />
 
     <field name="sub_location" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="sub_location_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="sub_location_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sub_location_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="sub_location" dest="sub_location_sort"/>
     <copyField source="sub_location" dest="sub_location_search"/>
@@ -88,14 +88,14 @@
 
     <field name="zone_group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_group_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="zone_group_name" dest="zone_group_name_sort" />
     <copyField source="zone_group_name" dest="zone_group_name_search" />
 
     <field name="zone_group_description" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_description_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_group_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="zone_group_description" dest="zone_group_description_sort" />
     <copyField source="zone_group_description" dest="zone_group_description_search" />
@@ -103,21 +103,21 @@
     <field name="room_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="room_name" dest="room_name_sort" />
     <copyField source="room_name" dest="room_name_search" />
 
     <field name="room_code" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_code_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_code_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="room_code" dest="room_code_sort" />
     <copyField source="room_code" dest="room_code_search" />
 
     <field name="room_description" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_description_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_description_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="room_description" dest="room_description_sort" />
     <copyField source="room_description" dest="room_description_search" />
@@ -127,7 +127,7 @@
 
     <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="site_name" dest="site_name_sort" />
     <copyField source="site_name" dest="site_name_search" />
@@ -137,7 +137,7 @@
 
     <field name="building_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="building_name" dest="building_name_sort" />
     <copyField source="building_name" dest="building_name_search" />
@@ -146,41 +146,41 @@
 
     <field name="project_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="project_name" dest="project_name_sort"/>
     <copyField source="project_name" dest="project_name_search"/>
 
     <field name="project_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_description_search" type="text_general" indexed="true" stored="true"
+    <field name="project_description_search" type="text_en_splitting" indexed="true" stored="true"
            omitNorms="true"/>
 
     <copyField source="project_description" dest="project_description_search"/>
 
     <field name="amount" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="amount" dest="amount_sort"/>
     <copyField source="amount" dest="amount_search"/>
 
     <field name="supplier_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="supplier_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="supplier_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="supplier_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="supplier_name" dest="supplier_sort"/>
     <copyField source="supplier_name" dest="supplier_search"/>
 
     <field name="order_number" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="order_number_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="order_number_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="order_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="order_number" dest="order_number_sort"/>
     <copyField source="order_number" dest="concentration_search"/>
 
     <field name="concentration" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="concentration_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="concentration_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="concentration_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="concentration" dest="concentration_sort"/>
     <copyField source="concentration" dest="concentration_search"/>

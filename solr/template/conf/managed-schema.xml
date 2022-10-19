@@ -18,14 +18,14 @@
     <field name="template_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="label" dest="label_sort"/>
     <copyField source="label" dest="label_search"/>
 
     <field name="name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="name" dest="name_sort"/>
     <copyField source="name" dest="name_search"/>
@@ -37,7 +37,7 @@
     <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="project" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="project" dest="project_sort"/>
     <copyField source="project" dest="project_search"/>
@@ -46,7 +46,7 @@
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="user" dest="user_search"/>
 
@@ -60,7 +60,7 @@
 
     <field name="process_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="process" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="process_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="process_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
     <field name="process_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
@@ -71,7 +71,7 @@
 
     <field name="equipment_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="equipment_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="equipment_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
     <field name="equipment_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
@@ -80,7 +80,7 @@
 
     <field name="equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="equipment_module_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="equipment_module_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
     <field name="equipment_module_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>

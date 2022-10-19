@@ -17,7 +17,7 @@
     <field name="facility_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="information" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
@@ -40,7 +40,7 @@
 
     <field name="equipment_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="equipment_search" type="text_general" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="amount_of_equipment" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_equipment_text" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -53,7 +53,7 @@
     <field name="has_equipment_module" type="boolean" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="has_equipment_module_text" type="string" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
-    <field name="equipment_module_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="equipment_module_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="equipment_module" dest="equipment_module_search"/>

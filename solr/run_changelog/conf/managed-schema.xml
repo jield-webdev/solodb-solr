@@ -23,7 +23,7 @@
 
     <field name="message" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="message_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="message_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="message_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="message" dest="message_sort"/>
     <copyField source="message" dest="message_search"/>
@@ -33,7 +33,7 @@
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
@@ -41,7 +41,7 @@
     <field name="source_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="source" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="source_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="source_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="source_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="source" dest="source_sort"/>
     <copyField source="source" dest="source_search"/>
@@ -49,7 +49,7 @@
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="user" dest="user_search"/>
 
@@ -57,7 +57,7 @@
     <field name="run_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="run_label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="run_label_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="run_label_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="run_label" dest="run_label_search"/>
 

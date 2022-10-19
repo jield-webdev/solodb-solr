@@ -28,42 +28,42 @@
     <field name="sequence" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="module" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_module_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_module_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_location" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="area_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="area" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="area_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="facility" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="facility_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="process_category_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_name_full" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_category_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_category_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="process_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name_full" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="process_module_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
@@ -75,12 +75,12 @@
     <field name="remark" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="instructions" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="group" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="group_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="group_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="tag" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="tag_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="tag_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <uniqueKey>id</uniqueKey>

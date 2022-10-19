@@ -23,38 +23,38 @@
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_int_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="building_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="building" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="room_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="zone_group_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_group_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="description_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>

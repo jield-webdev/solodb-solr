@@ -20,13 +20,13 @@
     <field name="process_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="number" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="number_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="number" dest="number_search"/>
 
     <field name="name_full" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="name_full" dest="name_search"/>
@@ -36,7 +36,7 @@
     <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="type_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="type_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="type_name" dest="type_search"/>
 
@@ -45,7 +45,7 @@
     <field name="process_category_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_name_full" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="process_category_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="process_category_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="process_category_name" dest="process_category_sort"/>
     <copyField source="process_category_name_full" dest="process_category_search"/>
@@ -53,69 +53,69 @@
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="user" dest="user_search"/>
 
     <field name="equipment_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="equipment_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="equipment_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="equipment" dest="equipment_search"/>
 
     <field name="equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="equipment_module_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="equipment_module_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="equipment_module" dest="equipment_module_search"/>
 
     <field name="facility_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="facility" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="facility_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="facility_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="facility" dest="facility_search"/>
 
     <field name="area_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="area" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="area_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="area_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="area" dest="area_search"/>
 
     <field name="zone_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="zone" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="zone_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="zone_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="zone" dest="zone_search"/>
 
     <field name="zone_group_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="zone_group" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="zone_group_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="zone_group_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="zone_group" dest="zone_group_search"/>
 
     <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="building" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="building_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="building_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="building" dest="building_search"/>
 
     <field name="room_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="room" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="room_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="room_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="room" dest="room_search"/>
 
     <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="site" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="site_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="site_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="site" dest="site_search"/>
