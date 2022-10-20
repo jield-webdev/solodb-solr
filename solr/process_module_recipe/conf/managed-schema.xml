@@ -27,7 +27,7 @@
     <field name="has_versions" type="boolean" indexed="true" stored="true" omitNorms="true" multiValued="false"/>
 
     <field name="has_versions_text" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    <field name="latest_version" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="latest_version" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="latest_version_notes" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="has_changes_in_draft" type="boolean" indexed="true" stored="true" omitNorms="true"
