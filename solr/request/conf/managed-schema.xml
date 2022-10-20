@@ -123,7 +123,7 @@
     <copyField source="room_label" dest="room_label_sort"/>
     <copyField source="room_label" dest="room_label_search"/>
 
-    <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="site" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -133,7 +133,7 @@
     <copyField source="site" dest="site_sort"/>
     <copyField source="site" dest="site_search"/>
 
-    <field name="building_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="building" type="string" indexed="true" stored="true" omitNorms="true"/>

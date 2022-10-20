@@ -63,7 +63,7 @@
     <field name="ownership" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="ownership_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="room_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="room_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="room_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -83,7 +83,7 @@
 
     <copyField source="room_description" dest="room_description_search"/>
 
-    <field name="zone_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -91,7 +91,7 @@
     <copyField source="zone_name" dest="zone_name_sort"/>
     <copyField source="zone_name" dest="zone_name_search"/>
 
-    <field name="zone_group_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="zone_group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="zone_group_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -99,7 +99,7 @@
     <copyField source="zone_group_name" dest="zone_group_name_sort"/>
     <copyField source="zone_group_name" dest="zone_group_name_search"/>
 
-    <field name="building_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -114,7 +114,7 @@
     <copyField source="building_name" dest="building_name_sort"/>
     <copyField source="building_name" dest="building_name_search"/>
 
-    <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
