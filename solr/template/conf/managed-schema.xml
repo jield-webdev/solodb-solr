@@ -16,6 +16,7 @@
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
     <field name="template_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -23,7 +24,7 @@
     <copyField source="label" dest="label_sort"/>
     <copyField source="label" dest="label_search"/>
 
-    <field name="name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="name" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 

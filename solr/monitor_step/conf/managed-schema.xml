@@ -35,7 +35,7 @@
     <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_module_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_location" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_location" type="text_en" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="area_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="area" type="string" indexed="true" stored="true" omitNorms="true"/>

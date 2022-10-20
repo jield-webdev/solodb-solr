@@ -150,7 +150,7 @@
     <field name="cmr_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="cmr" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
-    <field name="cmr_search" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="cmr_search" type="text_en" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <field name="amount_of_role_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="role_users_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>

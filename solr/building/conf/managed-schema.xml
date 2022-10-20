@@ -35,7 +35,7 @@
     <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_search" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_search" type="text_en" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="site" type="string" indexed="true" stored="true" omitNorms="true"/>

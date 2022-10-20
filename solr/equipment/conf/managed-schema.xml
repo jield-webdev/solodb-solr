@@ -27,7 +27,7 @@
     <copyField source="name" dest="name_sort"/>
     <copyField source="name" dest="name_search"/>
 
-    <field name="mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="mes_name" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="mes_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="mes_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
@@ -41,7 +41,7 @@
     <copyField source="number" dest="number_sort"/>
     <copyField source="number" dest="number_search"/>
 
-    <field name="default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="default_name" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="default_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="default_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
@@ -100,7 +100,7 @@
     <copyField source="zone_group_name" dest="zone_group_name_search"/>
 
     <field name="building_id" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_code" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="building_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
@@ -115,7 +115,7 @@
     <copyField source="building_name" dest="building_name_search"/>
 
     <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_code" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 

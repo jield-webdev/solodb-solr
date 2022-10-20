@@ -21,7 +21,7 @@
 
     <field name="changelog_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="message" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="message" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="message_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="message_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 

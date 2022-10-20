@@ -50,14 +50,14 @@
     <copyField source="module_name" dest="module_name_sort"/>
     <copyField source="module_name" dest="module_name_search"/>
 
-    <field name="module_mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_mes_name" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_mes_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_mes_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="module_name" dest="module_mes_name_sort"/>
     <copyField source="module_name" dest="module_mes_name_search"/>
 
-    <field name="module_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_default_name" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_default_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_default_name_search" type="text_en_splitting" indexed="true" stored="true"
            omitNorms="true"/>
@@ -80,7 +80,7 @@
     <copyField source="equipment_number" dest="equipment_number_sort"/>
     <copyField source="equipment_number" dest="equipment_number_search"/>
 
-    <field name="equipment_mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_mes_name" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_mes_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_mes_name_search" type="text_en_splitting" indexed="true" stored="true"
            omitNorms="true"/>
@@ -88,7 +88,7 @@
     <copyField source="equipment_mes_name" dest="equipment_mes_name_sort"/>
     <copyField source="equipment_mes_name" dest="equipment_mes_name_search"/>
 
-    <field name="equipment_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_default_name" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_default_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_default_name_search" type="text_en_splitting" indexed="true" stored="true"
            omitNorms="true"/>

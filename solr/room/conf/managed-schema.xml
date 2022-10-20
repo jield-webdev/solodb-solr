@@ -22,7 +22,7 @@
 
     <field name="site_id" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_code" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="site_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
