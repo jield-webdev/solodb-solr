@@ -55,7 +55,7 @@
 
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_sort" type="building_name_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
