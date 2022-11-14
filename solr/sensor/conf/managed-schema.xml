@@ -17,12 +17,12 @@
 
     <field name="sensor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="identifier" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="identifier_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <field name="identifier_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="local_identifier" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="local_identifier_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="local_identifier_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="identifier" dest="identifier_search"/>
-    <copyField source="identifier" dest="identifier_sort"/>
+    <copyField source="local_identifier" dest="local_identifier_search"/>
+    <copyField source="local_identifier" dest="local_identifier_sort"/>
 
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
