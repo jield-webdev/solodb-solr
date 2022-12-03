@@ -24,7 +24,7 @@
     <copyField source="label" dest="label_sort"/>
 
     <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="number_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="number" dest="number_sort"/>
