@@ -2,10 +2,6 @@ FROM solr:latest
 LABEL maintainer="info@jield.nl"
 LABEL org.opencontainers.image.source="https://github.com/jield-webdev/solodb/solr"
 
-#ENV SOLR_OPTS="-XX:-UseLargePages"
-
-USER root
-RUN apt-get update && apt-get install nano
 USER solr
 
 ADD --chown=solr:solr solr/building /var/solr/data/building
