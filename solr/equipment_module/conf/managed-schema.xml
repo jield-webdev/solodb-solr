@@ -214,7 +214,9 @@
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_sequence" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
