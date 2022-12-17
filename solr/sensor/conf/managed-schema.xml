@@ -99,6 +99,27 @@
     <field name="latest_calibration_date_calibrated" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="latest_calibration_date_valid" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
+    <dynamicField name="latest_calibration_property_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="latest_calibration_property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+    <dynamicField name="latest_calibration_property_array_*" type="string" indexed="true" stored="true"
+                  multiValued="true"/>
+    <dynamicField name="latest_calibration_property_date_*" type="pdate" indexed="true" stored="true"/>
+    <dynamicField name="latest_calibration_property_integer_*" type="pint" indexed="true" stored="true"/>
+
+    <dynamicField name="latest_calibration_property_min_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="latest_calibration_property_max_*" type="pint" indexed="true" stored="true"/>
+
+    <dynamicField name="latest_calibration_friendly_value_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="latest_calibration_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
+    <dynamicField name="latest_calibration_friendly_value_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+
+    <copyField source="latest_calibration_property_friendly_value_*"
+               dest="latest_calibration_property_friendly_value_search_*"/>
+    <copyField source="latest_calibration_property_friendly_value_*"
+               dest="latest_calibration_property_friendly_value_sort_*"/>
+    <copyField source="latest_calibration_property_*" dest="latest_calibration_property_sort_*"/>
+
+
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
@@ -110,16 +131,21 @@
 
 
     <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
     <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="property_date_*" type="pdate" indexed="true" stored="true"/>
-    <dynamicField name="property_integer_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_integer_*" type="pint" indexed="true" stored="true"/>
 
     <dynamicField name="property_min_*" type="pint" indexed="true" stored="true"/>
     <dynamicField name="property_max_*" type="pint" indexed="true" stored="true"/>
 
     <dynamicField name="property_friendly_value_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
+    <dynamicField name="property_friendly_value_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+
     <copyField source="property_friendly_value_*" dest="property_friendly_value_search_*"/>
+    <copyField source="property_friendly_value_*" dest="property_friendly_value_sort_*"/>
+    <copyField source="property_*" dest="property_sort_*"/>
 
     <uniqueKey>id</uniqueKey>
 
