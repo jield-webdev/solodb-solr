@@ -137,6 +137,17 @@
     <field name="monitored_equipment_trained_users" type="pint" indexed="true" stored="true" multiValued="true"/>
     <field name="monitored_equipment_role_users" type="pint" indexed="true" stored="true" multiValued="true"/>
 
+    <field name="monitored_recipe_version_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="monitored_recipe_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="monitored_recipe_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="monitored_recipe_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+    <field name="monitored_recipe_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+
+    <copyField source="monitored_recipe_name" dest="monitored_recipe_name_search"/>
+    <copyField source="monitored_recipe_name" dest="monitored_recipe_name_sort"/>
+
     <field name="has_monitored_processes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_monitored_processes" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_monitored_processes_steps" type="string" indexed="true" stored="true" omitNorms="true"/>
