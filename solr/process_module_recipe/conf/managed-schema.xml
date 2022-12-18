@@ -178,6 +178,10 @@
     <field name="amount_of_run_step" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_monitor_step" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="monitored_processes_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="has_monitored_processes" type="boolean" indexed="true" stored="true" omitNorms="true" />
+    <field name="amount_of_monitored_processes" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
