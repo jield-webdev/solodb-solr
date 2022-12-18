@@ -99,59 +99,6 @@
     <field name="equipment_trained_users" type="pint" indexed="true" stored="true" multiValued="true"/>
     <field name="equipment_role_users" type="pint" indexed="true" stored="true" multiValued="true"/>
 
-
-    <!-- Take 1 step out (the step with the requirement) -->
-    <field name="requirement_step_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_target" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_min_value" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_max_value" type="pfloat" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="requirement_step_equipment_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_equipment" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_equipment_search" type="text_en_splitting" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="requirement_step_equipment" dest="equipment_search"/>
-
-    <field name="requirement_step_equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_equipment_module" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_equipment_module_search" type="text_en_splitting" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="requirement_step_equipment_module" dest="requirement_step_equipment_module_search"/>
-
-
-    <field name="requirement_step_process_category_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_process_category_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_process_category_name_full" type="string" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <field name="requirement_step_process_category_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_process_category_search" type="text_en_splitting" indexed="true" stored="true"
-           omitNorms="true"/>
-    <field name="requirement_step_process_category_sort" type="text_gen_sort" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="requirement_step_process_category_name" dest="requirement_step_process_category_search"/>
-    <copyField source="requirement_step_process_category_name" dest="requirement_step_process_category_sort"/>
-
-    <field name="requirement_step_process_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_process_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_process_name_full" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="requirement_step_process_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="requirement_step_process_name_search" type="text_en_splitting" indexed="true" stored="true"
-           omitNorms="true"/>
-    <field name="requirement_step_process_name_sort" type="text_gen_sort" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="requirement_step_process_name" dest="requirement_step_process_name_search"/>
-    <copyField source="requirement_step_process_name" dest="requirement_step_process_name_sort"/>
-
-    <field name="has_requirement_step" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_requirement_step_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-
     <field name="monitored_process_module_id" type="pint" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
@@ -189,6 +136,10 @@
 
     <field name="monitored_equipment_trained_users" type="pint" indexed="true" stored="true" multiValued="true"/>
     <field name="monitored_equipment_role_users" type="pint" indexed="true" stored="true" multiValued="true"/>
+
+    <field name="has_monitored_processes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_monitored_processes" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_monitored_processes_steps" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <uniqueKey>id</uniqueKey>
 
