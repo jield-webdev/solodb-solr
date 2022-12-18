@@ -150,7 +150,7 @@
 
     <field name="has_monitored_processes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_monitored_processes" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_monitored_processes_steps" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_monitored_processes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <uniqueKey>id</uniqueKey>
 
