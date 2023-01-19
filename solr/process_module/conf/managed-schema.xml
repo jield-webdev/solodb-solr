@@ -28,6 +28,8 @@
     <field name="is_in_use_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_assembly_process" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_assembly_process_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_local_parameters" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_local_parameters_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="process_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -154,6 +156,7 @@
     <field name="amount_of_template_step" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_run_step" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_monitor_step" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_recipe" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <uniqueKey>id</uniqueKey>
 
