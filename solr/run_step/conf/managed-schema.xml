@@ -24,6 +24,12 @@
 
     <field name="step_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="step_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="step_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="step_name" dest="step_name_sort"/>
+    <copyField source="step_name" dest="step_name_search"/>
+
     <field name="step_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="sequence" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -32,43 +38,43 @@
     <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="equipment" dest="equipment_search" />
+    <copyField source="equipment" dest="equipment_search"/>
 
     <field name="equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_module_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="equipment_module" dest="equipment_module_search" />
+    <copyField source="equipment_module" dest="equipment_module_search"/>
 
     <field name="area_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="area" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="area_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="area" dest="area_sort" />
-    <copyField source="area" dest="area_search" />
+    <copyField source="area" dest="area_sort"/>
+    <copyField source="area" dest="area_search"/>
 
     <field name="facility_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="facility" dest="facility_sort" />
-    <copyField source="facility" dest="facility_search" />
+    <copyField source="facility" dest="facility_sort"/>
+    <copyField source="facility" dest="facility_search"/>
 
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="user" dest="user_search" />
+    <copyField source="user" dest="user_search"/>
 
     <field name="user_finish_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_finish" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_finish_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_finish_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="user_finish" dest="user_finish_search" />
+    <copyField source="user_finish" dest="user_finish_search"/>
 
     <field name="process_category_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -78,8 +84,8 @@
     <field name="process_category_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_category_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="process_category_name" dest="process_category_search" />
-    <copyField source="process_category_name" dest="process_category_sort" />
+    <copyField source="process_category_name" dest="process_category_search"/>
+    <copyField source="process_category_name" dest="process_category_sort"/>
 
     <field name="process_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -89,8 +95,8 @@
     <field name="process_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="process_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="process_name" dest="process_name_search" />
-    <copyField source="process_name" dest="process_name_sort" />
+    <copyField source="process_name" dest="process_name_search"/>
+    <copyField source="process_name" dest="process_name_sort"/>
 
     <field name="process_module_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
@@ -106,19 +112,19 @@
     <field name="group" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="group_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="group" dest="group_search" />
+    <copyField source="group" dest="group_search"/>
 
 
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="label" dest="label_search" />
+    <copyField source="label" dest="label_search"/>
 
     <field name="tag" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="tag_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
-    <copyField source="tag" dest="tag_search" />
+    <copyField source="tag" dest="tag_search"/>
 
     <field name="amount_of_files" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
@@ -151,8 +157,8 @@
     -->
 
     <!-- The StrField type is not analyzed, but indexed/stored verbatim. -->
-    <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true" />
-    <fieldType name="strings" class="solr.StrField" sortMissingLast="true" multiValued="true" docValues="true" />
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
+    <fieldType name="strings" class="solr.StrField" sortMissingLast="true" multiValued="true" docValues="true"/>
 
     <!-- boolean type: "true" or "false" -->
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
@@ -175,7 +181,7 @@
 
     <!-- since fields of this type are by default not stored or indexed,
        any data added to them will be ignored outright.  -->
-    <fieldType name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField" />
+    <fieldType name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField"/>
 
     <!-- The format for this date field is of the form 1995-12-31T23:59:59Z, and
          is a more restricted form of the canonical representation of dateTime
@@ -226,7 +232,7 @@
     -->
 
     <!-- A text field that only splits on whitespace for exact matching of words -->
-    <dynamicField name="*_ws" type="text_ws"  indexed="true"  stored="true"/>
+    <dynamicField name="*_ws" type="text_ws" indexed="true" stored="true"/>
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
         <analyzer>
             <tokenizer name="whitespace"/>
@@ -242,7 +248,7 @@
     <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
         <analyzer type="index">
             <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
             <!-- in this example, we will only use synonyms at query time
             <filter name="synonymGraph" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
             <filter name="flattenGraph"/>
@@ -251,7 +257,7 @@
         </analyzer>
         <analyzer type="query">
             <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
             <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
             <filter name="lowercase"/>
         </analyzer>
@@ -270,12 +276,12 @@
     <fieldType name="text_gen_sort" class="solr.SortableTextField" positionIncrementGap="100" multiValued="true">
         <analyzer type="index">
             <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
             <filter name="lowercase"/>
         </analyzer>
         <analyzer type="query">
             <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
             <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
             <filter name="lowercase"/>
         </analyzer>
@@ -284,7 +290,7 @@
     <!-- A text field with defaults appropriate for English: it tokenizes with StandardTokenizer,
          removes English stop words (lang/stopwords_en.txt), down cases, protects words from protwords.txt, and
          finally applies Porter's stemming.  The query time analyzer also applies synonyms from synonyms.txt. -->
-    <dynamicField name="*_txt_en" type="text_en"  indexed="true"  stored="true"/>
+    <dynamicField name="*_txt_en" type="text_en" indexed="true" stored="true"/>
     <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
             <tokenizer name="standard"/>
@@ -332,8 +338,9 @@
          cases will work, for example query "wi fi" will match
          document "WiFi" or "wi-fi".
     -->
-    <dynamicField name="*_txt_en_split" type="text_en_splitting"  indexed="true"  stored="true"/>
-    <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="true">
+    <dynamicField name="*_txt_en_split" type="text_en_splitting" indexed="true" stored="true"/>
+    <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100"
+               autoGeneratePhraseQueries="true">
         <analyzer type="index">
             <tokenizer name="whitespace"/>
             <!-- in this example, we will only use synonyms at query time
@@ -345,11 +352,12 @@
                     ignoreCase="true"
                     words="lang/stopwords_en.txt"
             />
-            <filter name="wordDelimiterGraph" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0" splitOnCaseChange="1"/>
+            <filter name="wordDelimiterGraph" generateWordParts="1" generateNumberParts="1" catenateWords="1"
+                    catenateNumbers="1" catenateAll="0" splitOnCaseChange="1"/>
             <filter name="lowercase"/>
             <filter name="keywordMarker" protected="protwords.txt"/>
             <filter name="porterStem"/>
-            <filter name="flattenGraph" />
+            <filter name="flattenGraph"/>
         </analyzer>
         <analyzer type="query">
             <tokenizer name="whitespace"/>
@@ -358,7 +366,8 @@
                     ignoreCase="true"
                     words="lang/stopwords_en.txt"
             />
-            <filter name="wordDelimiterGraph" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0" splitOnCaseChange="1"/>
+            <filter name="wordDelimiterGraph" generateWordParts="1" generateNumberParts="1" catenateWords="0"
+                    catenateNumbers="0" catenateAll="0" splitOnCaseChange="1"/>
             <filter name="lowercase"/>
             <filter name="keywordMarker" protected="protwords.txt"/>
             <filter name="porterStem"/>
@@ -367,26 +376,29 @@
 
     <!-- Less flexible matching, but less false matches.  Probably not ideal for product names,
          but may be good for SKUs.  Can insert dashes in the wrong place and still match. -->
-    <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight"  indexed="true"  stored="true"/>
-    <fieldType name="text_en_splitting_tight" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="true">
+    <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
+    <fieldType name="text_en_splitting_tight" class="solr.TextField" positionIncrementGap="100"
+               autoGeneratePhraseQueries="true">
         <analyzer type="index">
             <tokenizer name="whitespace"/>
             <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
             <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-            <filter name="wordDelimiterGraph" generateWordParts="0" generateNumberParts="0" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+            <filter name="wordDelimiterGraph" generateWordParts="0" generateNumberParts="0" catenateWords="1"
+                    catenateNumbers="1" catenateAll="0"/>
             <filter name="lowercase"/>
             <filter name="keywordMarker" protected="protwords.txt"/>
             <filter name="englishMinimalStem"/>
             <!-- this filter can remove any duplicate tokens that appear at the same position - sometimes
                  possible with WordDelimiterGraphFilter in conjuncton with stemming. -->
             <filter name="removeDuplicates"/>
-            <filter name="flattenGraph" />
+            <filter name="flattenGraph"/>
         </analyzer>
         <analyzer type="query">
             <tokenizer name="whitespace"/>
             <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
             <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-            <filter name="wordDelimiterGraph" generateWordParts="0" generateNumberParts="0" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+            <filter name="wordDelimiterGraph" generateWordParts="0" generateNumberParts="0" catenateWords="1"
+                    catenateNumbers="1" catenateAll="0"/>
             <filter name="lowercase"/>
             <filter name="keywordMarker" protected="protwords.txt"/>
             <filter name="englishMinimalStem"/>
@@ -399,11 +411,11 @@
     <!-- Just like text_general except it reverses the characters of
          each token, to enable more efficient leading wildcard queries.
     -->
-    <dynamicField name="*_txt_rev" type="text_general_rev"  indexed="true"  stored="true"/>
+    <dynamicField name="*_txt_rev" type="text_general_rev" indexed="true" stored="true"/>
     <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
             <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
             <filter name="lowercase"/>
             <filter name="reversedWildcard" withOriginal="true"
                     maxPosAsterisk="3" maxPosQuestion="2" maxFractionAsterisk="0.33"/>
@@ -411,13 +423,13 @@
         <analyzer type="query">
             <tokenizer name="standard"/>
             <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
             <filter name="lowercase"/>
         </analyzer>
     </fieldType>
 
-    <dynamicField name="*_phon_en" type="phonetic_en"  indexed="true"  stored="true"/>
-    <fieldType name="phonetic_en" stored="false" indexed="true" class="solr.TextField" >
+    <dynamicField name="*_phon_en" type="phonetic_en" indexed="true" stored="true"/>
+    <fieldType name="phonetic_en" stored="false" indexed="true" class="solr.TextField">
         <analyzer>
             <tokenizer name="standard"/>
             <filter name="doubleMetaphone" inject="false"/>
@@ -425,11 +437,11 @@
     </fieldType>
 
     <!-- lowercases the entire field value, keeping it as a single token.  -->
-    <dynamicField name="*_s_lower" type="lowercase"  indexed="true"  stored="true"/>
+    <dynamicField name="*_s_lower" type="lowercase" indexed="true" stored="true"/>
     <fieldType name="lowercase" class="solr.TextField" positionIncrementGap="100">
         <analyzer>
             <tokenizer name="keyword"/>
-            <filter name="lowercase" />
+            <filter name="lowercase"/>
         </analyzer>
     </fieldType>
 
@@ -444,7 +456,7 @@
       The subFields are an implementation detail of the fieldType, and end
       users normally should not need to know about them.
      -->
-    <dynamicField name="*_point" type="point"  indexed="true"  stored="true"/>
+    <dynamicField name="*_point" type="point" indexed="true" stored="true"/>
     <fieldType name="point" class="solr.PointType" dimension="2" subFieldSuffix="_d"/>
 
     <!-- A specialized field for geospatial search filters and distance sorting. -->
@@ -455,7 +467,7 @@
       https://solr.apache.org/guide/solr/latest/query-guide/spatial-search.html
     -->
     <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
-               geo="true" distErrPct="0.025" maxDistErr="0.001" distanceUnits="kilometers" />
+               geo="true" distErrPct="0.025" maxDistErr="0.001" distanceUnits="kilometers"/>
 
     <!-- Payloaded field types -->
     <fieldType name="delimited_payloads_float" stored="false" indexed="true" class="solr.TextField">
@@ -480,12 +492,12 @@
     <!-- some examples for different languages (generally ordered by ISO code) -->
 
     <!-- Dutch -->
-    <dynamicField name="*_txt_nl" type="text_nl"  indexed="true"  stored="true"/>
+    <dynamicField name="*_txt_nl" type="text_nl" indexed="true" stored="true"/>
     <fieldType name="text_nl" class="solr.TextField" positionIncrementGap="100">
         <analyzer>
             <tokenizer name="standard"/>
             <filter name="lowercase"/>
-            <filter name="stop" ignoreCase="true" words="lang/stopwords_nl.txt" format="snowball" />
+            <filter name="stop" ignoreCase="true" words="lang/stopwords_nl.txt" format="snowball"/>
             <filter name="stemmerOverride" dictionary="lang/stemdict_nl.txt" ignoreCase="false"/>
             <filter name="snowballPorter" language="Dutch"/>
         </analyzer>
