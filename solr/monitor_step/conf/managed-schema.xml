@@ -23,8 +23,10 @@
 
     <field name="step_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="step_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="step_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="step_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="step_name" dest="step_name_sort"/>
     <copyField source="step_name" dest="step_name_search"/>
 
     <field name="step_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
