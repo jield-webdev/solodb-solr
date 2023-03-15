@@ -31,10 +31,10 @@ Install SOLR (latest version)
 ```shell
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install default-jdk
-wget https://www.apache.org/dyn/closer.lua/solr/solr/9.1.0/solr-9.1.0.tgz?action=download
-mv solr-9.1.0.tgz?action=download solr-9.1.0.tgz
-tar xzf solr-9.1.0.tgz
-sudo bash solr-9.1.0/bin/install_solr_service.sh solr-9.1.0.tgz
+wget https://www.apache.org/dyn/closer.lua/solr/solr/9.1.1/solr-9.1.1.tgz?action=download
+mv solr-9.1.1.tgz?action=download solr-9.1.1.tgz
+tar xzf solr-9.1.1.tgz solr-9.1.1/bin/install_solr_service.sh --strip-components=2
+sudo ./install_solr_service.sh solr-9.1.1.tgz -f
 ```
 
 Change /etc/default/solr.in.sh so solr listens to 0.0.0.0

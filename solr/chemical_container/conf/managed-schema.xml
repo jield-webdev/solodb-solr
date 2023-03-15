@@ -175,7 +175,7 @@
     <field name="order_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="order_number" dest="order_number_sort"/>
-    <copyField source="order_number" dest="concentration_search"/>
+    <copyField source="order_number" dest="order_number_search"/>
 
     <field name="concentration" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="concentration_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
