@@ -54,6 +54,9 @@
     <field name="has_finished_steps" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_unfinished_steps" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="has_batch_card" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_batch_card_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="keywords" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <field name="parts" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
