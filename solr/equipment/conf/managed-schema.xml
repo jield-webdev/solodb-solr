@@ -99,6 +99,16 @@
     <copyField source="zone_group_name" dest="zone_group_name_sort"/>
     <copyField source="zone_group_name" dest="zone_group_name_search"/>
 
+    <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_code" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="location_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="location_name" dest="location_name_sort"/>
+    <copyField source="location_name" dest="location_name_search"/>
+
     <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
