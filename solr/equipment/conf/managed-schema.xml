@@ -109,6 +109,13 @@
     <copyField source="location_name" dest="location_name_sort"/>
     <copyField source="location_name" dest="location_name_search"/>
 
+    <field name="sub_location" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sub_location_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sub_location_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="sub_location" dest="sub_location_sort"/>
+    <copyField source="sub_location" dest="sub_location_search"/>
+
     <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
