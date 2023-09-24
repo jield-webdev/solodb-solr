@@ -169,6 +169,8 @@
     <field name="reservation_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="training_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scheduler_enabled" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="scheduler_enabled_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_modules" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="facility_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
