@@ -63,12 +63,12 @@
     <field name="hold_until" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="due_by" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="system_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="system" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="system_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+    <field name="equipment_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="equipment_search" type="text_general" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
-    <copyField source="system" dest="system_search"/>
+    <copyField source="equipment" dest="equipment_search"/>
 
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
