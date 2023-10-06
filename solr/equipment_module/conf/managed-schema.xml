@@ -227,6 +227,22 @@
     <field name="has_monitored_processes" type="boolean" indexed="true" stored="true" omitNorms="true" />
     <field name="amount_of_monitored_processes" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+    <dynamicField name="property_search_*" type="text_general" indexed="true" stored="true"/>
+    <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="property_array_int_*" type="pint" indexed="true" stored="true" multiValued="true"/>
+
+    <dynamicField name="property_min_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="property_max_*" type="pint" indexed="true" stored="true"/>
+
+    <dynamicField name="property_array_search_*" type="text_general" indexed="true" stored="true"
+                  multiValued="true"/>
+
+    <copyField source="property_*" dest="property_search_*"/>
+    <copyField source="property_*" dest="property_sort_*"/>
+    <copyField source="property_array_*" dest="property_array_search_*"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is

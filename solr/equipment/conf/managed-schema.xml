@@ -238,6 +238,20 @@
     <dynamicField name="property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
     <copyField source="property_friendly_value_*" dest="property_friendly_value_search_*"/>
 
+    <dynamicField name="module_property_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="module_property_integer_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="module_property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
+    <dynamicField name="module_property_search_*" type="text_general" indexed="true" stored="true"/>
+    <dynamicField name="module_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="module_property_array_int_*" type="pint" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="module_property_min_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="module_property_max_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="module_property_array_search_*" type="text_general" indexed="true" stored="true"                  multiValued="true"/>
+
+    <copyField source="module_property_*" dest="asset_property_sort_*"/>
+    <copyField source="module_property_*" dest="asset_property_search_*"/>
+    <copyField source="module_property_array_*" dest="asset_property_array_search_*"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
