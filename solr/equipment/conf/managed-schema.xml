@@ -248,9 +248,9 @@
     <dynamicField name="module_property_max_*" type="pint" indexed="true" stored="true"/>
     <dynamicField name="module_property_array_search_*" type="text_general" indexed="true" stored="true"                  multiValued="true"/>
 
-    <copyField source="module_property_*" dest="asset_property_sort_*"/>
-    <copyField source="module_property_*" dest="asset_property_search_*"/>
-    <copyField source="module_property_array_*" dest="asset_property_array_search_*"/>
+    <copyField source="module_property_*" dest="module_property_sort_*"/>
+    <copyField source="module_property_*" dest="module_property_search_*"/>
+    <copyField source="module_property_array_*" dest="module_property_array_search_*"/>
 
     <uniqueKey>id</uniqueKey>
 
