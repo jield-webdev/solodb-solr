@@ -227,6 +227,23 @@
     <field name="has_monitored_processes" type="boolean" indexed="true" stored="true" omitNorms="true" />
     <field name="amount_of_monitored_processes" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="function_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="function" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="function_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="function_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="function" dest="function_search"/>
+    <copyField source="function" dest="function_sort"/>
+
+    <field name="group_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="group" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="group_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="group_search" type="text_general" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
+
+    <copyField source="group" dest="group_search"/>
+    <copyField source="group" dest="group_sort"/>
+
     <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
     <dynamicField name="property_search_*" type="text_general" indexed="true" stored="true"/>
