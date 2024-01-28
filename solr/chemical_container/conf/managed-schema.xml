@@ -67,6 +67,22 @@
     <copyField source="main_chemical" dest="main_chemical_sort"/>
     <copyField source="main_chemical" dest="main_chemical_search"/>
 
+    <field name="purpose_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purpose" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purpose_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purpose_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="purpose" dest="purpose_sort"/>
+    <copyField source="purpose" dest="purpose_search"/>
+
+    <field name="method_of_use_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="method_of_use" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="method_of_use_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="method_of_use_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="method_of_use" dest="method_of_use_sort"/>
+    <copyField source="method_of_use" dest="method_of_use_search"/>
+
     <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="location_code" type="string" indexed="true" stored="true" omitNorms="true"/>
 
