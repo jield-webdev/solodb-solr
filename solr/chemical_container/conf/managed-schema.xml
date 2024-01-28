@@ -68,20 +68,34 @@
     <copyField source="main_chemical" dest="main_chemical_search"/>
 
     <field name="purpose_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purpose_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purpose_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purpose_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="purpose" dest="purpose_sort"/>
-    <copyField source="purpose" dest="purpose_search"/>
+    <copyField source="purpose_name" dest="purpose_name_sort"/>
+    <copyField source="purpose_name" dest="purpose_name_search"/>
+
+    <field name="purpose_description" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purpose_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purpose_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="purpose_description" dest="purpose_description_sort"/>
+    <copyField source="purpose_description" dest="purpose_description_search"/>
 
     <field name="method_of_use_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="method_of_use_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="method_of_use_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="method_of_use_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="method_of_use" dest="method_of_use_sort"/>
-    <copyField source="method_of_use" dest="method_of_use_search"/>
+    <copyField source="method_of_use_name" dest="method_of_use_name_sort"/>
+    <copyField source="method_of_use_name" dest="method_of_use_name_search"/>
+
+    <field name="method_of_use_description" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="method_of_use_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="method_of_use_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="method_of_use_description" dest="method_of_use_description_sort"/>
+    <copyField source="method_of_use_description" dest="method_of_use_description_search"/>
 
     <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="location_code" type="string" indexed="true" stored="true" omitNorms="true"/>
