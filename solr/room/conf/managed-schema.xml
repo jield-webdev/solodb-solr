@@ -27,7 +27,7 @@
     <field name="site_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="site" dest="site_search"/>
-    <copyField source="site_code" dest="site_search"/>
+    <copyField source="site" dest="site_sort"/>
 
     <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_code" type="text_general" indexed="true" stored="true" omitNorms="true"/>
@@ -36,7 +36,7 @@
     <field name="building_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="building" dest="building_search"/>
-    <copyField source="building" dest="building_search"/>
+    <copyField source="building" dest="building_sort"/>
 
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
