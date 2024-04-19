@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="chemical_container" version="1.6">
+<schema name="sensor_request" version="1.6">
 
     <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
       or Solr won't start. _version_ and update log are required for SolrCloud
@@ -16,247 +16,53 @@
      required, it is highly recommended. A <uniqueKey> is present in almost all Solr
      installations. See the <uniqueKey> declaration below where <uniqueKey> is set to "id".
    -->
-    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+    <field name="id" type="string" indexed="true" stored="true" required="true"/>
+    <field name="request_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="container_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="request_number" dest="request_number_sort"/>
 
-    <copyField source="description" dest="description_sort"/>
-    <copyField source="description" dest="description_search"/>
+    <field name="request_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="request_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="request_name" dest="request_name_sort"/>
+    <copyField source="request_name" dest="request_name_search"/>
 
-    <copyField source="type" dest="type_sort"/>
-    <copyField source="type" dest="type_search"/>
+    <field name="sensor_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sensor_type_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sensor_type_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sensor_type_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="chemical_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="sensor_type_name" dest="sensor_type_name_sort"/>
+    <copyField source="sensor_type_name" dest="sensor_type_name_search"/>
 
-    <copyField source="chemical_name" dest="chemical_name_sort"/>
-    <copyField source="chemical_name" dest="chemical_name_search"/>
+    <field name="sensor_type_type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sensor_type_type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="sensor_type_type_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="chemical_has_cmr" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_has_cmr_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_cmr" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="chemical_is_halogenated" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_is_halogenated_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="chemical_contains_metals" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_contains_metals_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="cas_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="cas_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="cas_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="cas_number" dest="cas_number_sort"/>
-    <copyField source="cas_number" dest="cas_number_search"/>
-
-    <field name="adr_classes" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="main_chemical_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_chemical" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_chemical_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_chemical_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="main_chemical" dest="main_chemical_sort"/>
-    <copyField source="main_chemical" dest="main_chemical_search"/>
-
-    <field name="purpose_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="purpose_name" dest="purpose_name_sort"/>
-    <copyField source="purpose_name" dest="purpose_name_search"/>
-
-    <field name="purpose_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="purpose_description" dest="purpose_description_sort"/>
-    <copyField source="purpose_description" dest="purpose_description_search"/>
-
-    <field name="method_of_use_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="method_of_use_name" dest="method_of_use_name_sort"/>
-    <copyField source="method_of_use_name" dest="method_of_use_name_search"/>
-
-    <field name="method_of_use_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="method_of_use_description" dest="method_of_use_description_sort"/>
-    <copyField source="method_of_use_description" dest="method_of_use_description_search"/>
-
-    <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_code" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="location_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="location_name" dest="location_name_sort"/>
-    <copyField source="location_name" dest="location_name_search"/>
-
-    <field name="sub_location" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="sub_location_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="sub_location_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="sub_location" dest="sub_location_sort"/>
-    <copyField source="sub_location" dest="sub_location_search"/>
-
-    <field name="zone_group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="zone_group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="zone_group_name" dest="zone_group_name_sort"/>
-    <copyField source="zone_group_name" dest="zone_group_name_search"/>
-
-    <field name="zone_group_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="zone_group_description" dest="zone_group_description_sort"/>
-    <copyField source="zone_group_description" dest="zone_group_description_search"/>
-
-    <field name="room_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="room_name" dest="room_name_sort"/>
-    <copyField source="room_name" dest="room_name_search"/>
-
-    <field name="room_code" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_code_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="room_code" dest="room_code_sort"/>
-    <copyField source="room_code" dest="room_code_search"/>
-
-    <field name="room_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_description_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="room_description" dest="room_description_sort"/>
-    <copyField source="room_description" dest="room_description_search"/>
-
-    <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_code" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="site_name" dest="site_name_sort"/>
-    <copyField source="site_name" dest="site_name_search"/>
-
-    <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="building_name" dest="building_name_sort"/>
-    <copyField source="building_name" dest="building_name_search"/>
-
-    <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="project_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="project_name" dest="project_name_sort"/>
-    <copyField source="project_name" dest="project_name_search"/>
-
-    <field name="project_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_description_search" type="text_en_splitting" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="project_description" dest="project_description_search"/>
-
-    <field name="amount" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="amount" dest="amount_sort"/>
-    <copyField source="amount" dest="amount_search"/>
-
-    <field name="supplier_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="supplier_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="supplier_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="supplier_name" dest="supplier_sort"/>
-    <copyField source="supplier_name" dest="supplier_search"/>
-
-    <field name="order_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="order_number_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="order_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="order_number" dest="order_number_sort"/>
-    <copyField source="order_number" dest="order_number_search"/>
-
-    <field name="concentration" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="concentration_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="concentration_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="concentration" dest="concentration_sort"/>
-    <copyField source="concentration" dest="concentration_search"/>
+    <copyField source="sensor_type_type" dest="sensor_type_type_sort"/>
+    <copyField source="sensor_type_type" dest="sensor_type_type_search"/>
 
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_expire" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_opened" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_arrived" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_marked_for_removal" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="chemical_is_standard_product" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_is_standard_product_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="is_expired" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_expired_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="user" dest="user_search"/>
 
-    <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="is_marked_for_removal" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_marked_for_removal_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-
-    <field name="is_deleted" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_deleted_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="amount_of_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_of_active_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_active_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_active_users_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_of_inactive_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_inactive_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="users" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="active_users" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="inactive_users" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="amount_of_role_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="role_users_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="role_users_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <copyField source="project_name" dest="project_name_sort"/>
+    <copyField source="project_name" dest="project_name_search"/>
 
     <uniqueKey>id</uniqueKey>
 

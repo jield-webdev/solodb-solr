@@ -29,6 +29,7 @@ ADD --chown=solr:solr solr/run /var/solr/data/run
 ADD --chown=solr:solr solr/run_changelog /var/solr/data/run_changelog
 ADD --chown=solr:solr solr/run_step /var/solr/data/run_step
 ADD --chown=solr:solr solr/sensor /var/solr/data/sensor
+ADD --chown=solr:solr solr/sensor_request /var/solr/data/sensor_request
 ADD --chown=solr:solr solr/scheduler_job /var/solr/data/scheduler_job
 ADD --chown=solr:solr solr/substrate /var/solr/data/substrate
 ADD --chown=solr:solr solr/template /var/solr/data/template
