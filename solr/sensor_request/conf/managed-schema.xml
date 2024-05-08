@@ -34,15 +34,17 @@
     <field name="sensor_types_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="sensor_types_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="sensor_types_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="sensor_types_name_search" type="text_general" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
-    <copyField source="sensor_types_name" dest="sensor_type_name_sort"/>
-    <copyField source="sensor_types_name" dest="sensor_type_name_search"/>
+    <copyField source="sensor_types_name" dest="sensor_types_name_sort"/>
+    <copyField source="sensor_types_name" dest="sensor_types_name_search"/>
 
     <field name="sensor_types_type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="sensor_types_type_search" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="sensor_types_type_search" type="text_general" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
-    <copyField source="sensors_type_type" dest="sensors_type_type_sort"/>
-    <copyField source="sensors_type_type" dest="sensors_type_type_search"/>
+    <copyField source="sensor_types_type" dest="sensor_types_type_sort"/>
+    <copyField source="sensor_types_type" dest="sensor_types_type_search"/>
 
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
