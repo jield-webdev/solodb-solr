@@ -131,6 +131,14 @@
     <field name="equipment_trained_users" type="pint" indexed="true" stored="true" multiValued="true"/>
     <field name="equipment_role_users" type="pint" indexed="true" stored="true" multiValued="true"/>
 
+    <field name="run_environment_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_environment" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_environment_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_environment_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="run_environment" dest="run_environment_sort"/>
+    <copyField source="run_environment" dest="run_environment_search"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
