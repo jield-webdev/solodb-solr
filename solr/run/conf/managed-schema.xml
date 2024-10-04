@@ -17,7 +17,6 @@
 
     <field name="run_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="label" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
@@ -27,6 +26,14 @@
     <field name="label_year" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="run_number" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="run_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="run_type" dest="run_type_sort"/>
+    <copyField source="run_type" dest="run_type_search"/>
 
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>

@@ -139,6 +139,14 @@
     <copyField source="run_environment" dest="run_environment_sort"/>
     <copyField source="run_environment" dest="run_environment_search"/>
 
+    <field name="run_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="run_type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="run_type" dest="run_type_sort"/>
+    <copyField source="run_type" dest="run_type_search"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
