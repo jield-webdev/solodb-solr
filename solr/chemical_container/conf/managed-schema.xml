@@ -52,6 +52,12 @@
     <field name="chemical_contains_metals" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="chemical_contains_metals_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="has_cas_number" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_cas_number_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="has_adr_classes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_adr_classes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="cas_number" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="cas_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="cas_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
