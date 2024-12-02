@@ -65,7 +65,7 @@
     <copyField source="cas_number" dest="cas_number_sort"/>
     <copyField source="cas_number" dest="cas_number_search"/>
 
-    <field name="adr_classes" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="adr_classes" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <field name="main_chemical_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="main_chemical" type="string" indexed="true" stored="true" omitNorms="true"/>
