@@ -135,6 +135,10 @@
     <field name="has_zones" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_zones_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="amount_of_locations" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_locations" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_locations_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="amount_of_trained_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_trained_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="trained_users_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
