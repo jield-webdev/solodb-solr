@@ -48,12 +48,10 @@
     <copyField source="service_vendor" dest="service_vendor_sort"/>
     <copyField source="service_vendor" dest="service_vendor_search"/>
 
-    <field name="service_type_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="service_type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="service_type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
-    <field name="service_type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
+    <field name="service_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="service_type" dest="service_type_sort"/>
     <copyField source="service_type" dest="service_type_search"/>

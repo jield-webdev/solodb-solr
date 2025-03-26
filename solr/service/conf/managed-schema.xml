@@ -47,15 +47,13 @@
     <copyField source="vendor" dest="vendor_sort"/>
     <copyField source="vendor" dest="vendor_search"/>
 
-    <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
-           multiValued="true"/>
+    <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
-
 
     <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
