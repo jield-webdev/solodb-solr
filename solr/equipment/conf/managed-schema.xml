@@ -233,7 +233,8 @@
     <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="property_date_*" type="pdate" indexed="true" stored="true"/>
-    <dynamicField name="property_integer_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="property_integer_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="property_float_*" type="pfloat" indexed="true" stored="true"/>
 
     <dynamicField name="property_min_*" type="pint" indexed="true" stored="true"/>
     <dynamicField name="property_max_*" type="pint" indexed="true" stored="true"/>
@@ -244,6 +245,7 @@
 
     <dynamicField name="module_property_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="module_property_integer_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="module_property_float_*" type="pint" indexed="true" stored="true"/>
     <dynamicField name="module_property_sort_*" type="text_gen_sort" indexed="true" stored="true"/>
     <dynamicField name="module_property_search_*" type="text_general" indexed="true" stored="true"/>
     <dynamicField name="module_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
