@@ -39,13 +39,21 @@
     <copyField source="department" dest="department_sort"/>
     <copyField source="department" dest="department_search"/>
 
-    <field name="vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="team_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="team" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="team_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="team_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="vendor" dest="vendor_sort"/>
-    <copyField source="vendor" dest="vendor_search"/>
+    <copyField source="team" dest="team_sort"/>
+    <copyField source="team" dest="team_search"/>
+
+    <field name="equipment_vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment_vendor" dest="equipment_vendor_sort"/>
+    <copyField source="equipment_vendor" dest="equipment_vendor_search"/>
 
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
