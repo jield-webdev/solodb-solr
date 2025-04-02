@@ -17,6 +17,8 @@
 
     <field name="service_event_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="service_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="service_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="service_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
