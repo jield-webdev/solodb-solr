@@ -17,6 +17,46 @@
 
     <field name="service_event_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_planned" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_executed" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+
+
+    <field name="external_company_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="external_company" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="external_company_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="external_company_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="external_company" dest="external_company_sort"/>
+    <copyField source="external_company" dest="external_company_search"/>
+
+    <field name="place_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="place" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="place_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="place_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="place" dest="place_sort"/>
+    <copyField source="place" dest="place_search"/>
+
+    <field name="performed_by" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="performed_by_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="performed_by_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="performed_by" dest="performed_by_sort"/>
+    <copyField source="performed_by" dest="performed_by_search"/>
+
+    <field name="purchase_order_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purchase_order_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="purchase_order_number_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="purchase_order_number" dest="purchase_order_number_sort"/>
+    <copyField source="purchase_order_number" dest="purchase_order_number_search"/>
+
     <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="service_name" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -42,13 +82,21 @@
     <copyField source="service_department" dest="service_department_sort"/>
     <copyField source="service_department" dest="service_department_search"/>
 
-    <field name="service_vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="service_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="service_vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="service_vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_team_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_team" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_team_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_team_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="service_vendor" dest="service_vendor_sort"/>
-    <copyField source="service_vendor" dest="service_vendor_search"/>
+    <copyField source="service_team" dest="service_team_sort"/>
+    <copyField source="service_team" dest="service_team_search"/>
+
+    <field name="equipment_vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment_vendor" dest="equipment_vendor_sort"/>
+    <copyField source="equipment_vendor" dest="equipment_vendor_search"/>
 
     <field name="service_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="service_type" type="string" indexed="true" stored="true" omitNorms="true"/>

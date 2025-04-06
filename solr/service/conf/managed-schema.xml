@@ -17,6 +17,9 @@
 
     <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
