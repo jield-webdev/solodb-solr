@@ -31,10 +31,10 @@ Install SOLR (latest version)
 ```shell
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install default-jdk
-wget https://www.apache.org/dyn/closer.lua/solr/solr/9.1.1/solr-9.1.1.tgz?action=download
-mv solr-9.1.1.tgz?action=download solr-9.1.1.tgz
-tar xzf solr-9.1.1.tgz solr-9.1.1/bin/install_solr_service.sh --strip-components=2
-sudo ./install_solr_service.sh solr-9.1.1.tgz -f
+wget https://www.apache.org/dyn/closer.lua/solr/solr/9.8.4/solr-9.8.4.tgz?action=download
+mv solr-9.8.4.tgz?action=download solr-9.8.4.tgz
+tar xzf solr-9.8.4.tgz solr-9.8.4/bin/install_solr_service.sh --strip-components=2
+sudo ./install_solr_service.sh solr-9.8.4.tgz -f
 ```
 
 Change /etc/default/solr.in.sh so solr listens to 0.0.0.0
@@ -59,14 +59,12 @@ ssh-keygen
 sudo apt-get install git
 ```
 
-Install PHP 8.1 cli to have cli operations
+Install PHP 8.4 cli to have cli operations
 
 ```shell
 sudo apt-get install gnupg2
 sudo echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
 sudo wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install redis-server php8.1-cli php8.1-common php8.1-intl php-redis php8.1-gd php-igbinary php8.1-mysql php8.1-mbstring php8.1-zip php8.1-xml php8.1-curl php8.1-opcache php8.1-readline php8.1-soap php8.1-bcmath php8.1-redis php8.1-gmp
+sudo apt-get install redis-server php8.4-cli php8.4-common php8.4-intl php-redis php8.4-gd php-igbinary php8.4-mysql php8.4-mbstring php8.4-zip php8.4-xml php8.4-curl php8.4-opcache php8.4-readline php8.4-soap php8.4-bcmath php8.4-redis php8.4-gmp
 ```
-
-(c) 2022, Dr. Ir. Johan van der Heide (info@jield.nl)

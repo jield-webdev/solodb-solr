@@ -1,268 +1,1059 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <schema name="chemical_container" version="1.6">
 
     <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
       or Solr won't start. _version_ and update log are required for SolrCloud
    -->
-    <field name="_version_" type="plong" indexed="true" stored="true"/>
+    <field name="_version_" type="plong" indexed="true" stored="true" />
 
     <!-- points to the root document of a block of nested documents. Required for nested
       document support, may be removed otherwise
    -->
-    <field name="_root_" type="string" indexed="true" stored="false"/>
+    <field name="_root_" type="string" indexed="true" stored="false" />
 
     <!-- Only remove the "id" field if you have a very good reason to. While not strictly
      required, it is highly recommended. A <uniqueKey> is present in almost all Solr
      installations. See the <uniqueKey> declaration below where <uniqueKey> is set to "id".
    -->
-    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-
-    <field name="container_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="description" dest="description_sort"/>
-    <copyField source="description" dest="description_search"/>
-
-    <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="type" dest="type_sort"/>
-    <copyField source="type" dest="type_search"/>
-
-    <field name="chemical_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="chemical_name" dest="chemical_name_sort"/>
-    <copyField source="chemical_name" dest="chemical_name_search"/>
-
-    <field name="chemical_has_cmr" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_has_cmr_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_cmr" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="chemical_is_halogenated" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_is_halogenated_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="chemical_contains_metals" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_contains_metals_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="has_cas_number" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_cas_number_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="has_adr_classes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_adr_classes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="cas_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="cas_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="cas_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="cas_number" dest="cas_number_sort"/>
-    <copyField source="cas_number" dest="cas_number_search"/>
-
-    <field name="adr_classes" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="main_chemical_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_chemical" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_chemical_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="main_chemical_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="main_chemical" dest="main_chemical_sort"/>
-    <copyField source="main_chemical" dest="main_chemical_search"/>
-
-    <field name="purpose_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="purpose_name" dest="purpose_name_sort"/>
-    <copyField source="purpose_name" dest="purpose_name_search"/>
-
-    <field name="purpose_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="purpose_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="purpose_description" dest="purpose_description_sort"/>
-    <copyField source="purpose_description" dest="purpose_description_search"/>
-
-    <field name="method_of_use_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="method_of_use_name" dest="method_of_use_name_sort"/>
-    <copyField source="method_of_use_name" dest="method_of_use_name_search"/>
-
-    <field name="method_of_use_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="method_of_use_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="method_of_use_description" dest="method_of_use_description_sort"/>
-    <copyField source="method_of_use_description" dest="method_of_use_description_search"/>
-
-    <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_code" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="location_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="location_name" dest="location_name_sort"/>
-    <copyField source="location_name" dest="location_name_search"/>
-
-    <field name="sub_location" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="sub_location_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="sub_location_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="sub_location" dest="sub_location_sort"/>
-    <copyField source="sub_location" dest="sub_location_search"/>
-
-    <field name="zone_group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="zone_group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="zone_group_name" dest="zone_group_name_sort"/>
-    <copyField source="zone_group_name" dest="zone_group_name_search"/>
-
-    <field name="zone_group_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="zone_group_description" dest="zone_group_description_sort"/>
-    <copyField source="zone_group_description" dest="zone_group_description_search"/>
-
-    <field name="room_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="room_name" dest="room_name_sort"/>
-    <copyField source="room_name" dest="room_name_search"/>
-
-    <field name="room_code" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_code_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="room_code" dest="room_code_sort"/>
-    <copyField source="room_code" dest="room_code_search"/>
-
-    <field name="room_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_description_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="room_description" dest="room_description_sort"/>
-    <copyField source="room_description" dest="room_description_search"/>
-
-    <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_code" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="site_name" dest="site_name_sort"/>
-    <copyField source="site_name" dest="site_name_search"/>
-
-    <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="building_name" dest="building_name_sort"/>
-    <copyField source="building_name" dest="building_name_search"/>
-
-    <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="project_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="project_name" dest="project_name_sort"/>
-    <copyField source="project_name" dest="project_name_search"/>
-
-    <field name="project_description" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_description_search" type="text_en_splitting" indexed="true" stored="true"
-           omitNorms="true"/>
-
-    <copyField source="project_description" dest="project_description_search"/>
-
-    <field name="amount" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="amount" dest="amount_sort"/>
-    <copyField source="amount" dest="amount_search"/>
-
-    <field name="supplier_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="supplier_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="supplier_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="supplier_name" dest="supplier_sort"/>
-    <copyField source="supplier_name" dest="supplier_search"/>
-
-    <field name="order_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="order_number_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="order_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="order_number" dest="order_number_sort"/>
-    <copyField source="order_number" dest="order_number_search"/>
-
-    <field name="concentration" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="concentration_sort" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="concentration_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="concentration" dest="concentration_sort"/>
-    <copyField source="concentration" dest="concentration_search"/>
-
-    <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_expire" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_opened" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_arrived" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_marked_for_removal" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="chemical_is_standard_product" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_is_standard_product_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="is_expired" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_expired_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="is_marked_for_removal" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_marked_for_removal_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-
-    <field name="is_deleted" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_deleted_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="amount_of_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_of_active_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_active_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_active_users_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="amount_of_inactive_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_inactive_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="users" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="active_users" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="inactive_users" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="amount_of_role_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="role_users_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="role_users_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field
+        name="id"
+        type="string"
+        indexed="true"
+        stored="true"
+        required="true"
+        multiValued="false"
+    />
+
+    <field
+        name="container_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="description"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="description_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="description_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="description" dest="description_sort" />
+    <copyField source="description" dest="description_search" />
+
+    <field
+        name="type"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="type_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="type_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="type" dest="type_sort" />
+    <copyField source="type" dest="type_search" />
+
+    <field
+        name="chemical_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="chemical_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="chemical_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="chemical_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="chemical_name" dest="chemical_name_sort" />
+    <copyField source="chemical_name" dest="chemical_name_search" />
+
+    <field
+        name="chemical_has_cmr"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="chemical_has_cmr_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="chemical_cmr"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+        multiValued="true"
+    />
+
+    <field
+        name="chemical_is_halogenated"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="chemical_is_halogenated_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="chemical_contains_metals"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="chemical_contains_metals_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="has_cas_number"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="has_cas_number_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="has_adr_classes"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="has_adr_classes_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="cas_number"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="cas_number_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="cas_number_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="cas_number" dest="cas_number_sort" />
+    <copyField source="cas_number" dest="cas_number_search" />
+
+    <field
+        name="adr_classes"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+        multiValued="true"
+    />
+
+    <field
+        name="main_chemical_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="main_chemical"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="main_chemical_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="main_chemical_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="main_chemical" dest="main_chemical_sort" />
+    <copyField source="main_chemical" dest="main_chemical_search" />
+
+    <field
+        name="purpose_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="purpose_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="purpose_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="purpose_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="purpose_name" dest="purpose_name_sort" />
+    <copyField source="purpose_name" dest="purpose_name_search" />
+
+    <field
+        name="purpose_description"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="purpose_description_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="purpose_description_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="purpose_description" dest="purpose_description_sort" />
+    <copyField source="purpose_description" dest="purpose_description_search" />
+
+    <field
+        name="method_of_use_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="method_of_use_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="method_of_use_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="method_of_use_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="method_of_use_name" dest="method_of_use_name_sort" />
+    <copyField source="method_of_use_name" dest="method_of_use_name_search" />
+
+    <field
+        name="method_of_use_description"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="method_of_use_description_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="method_of_use_description_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField
+        source="method_of_use_description"
+        dest="method_of_use_description_sort"
+    />
+    <copyField
+        source="method_of_use_description"
+        dest="method_of_use_description_search"
+    />
+
+    <field
+        name="location_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="location_code"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="location_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="location_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="location_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="location_name" dest="location_name_sort" />
+    <copyField source="location_name" dest="location_name_search" />
+
+    <field
+        name="sub_location"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="sub_location_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="sub_location_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="sub_location" dest="sub_location_sort" />
+    <copyField source="sub_location" dest="sub_location_search" />
+
+    <field
+        name="zone_group_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="zone_group_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="zone_group_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="zone_group_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="zone_group_name" dest="zone_group_name_sort" />
+    <copyField source="zone_group_name" dest="zone_group_name_search" />
+
+    <field
+        name="zone_group_description"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="zone_group_description_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="zone_group_description_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField
+        source="zone_group_description"
+        dest="zone_group_description_sort"
+    />
+    <copyField
+        source="zone_group_description"
+        dest="zone_group_description_search"
+    />
+
+    <field
+        name="room_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="room_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="room_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="room_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="room_name" dest="room_name_sort" />
+    <copyField source="room_name" dest="room_name_search" />
+
+    <field
+        name="room_code"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="room_code_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="room_code_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="room_code" dest="room_code_sort" />
+    <copyField source="room_code" dest="room_code_search" />
+
+    <field
+        name="room_description"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="room_description_sort"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="room_description_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="room_description" dest="room_description_sort" />
+    <copyField source="room_description" dest="room_description_search" />
+
+    <field
+        name="site_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="site_code"
+        type="text_general"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="site_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="site_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="site_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="site_name" dest="site_name_sort" />
+    <copyField source="site_name" dest="site_name_search" />
+
+    <field
+        name="building_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="building_code"
+        type="text_en"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="building_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="building_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="building_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="building_name" dest="building_name_sort" />
+    <copyField source="building_name" dest="building_name_search" />
+
+    <field
+        name="project_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="project_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="project_name_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="project_name_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="project_name" dest="project_name_sort" />
+    <copyField source="project_name" dest="project_name_search" />
+
+    <field
+        name="project_description"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="project_description_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="project_description" dest="project_description_search" />
+
+    <field
+        name="amount"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="amount_sort"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="amount_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="amount" dest="amount_sort" />
+    <copyField source="amount" dest="amount_search" />
+
+    <field
+        name="supplier_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="supplier_sort"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="supplier_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="supplier_name" dest="supplier_sort" />
+    <copyField source="supplier_name" dest="supplier_search" />
+
+    <field
+        name="order_number"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="order_number_sort"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="order_number_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="order_number" dest="order_number_sort" />
+    <copyField source="order_number" dest="order_number_search" />
+
+    <field
+        name="concentration"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="concentration_sort"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="concentration_search"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <copyField source="concentration" dest="concentration_search" />
+
+    <field
+        name="date_created"
+        type="pdate"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="last_update"
+        type="pdate"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="date_expire"
+        type="pdate"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="date_opened"
+        type="pdate"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="date_arrived"
+        type="pdate"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="date_marked_for_removal"
+        type="pdate"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="chemical_is_standard_product"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="chemical_is_standard_product_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="is_expired"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="is_expired_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="status_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="status_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="is_active"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="is_active_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="is_marked_for_removal"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="is_marked_for_removal_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+
+    <field
+        name="is_deleted"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="is_deleted_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="amount_of_users"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="has_users"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="amount_of_active_users"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="has_active_users"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="has_active_users_text"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="amount_of_inactive_users"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="has_inactive_users"
+        type="boolean"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+
+    <field
+        name="users"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+        multiValued="true"
+    />
+    <field
+        name="active_users"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+        multiValued="true"
+    />
+    <field
+        name="inactive_users"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+        multiValued="true"
+    />
+
+    <field
+        name="amount_of_role_users"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+    />
+    <field
+        name="role_users_id"
+        type="pint"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+        multiValued="true"
+    />
+    <field
+        name="role_users_name"
+        type="string"
+        indexed="true"
+        stored="true"
+        omitNorms="true"
+        multiValued="true"
+    />
 
     <uniqueKey>id</uniqueKey>
 
@@ -290,31 +1081,73 @@
     -->
 
     <!-- The StrField type is not analyzed, but indexed/stored verbatim. -->
-    <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
-    <fieldType name="strings" class="solr.StrField" sortMissingLast="true" multiValued="true" docValues="true"/>
+    <fieldType
+        name="string"
+        class="solr.StrField"
+        sortMissingLast="true"
+        docValues="true"
+    />
+    <fieldType
+        name="strings"
+        class="solr.StrField"
+        sortMissingLast="true"
+        multiValued="true"
+        docValues="true"
+    />
 
     <!-- boolean type: "true" or "false" -->
-    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
-    <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" multiValued="true"/>
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" />
+    <fieldType
+        name="booleans"
+        class="solr.BoolField"
+        sortMissingLast="true"
+        multiValued="true"
+    />
 
     <!--
       Numeric field types that index values using KD-trees.
       Point fields don't support FieldCache, so they must have docValues="true" if needed for sorting, faceting, functions, etc.
     -->
-    <fieldType name="pint" class="solr.IntPointField" docValues="true"/>
-    <fieldType name="pfloat" class="solr.FloatPointField" docValues="true"/>
-    <fieldType name="plong" class="solr.LongPointField" docValues="true"/>
-    <fieldType name="pdouble" class="solr.DoublePointField" docValues="true"/>
+    <fieldType name="pint" class="solr.IntPointField" docValues="true" />
+    <fieldType name="pfloat" class="solr.FloatPointField" docValues="true" />
+    <fieldType name="plong" class="solr.LongPointField" docValues="true" />
+    <fieldType name="pdouble" class="solr.DoublePointField" docValues="true" />
 
-    <fieldType name="pints" class="solr.IntPointField" docValues="true" multiValued="true"/>
-    <fieldType name="pfloats" class="solr.FloatPointField" docValues="true" multiValued="true"/>
-    <fieldType name="plongs" class="solr.LongPointField" docValues="true" multiValued="true"/>
-    <fieldType name="pdoubles" class="solr.DoublePointField" docValues="true" multiValued="true"/>
-    <fieldType name="random" class="solr.RandomSortField" indexed="true"/>
+    <fieldType
+        name="pints"
+        class="solr.IntPointField"
+        docValues="true"
+        multiValued="true"
+    />
+    <fieldType
+        name="pfloats"
+        class="solr.FloatPointField"
+        docValues="true"
+        multiValued="true"
+    />
+    <fieldType
+        name="plongs"
+        class="solr.LongPointField"
+        docValues="true"
+        multiValued="true"
+    />
+    <fieldType
+        name="pdoubles"
+        class="solr.DoublePointField"
+        docValues="true"
+        multiValued="true"
+    />
+    <fieldType name="random" class="solr.RandomSortField" indexed="true" />
 
     <!-- since fields of this type are by default not stored or indexed,
        any data added to them will be ignored outright.  -->
-    <fieldType name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField"/>
+    <fieldType
+        name="ignored"
+        stored="false"
+        indexed="false"
+        multiValued="true"
+        class="solr.StrField"
+    />
 
     <!-- The format for this date field is of the form 1995-12-31T23:59:59Z, and
          is a more restricted form of the canonical representation of dateTime
@@ -333,18 +1166,23 @@
                       the current day
       -->
     <!-- KD-tree versions of date fields -->
-    <fieldType name="pdate" class="solr.DatePointField" docValues="true"/>
-    <fieldType name="pdates" class="solr.DatePointField" docValues="true" multiValued="true"/>
+    <fieldType name="pdate" class="solr.DatePointField" docValues="true" />
+    <fieldType
+        name="pdates"
+        class="solr.DatePointField"
+        docValues="true"
+        multiValued="true"
+    />
 
     <!--Binary data type. The data should be sent/retrieved in as Base64 encoded Strings -->
-    <fieldType name="binary" class="solr.BinaryField"/>
+    <fieldType name="binary" class="solr.BinaryField" />
 
     <!--
     RankFields can be used to store scoring factors to improve document ranking. They should be used
     in combination with RankQParserPlugin.
     (experimental)
     -->
-    <fieldType name="rank" class="solr.RankField"/>
+    <fieldType name="rank" class="solr.RankField" />
 
     <!-- solr.TextField allows the specification of custom text analyzers
          specified as a tokenizer and a list of token filters. Different
@@ -365,10 +1203,10 @@
     -->
 
     <!-- A text field that only splits on whitespace for exact matching of words -->
-    <dynamicField name="*_ws" type="text_ws" indexed="true" stored="true"/>
+    <dynamicField name="*_ws" type="text_ws" indexed="true" stored="true" />
     <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
         <analyzer>
-            <tokenizer name="whitespace"/>
+            <tokenizer name="whitespace" />
         </analyzer>
     </fieldType>
 
@@ -378,21 +1216,31 @@
          (empty by default), and down cases.  At query time only, it
          also applies synonyms.
     -->
-    <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
+    <fieldType
+        name="text_general"
+        class="solr.TextField"
+        positionIncrementGap="100"
+        multiValued="true"
+    >
         <analyzer type="index">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
+            <tokenizer name="standard" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
             <!-- in this example, we will only use synonyms at query time
             <filter name="synonymGraph" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
             <filter name="flattenGraph"/>
             -->
-            <filter name="lowercase"/>
+            <filter name="lowercase" />
         </analyzer>
         <analyzer type="query">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="lowercase"/>
+            <tokenizer name="standard" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter
+                name="synonymGraph"
+                synonyms="synonyms.txt"
+                ignoreCase="true"
+                expand="true"
+            />
+            <filter name="lowercase" />
         </analyzer>
     </fieldType>
 
@@ -404,61 +1252,89 @@
          is that it takes up more space on disk; which is why it's not used in place of TextField
          for every fieldType in this _default schema.
     -->
-    <dynamicField name="*_t_sort" type="text_gen_sort" indexed="true" stored="true" multiValued="false"/>
-    <dynamicField name="*_txt_sort" type="text_gen_sort" indexed="true" stored="true"/>
-    <fieldType name="text_gen_sort" class="solr.SortableTextField" positionIncrementGap="100" multiValued="true">
+    <dynamicField
+        name="*_t_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+        multiValued="false"
+    />
+    <dynamicField
+        name="*_txt_sort"
+        type="text_gen_sort"
+        indexed="true"
+        stored="true"
+    />
+    <fieldType
+        name="text_gen_sort"
+        class="solr.SortableTextField"
+        positionIncrementGap="100"
+        multiValued="true"
+    >
         <analyzer type="index">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="lowercase"/>
+            <tokenizer name="standard" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="lowercase" />
         </analyzer>
         <analyzer type="query">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="lowercase"/>
+            <tokenizer name="standard" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter
+                name="synonymGraph"
+                synonyms="synonyms.txt"
+                ignoreCase="true"
+                expand="true"
+            />
+            <filter name="lowercase" />
         </analyzer>
     </fieldType>
 
     <!-- A text field with defaults appropriate for English: it tokenizes with StandardTokenizer,
          removes English stop words (lang/stopwords_en.txt), down cases, protects words from protwords.txt, and
          finally applies Porter's stemming.  The query time analyzer also applies synonyms from synonyms.txt. -->
-    <dynamicField name="*_txt_en" type="text_en" indexed="true" stored="true"/>
+    <dynamicField name="*_txt_en" type="text_en" indexed="true" stored="true" />
     <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
-            <tokenizer name="standard"/>
+            <tokenizer name="standard" />
             <!-- in this example, we will only use synonyms at query time
             <filter name="synonymGraph" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
             <filter name="flattenGraph"/>
             -->
             <!-- Case insensitive stop word removal.
             -->
-            <filter name="stop"
-                    ignoreCase="true"
-                    words="lang/stopwords_en.txt"
+            <filter
+                name="stop"
+                ignoreCase="true"
+                words="lang/stopwords_en.txt"
             />
-            <filter name="lowercase"/>
-            <filter name="englishPossessive"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
+            <filter name="lowercase" />
+            <filter name="englishPossessive" />
+            <filter name="keywordMarker" protected="protwords.txt" />
             <!-- Optionally you may want to use this less aggressive stemmer instead of PorterStemFilterFactory:
             <filter name="englishMinimalStem"/>
             -->
-            <filter name="porterStem"/>
+            <filter name="porterStem" />
         </analyzer>
         <analyzer type="query">
-            <tokenizer name="standard"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="stop"
-                    ignoreCase="true"
-                    words="lang/stopwords_en.txt"
+            <tokenizer name="standard" />
+            <filter
+                name="synonymGraph"
+                synonyms="synonyms.txt"
+                ignoreCase="true"
+                expand="true"
             />
-            <filter name="lowercase"/>
-            <filter name="englishPossessive"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
+            <filter
+                name="stop"
+                ignoreCase="true"
+                words="lang/stopwords_en.txt"
+            />
+            <filter name="lowercase" />
+            <filter name="englishPossessive" />
+            <filter name="keywordMarker" protected="protwords.txt" />
             <!-- Optionally you may want to use this less aggressive stemmer instead of PorterStemFilterFactory:
             <filter name="englishMinimalStem"/>
             -->
-            <filter name="porterStem"/>
+            <filter name="porterStem" />
         </analyzer>
     </fieldType>
 
@@ -471,110 +1347,217 @@
          cases will work, for example query "wi fi" will match
          document "WiFi" or "wi-fi".
     -->
-    <dynamicField name="*_txt_en_split" type="text_en_splitting" indexed="true" stored="true"/>
-    <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100"
-               autoGeneratePhraseQueries="true">
+    <dynamicField
+        name="*_txt_en_split"
+        type="text_en_splitting"
+        indexed="true"
+        stored="true"
+    />
+    <fieldType
+        name="text_en_splitting"
+        class="solr.TextField"
+        positionIncrementGap="100"
+        autoGeneratePhraseQueries="true"
+    >
         <analyzer type="index">
-            <tokenizer name="whitespace"/>
+            <tokenizer name="whitespace" />
             <!-- in this example, we will only use synonyms at query time
             <filter name="synonymGraph" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
             -->
             <!-- Case insensitive stop word removal.
             -->
-            <filter name="stop"
-                    ignoreCase="true"
-                    words="lang/stopwords_en.txt"
+            <filter
+                name="stop"
+                ignoreCase="true"
+                words="lang/stopwords_en.txt"
             />
-            <filter name="wordDelimiterGraph" generateWordParts="1" generateNumberParts="1" catenateWords="1"
-                    catenateNumbers="1" catenateAll="0" splitOnCaseChange="1"/>
-            <filter name="lowercase"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
-            <filter name="porterStem"/>
-            <filter name="flattenGraph"/>
+            <filter
+                name="wordDelimiterGraph"
+                generateWordParts="1"
+                generateNumberParts="1"
+                catenateWords="1"
+                catenateNumbers="1"
+                catenateAll="0"
+                splitOnCaseChange="1"
+            />
+            <filter name="lowercase" />
+            <filter name="keywordMarker" protected="protwords.txt" />
+            <filter name="porterStem" />
+            <filter name="flattenGraph" />
         </analyzer>
         <analyzer type="query">
-            <tokenizer name="whitespace"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="stop"
-                    ignoreCase="true"
-                    words="lang/stopwords_en.txt"
+            <tokenizer name="whitespace" />
+            <filter
+                name="synonymGraph"
+                synonyms="synonyms.txt"
+                ignoreCase="true"
+                expand="true"
             />
-            <filter name="wordDelimiterGraph" generateWordParts="1" generateNumberParts="1" catenateWords="0"
-                    catenateNumbers="0" catenateAll="0" splitOnCaseChange="1"/>
-            <filter name="lowercase"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
-            <filter name="porterStem"/>
+            <filter
+                name="stop"
+                ignoreCase="true"
+                words="lang/stopwords_en.txt"
+            />
+            <filter
+                name="wordDelimiterGraph"
+                generateWordParts="1"
+                generateNumberParts="1"
+                catenateWords="0"
+                catenateNumbers="0"
+                catenateAll="0"
+                splitOnCaseChange="1"
+            />
+            <filter name="lowercase" />
+            <filter name="keywordMarker" protected="protwords.txt" />
+            <filter name="porterStem" />
         </analyzer>
     </fieldType>
 
     <!-- Less flexible matching, but less false matches.  Probably not ideal for product names,
          but may be good for SKUs.  Can insert dashes in the wrong place and still match. -->
-    <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
-    <fieldType name="text_en_splitting_tight" class="solr.TextField" positionIncrementGap="100"
-               autoGeneratePhraseQueries="true">
+    <dynamicField
+        name="*_txt_en_split_tight"
+        type="text_en_splitting_tight"
+        indexed="true"
+        stored="true"
+    />
+    <fieldType
+        name="text_en_splitting_tight"
+        class="solr.TextField"
+        positionIncrementGap="100"
+        autoGeneratePhraseQueries="true"
+    >
         <analyzer type="index">
-            <tokenizer name="whitespace"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
-            <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-            <filter name="wordDelimiterGraph" generateWordParts="0" generateNumberParts="0" catenateWords="1"
-                    catenateNumbers="1" catenateAll="0"/>
-            <filter name="lowercase"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
-            <filter name="englishMinimalStem"/>
+            <tokenizer name="whitespace" />
+            <filter
+                name="synonymGraph"
+                synonyms="synonyms.txt"
+                ignoreCase="true"
+                expand="false"
+            />
+            <filter
+                name="stop"
+                ignoreCase="true"
+                words="lang/stopwords_en.txt"
+            />
+            <filter
+                name="wordDelimiterGraph"
+                generateWordParts="0"
+                generateNumberParts="0"
+                catenateWords="1"
+                catenateNumbers="1"
+                catenateAll="0"
+            />
+            <filter name="lowercase" />
+            <filter name="keywordMarker" protected="protwords.txt" />
+            <filter name="englishMinimalStem" />
             <!-- this filter can remove any duplicate tokens that appear at the same position - sometimes
                  possible with WordDelimiterGraphFilter in conjuncton with stemming. -->
-            <filter name="removeDuplicates"/>
-            <filter name="flattenGraph"/>
+            <filter name="removeDuplicates" />
+            <filter name="flattenGraph" />
         </analyzer>
         <analyzer type="query">
-            <tokenizer name="whitespace"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="false"/>
-            <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-            <filter name="wordDelimiterGraph" generateWordParts="0" generateNumberParts="0" catenateWords="1"
-                    catenateNumbers="1" catenateAll="0"/>
-            <filter name="lowercase"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
-            <filter name="englishMinimalStem"/>
+            <tokenizer name="whitespace" />
+            <filter
+                name="synonymGraph"
+                synonyms="synonyms.txt"
+                ignoreCase="true"
+                expand="false"
+            />
+            <filter
+                name="stop"
+                ignoreCase="true"
+                words="lang/stopwords_en.txt"
+            />
+            <filter
+                name="wordDelimiterGraph"
+                generateWordParts="0"
+                generateNumberParts="0"
+                catenateWords="1"
+                catenateNumbers="1"
+                catenateAll="0"
+            />
+            <filter name="lowercase" />
+            <filter name="keywordMarker" protected="protwords.txt" />
+            <filter name="englishMinimalStem" />
             <!-- this filter can remove any duplicate tokens that appear at the same position - sometimes
                  possible with WordDelimiterGraphFilter in conjuncton with stemming. -->
-            <filter name="removeDuplicates"/>
+            <filter name="removeDuplicates" />
         </analyzer>
     </fieldType>
 
     <!-- Just like text_general except it reverses the characters of
          each token, to enable more efficient leading wildcard queries.
     -->
-    <dynamicField name="*_txt_rev" type="text_general_rev" indexed="true" stored="true"/>
-    <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100">
+    <dynamicField
+        name="*_txt_rev"
+        type="text_general_rev"
+        indexed="true"
+        stored="true"
+    />
+    <fieldType
+        name="text_general_rev"
+        class="solr.TextField"
+        positionIncrementGap="100"
+    >
         <analyzer type="index">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="lowercase"/>
-            <filter name="reversedWildcard" withOriginal="true"
-                    maxPosAsterisk="3" maxPosQuestion="2" maxFractionAsterisk="0.33"/>
+            <tokenizer name="standard" />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="lowercase" />
+            <filter
+                name="reversedWildcard"
+                withOriginal="true"
+                maxPosAsterisk="3"
+                maxPosQuestion="2"
+                maxFractionAsterisk="0.33"
+            />
         </analyzer>
         <analyzer type="query">
-            <tokenizer name="standard"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="lowercase"/>
+            <tokenizer name="standard" />
+            <filter
+                name="synonymGraph"
+                synonyms="synonyms.txt"
+                ignoreCase="true"
+                expand="true"
+            />
+            <filter name="stop" ignoreCase="true" words="stopwords.txt" />
+            <filter name="lowercase" />
         </analyzer>
     </fieldType>
 
-    <dynamicField name="*_phon_en" type="phonetic_en" indexed="true" stored="true"/>
-    <fieldType name="phonetic_en" stored="false" indexed="true" class="solr.TextField">
+    <dynamicField
+        name="*_phon_en"
+        type="phonetic_en"
+        indexed="true"
+        stored="true"
+    />
+    <fieldType
+        name="phonetic_en"
+        stored="false"
+        indexed="true"
+        class="solr.TextField"
+    >
         <analyzer>
-            <tokenizer name="standard"/>
-            <filter name="doubleMetaphone" inject="false"/>
+            <tokenizer name="standard" />
+            <filter name="doubleMetaphone" inject="false" />
         </analyzer>
     </fieldType>
 
     <!-- lowercases the entire field value, keeping it as a single token.  -->
-    <dynamicField name="*_s_lower" type="lowercase" indexed="true" stored="true"/>
-    <fieldType name="lowercase" class="solr.TextField" positionIncrementGap="100">
+    <dynamicField
+        name="*_s_lower"
+        type="lowercase"
+        indexed="true"
+        stored="true"
+    />
+    <fieldType
+        name="lowercase"
+        class="solr.TextField"
+        positionIncrementGap="100"
+    >
         <analyzer>
-            <tokenizer name="keyword"/>
-            <filter name="lowercase"/>
+            <tokenizer name="keyword" />
+            <filter name="lowercase" />
         </analyzer>
     </fieldType>
 
@@ -589,50 +1572,89 @@
       The subFields are an implementation detail of the fieldType, and end
       users normally should not need to know about them.
      -->
-    <dynamicField name="*_point" type="point" indexed="true" stored="true"/>
-    <fieldType name="point" class="solr.PointType" dimension="2" subFieldSuffix="_d"/>
+    <dynamicField name="*_point" type="point" indexed="true" stored="true" />
+    <fieldType
+        name="point"
+        class="solr.PointType"
+        dimension="2"
+        subFieldSuffix="_d"
+    />
 
     <!-- A specialized field for geospatial search filters and distance sorting. -->
-    <fieldType name="location" class="solr.LatLonPointSpatialField" docValues="true"/>
+    <fieldType
+        name="location"
+        class="solr.LatLonPointSpatialField"
+        docValues="true"
+    />
 
     <!-- A geospatial field type that supports multiValued and polygon shapes.
       For more information about this and other spatial fields see:
       https://solr.apache.org/guide/solr/latest/query-guide/spatial-search.html
     -->
-    <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
-               geo="true" distErrPct="0.025" maxDistErr="0.001" distanceUnits="kilometers"/>
+    <fieldType
+        name="location_rpt"
+        class="solr.SpatialRecursivePrefixTreeFieldType"
+        geo="true"
+        distErrPct="0.025"
+        maxDistErr="0.001"
+        distanceUnits="kilometers"
+    />
 
     <!-- Payloaded field types -->
-    <fieldType name="delimited_payloads_float" stored="false" indexed="true" class="solr.TextField">
+    <fieldType
+        name="delimited_payloads_float"
+        stored="false"
+        indexed="true"
+        class="solr.TextField"
+    >
         <analyzer>
-            <tokenizer name="whitespace"/>
-            <filter name="delimitedPayload" encoder="float"/>
+            <tokenizer name="whitespace" />
+            <filter name="delimitedPayload" encoder="float" />
         </analyzer>
     </fieldType>
-    <fieldType name="delimited_payloads_int" stored="false" indexed="true" class="solr.TextField">
+    <fieldType
+        name="delimited_payloads_int"
+        stored="false"
+        indexed="true"
+        class="solr.TextField"
+    >
         <analyzer>
-            <tokenizer name="whitespace"/>
-            <filter name="delimitedPayload" encoder="integer"/>
+            <tokenizer name="whitespace" />
+            <filter name="delimitedPayload" encoder="integer" />
         </analyzer>
     </fieldType>
-    <fieldType name="delimited_payloads_string" stored="false" indexed="true" class="solr.TextField">
+    <fieldType
+        name="delimited_payloads_string"
+        stored="false"
+        indexed="true"
+        class="solr.TextField"
+    >
         <analyzer>
-            <tokenizer name="whitespace"/>
-            <filter name="delimitedPayload" encoder="identity"/>
+            <tokenizer name="whitespace" />
+            <filter name="delimitedPayload" encoder="identity" />
         </analyzer>
     </fieldType>
 
     <!-- some examples for different languages (generally ordered by ISO code) -->
 
     <!-- Dutch -->
-    <dynamicField name="*_txt_nl" type="text_nl" indexed="true" stored="true"/>
+    <dynamicField name="*_txt_nl" type="text_nl" indexed="true" stored="true" />
     <fieldType name="text_nl" class="solr.TextField" positionIncrementGap="100">
         <analyzer>
-            <tokenizer name="standard"/>
-            <filter name="lowercase"/>
-            <filter name="stop" ignoreCase="true" words="lang/stopwords_nl.txt" format="snowball"/>
-            <filter name="stemmerOverride" dictionary="lang/stemdict_nl.txt" ignoreCase="false"/>
-            <filter name="snowballPorter" language="Dutch"/>
+            <tokenizer name="standard" />
+            <filter name="lowercase" />
+            <filter
+                name="stop"
+                ignoreCase="true"
+                words="lang/stopwords_nl.txt"
+                format="snowball"
+            />
+            <filter
+                name="stemmerOverride"
+                dictionary="lang/stemdict_nl.txt"
+                ignoreCase="false"
+            />
+            <filter name="snowballPorter" language="Dutch" />
         </analyzer>
     </fieldType>
 </schema>
