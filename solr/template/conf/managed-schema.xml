@@ -43,6 +43,12 @@
     <copyField source="project" dest="project_sort"/>
     <copyField source="project" dest="project_search"/>
 
+    <field name="team_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="team" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="team_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="team" dest="team_search"/>
+
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
