@@ -46,10 +46,10 @@
     <copyField source="location" dest="location_sort"/>
     <copyField source="location" dest="location_search"/>
 
-    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="status_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="approval_required" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="approval_required_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_approval_required" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_approval_required_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
