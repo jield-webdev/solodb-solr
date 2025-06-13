@@ -11,119 +11,70 @@
      required, it is highly recommended. A <uniqueKey> is present in almost all Solr
      installations. See the <uniqueKey> declaration below where <uniqueKey> is set to "id".
    -->
-    <field
-        name="id"
-        type="string"
-        indexed="true"
-        stored="true"
-        required="true"
-        multiValued="false"
-    />
+    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true" />
 
-    <field
-        name="service_id"
-        type="pint"
-        indexed="true"
-        stored="true"
-        omitNorms="true"
-    />
+    <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true" />
+    <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true" />
 
-    <field
-        name="label"
-        type="string"
-        indexed="true"
-        stored="true"
-        omitNorms="true"
-    />
-    <field
-        name="label_search"
-        type="text_general"
-        indexed="true"
-        stored="true"
-        omitNorms="true"
-    />
-    <field
-        name="label_sort"
-        type="text_gen_sort"
-        indexed="true"
-        stored="true"
-        omitNorms="true"
-    />
+    <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true" />
+    <field name="type" type="string" indexed="true" stored="true" omitNorms="true" />
+    <field name="type_search" type="text_general" indexed="true" stored="true" omitNorms="true" />
+    <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" />
 
-    <copyField source="label" dest="label_search" />
-    <copyField source="label" dest="label_sort" />
+    <copyField source="type" dest="type_search" />
+    <copyField source="type" dest="type_sort" />
 
+    <field name="name" type="string" indexed="true" stored="true" omitNorms="true" />
+    <field name="name_search" type="text_general" indexed="true" stored="true" omitNorms="true" />
+    <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" />
 
+    <copyField source="name" dest="name_search" />
+    <copyField source="name" dest="name_sort" />
 
-    <field
-        name="date_created"
-        type="pdate"
-        indexed="true"
-        stored="true"
-        omitNorms="true"
-    />
+    <field name="description" type="string" indexed="true" stored="true" omitNorms="true" />
+    <field name="description_search" type="text_general" indexed="true" stored="true" omitNorms="true" />
+    <field name="description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" />
 
-    <dynamicField
-        name="property_*"
-        type="string"
-        indexed="true"
-        stored="true"
-    />
-    <dynamicField
-        name="property_array_*"
-        type="string"
-        indexed="true"
-        stored="true"
-        multiValued="true"
-    />
-    <dynamicField
-        name="property_date_*"
-        type="pdate"
-        indexed="true"
-        stored="true"
-    />
-    <dynamicField
-        name="property_integer_*"
-        type="string"
-        indexed="true"
-        stored="true"
-    />
-    <dynamicField
-        name="property_float_*"
-        type="pfloat"
-        indexed="true"
-        stored="true"
-    />
+    <copyField source="description" dest="description_search" />
+    <copyField source="description" dest="description_sort" />
 
-    <dynamicField
-        name="property_min_*"
-        type="pint"
-        indexed="true"
-        stored="true"
-    />
-    <dynamicField
-        name="property_max_*"
-        type="pint"
-        indexed="true"
-        stored="true"
-    />
+    <field name="team_id" type="pint" indexed="true" stored="true" omitNorms="true" />
+    <field name="team" type="string" indexed="true" stored="true" omitNorms="true" />
+    <field name="team_search" type="text_general" indexed="true" stored="true" omitNorms="true" />
+    <field name="team_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" />
 
-    <dynamicField
-        name="property_friendly_value_*"
-        type="string"
-        indexed="true"
-        stored="true"
-    />
-    <dynamicField
-        name="property_friendly_value_search_*"
-        type="text_general"
-        indexed="true"
-        stored="true"
-    />
-    <copyField
-        source="property_friendly_value_*"
-        dest="property_friendly_value_search_*"
-    />
+    <copyField source="team" dest="team_search" />
+    <copyField source="team" dest="team_sort" />
+
+    <field name="department_id" type="pint" indexed="true" stored="true" omitNorms="true" />
+    <field name="department" type="string" indexed="true" stored="true" omitNorms="true" />
+    <field name="department_search" type="text_general" indexed="true" stored="true" omitNorms="true" />
+    <field name="department_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" />
+
+    <copyField source="department" dest="department_search" />
+    <copyField source="department" dest="department_sort" />
+
+    <field name="equipment_vendor_id" type="pint" indexed="true" stored="true" omitNorms="true" />
+    <field name="equipment_vendor" type="string" indexed="true" stored="true" omitNorms="true" />
+    <field name="equipment_vendor_search" type="text_general" indexed="true" stored="true" omitNorms="true" />
+    <field name="equipment_vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" />
+
+    <copyField source="equipment_vendor" dest="equipment_vendor_search" />
+    <copyField source="equipment_vendor" dest="equipment_vendor_sort" />
+
+    <dynamicField name="property_*" type="string" indexed="true" stored="true" />
+    <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true" />
+    <dynamicField name="property_date_*" type="pdate" indexed="true" stored="true" />
+    <dynamicField name="property_integer_*" type="string" indexed="true" stored="true" />
+    <dynamicField name="property_float_*" type="pfloat" indexed="true" stored="true" />
+
+    <dynamicField name="property_min_*" type="pint" indexed="true" stored="true" />
+    <dynamicField name="property_max_*" type="pint" indexed="true" stored="true" />
+
+    <dynamicField name="property_friendly_value_*" type="string" indexed="true" stored="true" />
+    <dynamicField name="property_friendly_value_search_*" type="text_general" indexed="true" stored="true" />
+    <copyField source="property_friendly_value_*" dest="property_friendly_value_search_*" />
 
 
     <uniqueKey>id</uniqueKey>
@@ -152,28 +103,12 @@
     -->
 
     <!-- The StrField type is not analyzed, but indexed/stored verbatim. -->
-    <fieldType
-        name="string"
-        class="solr.StrField"
-        sortMissingLast="true"
-        docValues="true"
-    />
-    <fieldType
-        name="strings"
-        class="solr.StrField"
-        sortMissingLast="true"
-        multiValued="true"
-        docValues="true"
-    />
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true" />
+    <fieldType name="strings" class="solr.StrField" sortMissingLast="true" multiValued="true" docValues="true" />
 
     <!-- boolean type: "true" or "false" -->
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" />
-    <fieldType
-        name="booleans"
-        class="solr.BoolField"
-        sortMissingLast="true"
-        multiValued="true"
-    />
+    <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" multiValued="true" />
 
     <!--
       Numeric field types that index values using KD-trees.
@@ -323,25 +258,9 @@
          is that it takes up more space on disk; which is why it's not used in place of TextField
          for every fieldType in this _default schema.
     -->
-    <dynamicField
-        name="*_t_sort"
-        type="text_gen_sort"
-        indexed="true"
-        stored="true"
-        multiValued="false"
-    />
-    <dynamicField
-        name="*_txt_sort"
-        type="text_gen_sort"
-        indexed="true"
-        stored="true"
-    />
-    <fieldType
-        name="text_gen_sort"
-        class="solr.SortableTextField"
-        positionIncrementGap="100"
-        multiValued="true"
-    >
+    <dynamicField name="*_t_sort" type="text_gen_sort" indexed="true" stored="true" multiValued="false" />
+    <dynamicField name="*_txt_sort" type="text_gen_sort" indexed="true" stored="true" />
+    <fieldType name="text_gen_sort" class="solr.SortableTextField" positionIncrementGap="100" multiValued="true" >
         <analyzer type="index">
             <tokenizer name="standard" />
             <filter name="stop" ignoreCase="true" words="stopwords.txt" />
@@ -418,18 +337,8 @@
          cases will work, for example query "wi fi" will match
          document "WiFi" or "wi-fi".
     -->
-    <dynamicField
-        name="*_txt_en_split"
-        type="text_en_splitting"
-        indexed="true"
-        stored="true"
-    />
-    <fieldType
-        name="text_en_splitting"
-        class="solr.TextField"
-        positionIncrementGap="100"
-        autoGeneratePhraseQueries="true"
-    >
+    <dynamicField name="*_txt_en_split" type="text_en_splitting" indexed="true" stored="true" />
+    <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="true" >
         <analyzer type="index">
             <tokenizer name="whitespace" />
             <!-- in this example, we will only use synonyms at query time
@@ -486,18 +395,8 @@
 
     <!-- Less flexible matching, but less false matches.  Probably not ideal for product names,
          but may be good for SKUs.  Can insert dashes in the wrong place and still match. -->
-    <dynamicField
-        name="*_txt_en_split_tight"
-        type="text_en_splitting_tight"
-        indexed="true"
-        stored="true"
-    />
-    <fieldType
-        name="text_en_splitting_tight"
-        class="solr.TextField"
-        positionIncrementGap="100"
-        autoGeneratePhraseQueries="true"
-    >
+    <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true" />
+    <fieldType name="text_en_splitting_tight" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="true" >
         <analyzer type="index">
             <tokenizer name="whitespace" />
             <filter
@@ -560,28 +459,13 @@
     <!-- Just like text_general except it reverses the characters of
          each token, to enable more efficient leading wildcard queries.
     -->
-    <dynamicField
-        name="*_txt_rev"
-        type="text_general_rev"
-        indexed="true"
-        stored="true"
-    />
-    <fieldType
-        name="text_general_rev"
-        class="solr.TextField"
-        positionIncrementGap="100"
-    >
+    <dynamicField name="*_txt_rev" type="text_general_rev" indexed="true" stored="true" />
+    <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100" >
         <analyzer type="index">
             <tokenizer name="standard" />
             <filter name="stop" ignoreCase="true" words="stopwords.txt" />
             <filter name="lowercase" />
-            <filter
-                name="reversedWildcard"
-                withOriginal="true"
-                maxPosAsterisk="3"
-                maxPosQuestion="2"
-                maxFractionAsterisk="0.33"
-            />
+            <filter name="reversedWildcard" withOriginal="true" maxPosAsterisk="3" maxPosQuestion="2" maxFractionAsterisk="0.33" />
         </analyzer>
         <analyzer type="query">
             <tokenizer name="standard" />
@@ -596,18 +480,8 @@
         </analyzer>
     </fieldType>
 
-    <dynamicField
-        name="*_phon_en"
-        type="phonetic_en"
-        indexed="true"
-        stored="true"
-    />
-    <fieldType
-        name="phonetic_en"
-        stored="false"
-        indexed="true"
-        class="solr.TextField"
-    >
+    <dynamicField name="*_phon_en" type="phonetic_en" indexed="true" stored="true" />
+    <fieldType name="phonetic_en" stored="false" indexed="true" class="solr.TextField" >
         <analyzer>
             <tokenizer name="standard" />
             <filter name="doubleMetaphone" inject="false" />
