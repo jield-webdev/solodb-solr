@@ -147,19 +147,22 @@
     <copyField source="purpose_name" dest="purpose_name_search"/>
 
     <field name="purpose_description" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="purpose_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="purpose_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
 
     <copyField source="purpose_description" dest="purpose_description_search"/>
 
     <field name="method_of_use_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="method_of_use_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="method_of_use_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="method_of_use_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
 
     <copyField source="method_of_use_name" dest="method_of_use_name_search"/>
 
     <field name="method_of_use_description" type="string" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
-    <field name="method_of_use_description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
+    <field name="method_of_use_description_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"
            multiValued="true"/>
     <copyField source="method_of_use_description" dest="method_of_use_description_search"/>
 
@@ -174,6 +177,9 @@
 
     <field name="contains_metals" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="contains_metals_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="is_zzs" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_zzs_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="has_cmr" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_cmr_text" type="string" indexed="true" stored="true" omitNorms="true"/>

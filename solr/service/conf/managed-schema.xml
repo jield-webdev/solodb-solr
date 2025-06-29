@@ -63,6 +63,24 @@
     <copyField source="equipment_vendor" dest="equipment_vendor_search" />
     <copyField source="equipment_vendor" dest="equipment_vendor_sort" />
 
+    <field name="external_company_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="external_company" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="external_company_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="external_company_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="external_company" dest="external_company_sort"/>
+    <copyField source="external_company" dest="external_company_search"/>
+
+    <field name="place_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="place" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="place_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="place_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="place" dest="place_sort"/>
+    <copyField source="place" dest="place_search"/>
+
     <dynamicField name="property_*" type="string" indexed="true" stored="true" />
     <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true" />
     <dynamicField name="property_date_*" type="pdate" indexed="true" stored="true" />
