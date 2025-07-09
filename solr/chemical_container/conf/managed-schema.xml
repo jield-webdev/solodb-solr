@@ -145,36 +145,6 @@
             multiValued="true"
     />
 
-    <field
-            name="chemical_is_halogenated"
-            type="boolean"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-    <field
-            name="chemical_is_halogenated_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
-    <field
-            name="chemical_contains_metals"
-            type="boolean"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-    <field
-            name="chemical_contains_metals_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
     <field name="chemical_is_zzs" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="chemical_is_zzs_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 

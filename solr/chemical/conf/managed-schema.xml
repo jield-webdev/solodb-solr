@@ -169,12 +169,6 @@
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="is_standard_product" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_standard_product_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="is_halogenated" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_halogenated_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="contains_metals" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="contains_metals_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
