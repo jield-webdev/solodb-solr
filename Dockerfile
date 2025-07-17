@@ -22,6 +22,7 @@ ADD --chown=solr:solr solr/service_event /var/solr/data/service_event
 ADD --chown=solr:solr solr/facility /var/solr/data/facility
 ADD --chown=solr:solr solr/facility /var/solr/data/facility
 ADD --chown=solr:solr solr/file /var/solr/data/file
+ADD --chown=solr:solr solr/mailing_email_message /var/solr/data/mailing_email_message
 ADD --chown=solr:solr solr/monitor /var/solr/data/monitor
 ADD --chown=solr:solr solr/monitor_step /var/solr/data/monitor_step
 ADD --chown=solr:solr solr/process /var/solr/data/process
