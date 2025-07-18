@@ -20,88 +20,104 @@
 
     <!-- Email Message specific fields -->
     <field name="email_message_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <field name="identifier" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="identifier_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="identifier_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="identifier" dest="identifier_sort"/>
     <copyField source="identifier" dest="identifier_search"/>
-    
+
     <field name="subject" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="subject_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="subject_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="subject" dest="subject_sort"/>
     <copyField source="subject" dest="subject_search"/>
-    
+
     <field name="email_address" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="email_address_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="email_address_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="email_address" dest="email_address_sort"/>
     <copyField source="email_address" dest="email_address_search"/>
-    
+
     <field name="message" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="message_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="message" dest="message_search"/>
-    
+
     <field name="amount_of_attachments" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    
-    <field name="to" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="cc" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="bcc" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="to" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="cc" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="bcc" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="latest_event" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="latest_event_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="latest_event_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="latest_event" dest="latest_event_sort"/>
     <copyField source="latest_event" dest="latest_event_search"/>
-    
+
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="date_latest_event" type="pdate" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <field name="year" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="month" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <field name="template_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="template" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="template_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="template_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="template" dest="template_sort"/>
     <copyField source="template" dest="template_search"/>
-    
+
     <field name="sender_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="sender" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="sender_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="sender_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="sender" dest="sender_sort"/>
     <copyField source="sender" dest="sender_search"/>
-    
+
     <field name="mailer_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="mailer" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="mailer_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="mailer_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="mailer" dest="mailer_sort"/>
     <copyField source="mailer" dest="mailer_search"/>
-    
+
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="user" dest="user_search"/>
-    
+
+    <field name="mailing_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="mailing_mailing" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="mailing_mailing_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="mailing_mailing_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="mailing_mail_subject" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="mailing_mail_subject_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="mailing_mail_subject_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="mailing_mailing" dest="mailing_mailing_sort"/>
+    <copyField source="mailing_mailing" dest="mailing_mailing_search"/>
+    <copyField source="mailing_mail_subject" dest="mailing_mail_subject_sort"/>
+    <copyField source="mailing_mail_subject" dest="mailing_mail_subject_search"/>
+
+    <field name="has_mailing" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_mailing_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="mailing_user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="mailing_user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="mailing_user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="mailing_user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
-    
+
     <copyField source="mailing_user" dest="mailing_user_sort"/>
     <copyField source="mailing_user" dest="mailing_user_search"/>
 
