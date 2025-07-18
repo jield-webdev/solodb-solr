@@ -118,8 +118,17 @@
     <field name="mailing_user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="mailing_user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="mailing_user" dest="mailing_user_sort"/>
     <copyField source="mailing_user" dest="mailing_user_search"/>
+
+    <field name="has_distribution_list" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_distribution_list_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="distribution_list_user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="distribution_list_user" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="distribution_list_user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="distribution_list_user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="distribution_list_user" dest="distribution_list_user_search"/>
 
     <uniqueKey>id</uniqueKey>
 
