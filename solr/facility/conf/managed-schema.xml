@@ -43,6 +43,9 @@
     <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
 
+    <field name="grade_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="grade_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
