@@ -100,7 +100,7 @@
 
     <copyField source="equipment_type" dest="equipment_type_search"/>
 
-    <field name="equipment_grade_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_grade_value" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_grade_name" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
