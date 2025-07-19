@@ -32,8 +32,8 @@
 
     <field name="information" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="active" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
