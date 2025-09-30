@@ -107,6 +107,13 @@
     <copyField source="equipment_default_name" dest="equipment_default_name_sort"/>
     <copyField source="equipment_default_name" dest="equipment_default_name_search"/>
 
+    <field name="equipment_main_equipment_in_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_main_equipment_in_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="equipment_in_active_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_in_active_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+
     <field name="equipment_serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_serial_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_serial_number_search" type="text_en_splitting" indexed="true" stored="true"
