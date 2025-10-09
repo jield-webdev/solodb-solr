@@ -42,16 +42,19 @@
     <copyField source="email_address" dest="email_address_sort"/>
     <copyField source="email_address" dest="email_address_search"/>
 
+    <field name="recipient_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="recipient_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="recipient_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="recipient_name" dest="recipient_name_sort"/>
+    <copyField source="recipient_name" dest="recipient_name_search"/>
+
     <field name="message" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="message_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="message" dest="message_search"/>
 
     <field name="amount_of_attachments" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="to" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="cc" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="bcc" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="latest_event" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="latest_event_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
@@ -109,7 +112,7 @@
     <copyField source="mailing_mailing" dest="mailing_mailing_search"/>
     <copyField source="mailing_mail_subject" dest="mailing_mail_subject_sort"/>
     <copyField source="mailing_mail_subject" dest="mailing_mail_subject_search"/>
-    
+
 
     <field name="has_mailing" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_mailing_text" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -126,8 +129,10 @@
     <field name="distribution_list_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="distribution_list_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
     <field name="distribution_list_mail_subject" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="distribution_list_mail_subject_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="distribution_list_mail_subject_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="distribution_list_mail_subject_sort" type="text_gen_sort" indexed="true" stored="true"
+           omitNorms="true"/>
+    <field name="distribution_list_mail_subject_search" type="text_general" indexed="true" stored="true"
+           omitNorms="true"/>
 
     <copyField source="distribution_list_name" dest="distribution_list_name_sort"/>
     <copyField source="distribution_list_name" dest="distribution_list_name_search"/>
