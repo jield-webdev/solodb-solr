@@ -30,6 +30,13 @@
     <field name="grade_value" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="grade_name" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="model" type="text_en" indexed="true" stored="true" omitNorms="true"/>
+    <field name="model_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="model_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="model" dest="model_sort"/>
+    <copyField source="model" dest="model_search"/>
+
     <field name="mes_name" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="mes_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="mes_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -57,6 +64,7 @@
     <copyField source="serial_number" dest="serial_number_sort"/>
     <copyField source="serial_number" dest="serial_number_search"/>
 
+    <field name="vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -162,9 +170,16 @@
     <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
-
     <copyField source="type" dest="type_name"/>
     <copyField source="type" dest="type_search"/>
+
+    <field name="group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="group" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="group_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="group" dest="group_name"/>
+    <copyField source="group" dest="group_search"/>
 
 
     <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
@@ -177,6 +192,9 @@
     <field name="training_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="scheduler_enabled" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="scheduler_enabled_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="is_available_for_rental" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_available_for_rental_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="main_equipment_in_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="main_equipment_in_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
