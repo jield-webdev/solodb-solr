@@ -21,7 +21,10 @@
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="date_planned" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="date_executed" type="pdate" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_finished" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="is_finished" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_finished_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="external_company_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="external_company" type="string" indexed="true" stored="true" omitNorms="true"/>
