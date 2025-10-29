@@ -271,18 +271,18 @@
     <copyField source="equipment_property_friendly_value_*" dest="equipment_property_friendly_value_search_*"/>
     <copyField source="equipment_property_friendly_value_*" dest="equipment_property_friendly_value_sort_*"/>
 
-    <dynamicField name="module_property_integer_*" type="pint" indexed="true" stored="true"/>
-    <dynamicField name="module_property_float_*" type="pint" indexed="true" stored="true"/>
-    <dynamicField name="module_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="module_property_date_*" type="pdate" indexed="true" stored="true"/>
-    <dynamicField name="module_property_min_*" type="pint" indexed="true" stored="true"/>
-    <dynamicField name="module_property_max_*" type="pint" indexed="true" stored="true"/>
+<!--    <dynamicField name="module_property_integer_*" type="pint" indexed="true" stored="true"/>-->
+<!--    <dynamicField name="module_property_float_*" type="pint" indexed="true" stored="true"/>-->
+<!--    <dynamicField name="module_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>-->
+<!--    <dynamicField name="module_property_date_*" type="pdate" indexed="true" stored="true"/>-->
+<!--    <dynamicField name="module_property_min_*" type="pint" indexed="true" stored="true"/>-->
+<!--    <dynamicField name="module_property_max_*" type="pint" indexed="true" stored="true"/>-->
 
-    <dynamicField name="module_property_friendly_value_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="module_property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
-    <dynamicField name="module_property_friendly_value_sort_*" type="text_general" indexed="true" stored="true"/>
-    <copyField source="module_property_friendly_value_*" dest="module_property_friendly_value_search_*"/>
-    <copyField source="module_property_friendly_value_*" dest="module_property_friendly_value_sort_*"/>
+<!--    <dynamicField name="module_property_friendly_value_*" type="string" indexed="true" stored="true"/>-->
+<!--    <dynamicField name="module_property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>-->
+<!--    <dynamicField name="module_property_friendly_value_sort_*" type="text_general" indexed="true" stored="true"/>-->
+<!--    <copyField source="module_property_friendly_value_*" dest="module_property_friendly_value_search_*"/>-->
+<!--    <copyField source="module_property_friendly_value_*" dest="module_property_friendly_value_sort_*"/>-->
 
     <uniqueKey>id</uniqueKey>
 
