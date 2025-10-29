@@ -27,20 +27,35 @@
     <copyField source="module_name" dest="module_name_sort"/>
     <copyField source="module_name" dest="module_name_search"/>
 
-    <field name="module_mes_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_mes_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_mes_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_mes_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="module_mes_name" dest="module_mes_name_sort"/>
     <copyField source="module_mes_name" dest="module_mes_name_search"/>
 
-    <field name="module_default_name" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_default_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_default_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_default_name_search" type="text_en_splitting" indexed="true" stored="true"
            omitNorms="true"/>
 
     <copyField source="module_default_name" dest="module_default_name_sort"/>
     <copyField source="module_default_name" dest="module_default_name_search"/>
+
+    <field name="module_serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_serial_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_serial_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="module_serial_number" dest="module_serial_number_sort"/>
+    <copyField source="module_serial_number" dest="module_serial_number_search"/>
+
+    <field name="module_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="module_vendor" dest="module_vendor_sort"/>
+    <copyField source="module_vendor" dest="module_vendor_search"/>
+
 
     <field name="module_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="module_type" type="string" indexed="true" stored="true" omitNorms="true"/>
