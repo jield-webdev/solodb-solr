@@ -135,6 +135,30 @@
     <field name="equipment_grade_value" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_grade_name" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="equipment_group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_group_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_group_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment_group_name" dest="equipment_group_name_sort"/>
+    <copyField source="equipment_group_name" dest="equipment_group_name_search"/>
+
+    <field name="equipment_project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_project_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_project_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_project_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_project_wbs" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment_project_name" dest="equipment_project_name_sort"/>
+    <copyField source="equipment_project_name" dest="equipment_project_name_search"/>
+
+    <field name="equipment_cost_center" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_cost_center_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_cost_center_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="equipment_cost_center" dest="equipment_cost_center_sort"/>
+    <copyField source="equipment_cost_center" dest="equipment_cost_center_search"/>
+
     <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>

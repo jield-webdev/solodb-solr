@@ -174,13 +174,28 @@
     <copyField source="type" dest="type_search"/>
 
     <field name="group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="group" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="group_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="group_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="group_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="group" dest="group_name"/>
-    <copyField source="group" dest="group_search"/>
+    <copyField source="group_name" dest="group_name_sort"/>
+    <copyField source="group_name" dest="group_name_search"/>
 
+    <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="project_wbs" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="project_name" dest="project_name_sort"/>
+    <copyField source="project_name" dest="project_name_search"/>
+
+    <field name="cost_center" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="cost_center_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="cost_center_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="cost_center" dest="cost_center_sort"/>
+    <copyField source="cost_center" dest="cost_center_search"/>
 
     <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -271,18 +286,18 @@
     <copyField source="equipment_property_friendly_value_*" dest="equipment_property_friendly_value_search_*"/>
     <copyField source="equipment_property_friendly_value_*" dest="equipment_property_friendly_value_sort_*"/>
 
-<!--    <dynamicField name="module_property_integer_*" type="pint" indexed="true" stored="true"/>-->
-<!--    <dynamicField name="module_property_float_*" type="pint" indexed="true" stored="true"/>-->
-<!--    <dynamicField name="module_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>-->
-<!--    <dynamicField name="module_property_date_*" type="pdate" indexed="true" stored="true"/>-->
-<!--    <dynamicField name="module_property_min_*" type="pint" indexed="true" stored="true"/>-->
-<!--    <dynamicField name="module_property_max_*" type="pint" indexed="true" stored="true"/>-->
+    <!--    <dynamicField name="module_property_integer_*" type="pint" indexed="true" stored="true"/>-->
+    <!--    <dynamicField name="module_property_float_*" type="pint" indexed="true" stored="true"/>-->
+    <!--    <dynamicField name="module_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>-->
+    <!--    <dynamicField name="module_property_date_*" type="pdate" indexed="true" stored="true"/>-->
+    <!--    <dynamicField name="module_property_min_*" type="pint" indexed="true" stored="true"/>-->
+    <!--    <dynamicField name="module_property_max_*" type="pint" indexed="true" stored="true"/>-->
 
-<!--    <dynamicField name="module_property_friendly_value_*" type="string" indexed="true" stored="true"/>-->
-<!--    <dynamicField name="module_property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>-->
-<!--    <dynamicField name="module_property_friendly_value_sort_*" type="text_general" indexed="true" stored="true"/>-->
-<!--    <copyField source="module_property_friendly_value_*" dest="module_property_friendly_value_search_*"/>-->
-<!--    <copyField source="module_property_friendly_value_*" dest="module_property_friendly_value_sort_*"/>-->
+    <!--    <dynamicField name="module_property_friendly_value_*" type="string" indexed="true" stored="true"/>-->
+    <!--    <dynamicField name="module_property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>-->
+    <!--    <dynamicField name="module_property_friendly_value_sort_*" type="text_general" indexed="true" stored="true"/>-->
+    <!--    <copyField source="module_property_friendly_value_*" dest="module_property_friendly_value_search_*"/>-->
+    <!--    <copyField source="module_property_friendly_value_*" dest="module_property_friendly_value_sort_*"/>-->
 
     <uniqueKey>id</uniqueKey>
 
