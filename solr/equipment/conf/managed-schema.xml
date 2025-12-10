@@ -63,6 +63,12 @@
     <field name="serial_number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <copyField source="serial_number" dest="serial_number_sort"/>
     <copyField source="serial_number" dest="serial_number_search"/>
+    
+    <field name="original_purchase_order" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="original_purchase_order_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="original_purchase_order_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="original_purchase_order" dest="original_purchase_order_sort"/>
+    <copyField source="original_purchase_order" dest="original_purchase_order_search"/>
 
     <field name="vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -216,6 +222,9 @@
 
     <field name="in_active_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="in_active_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="setup_type" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="setup_type_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="amount_of_modules" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
