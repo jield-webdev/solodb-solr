@@ -110,83 +110,106 @@
            multiValued="true"/>
 
 
-    <field name="facility_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_facility_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_facility_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_facility_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_facility_name_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
 
-    <copyField source="facility_name" dest="facility_name_sort"/>
-    <copyField source="facility_name" dest="facility_name_search"/>
+    <copyField source="equipment_facility_name" dest="equipment_facility_name_sort"/>
+    <copyField source="equipment_facility_name" dest="equipment_facility_name_search"/>
 
-    <field name="facility_label" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_label_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="facility_label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_facility_label" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_facility_label_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_facility_label_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
 
-    <copyField source="facility_label" dest="facility_label_sort"/>
-    <copyField source="facility_label" dest="facility_label_search"/>
+    <copyField source="equipment_facility_label" dest="equipment_facility_label_sort"/>
+    <copyField source="equipment_facility_label" dest="equipment_facility_label_search"/>
 
-    <field name="area_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_area_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_area_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_area_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_area_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="area_name" dest="area_name_sort"/>
-    <copyField source="area_name" dest="area_name_search"/>
+    <copyField source="equipment_area_name" dest="equipment_area_name_sort"/>
+    <copyField source="equipment_area_name" dest="equipment_area_name_search"/>
 
-    <field name="area_label" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_label_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="area_label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_area_label" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_area_label_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_area_label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="area_label" dest="area_label_sort"/>
-    <copyField source="area_label" dest="area_label_search"/>
+    <copyField source="equipment_area_label" dest="equipment_area_label_sort"/>
+    <copyField source="equipment_area_label" dest="equipment_area_label_search"/>
 
-    <field name="room_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="room_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_room_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_room" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_room_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_room_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="room" dest="room_sort"/>
-    <copyField source="room" dest="room_search"/>
+    <copyField source="equipment_room" dest="equipment_room_sort"/>
+    <copyField source="equipment_room" dest="equipment_room_search"/>
 
-    <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="building_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_building" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_building_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_building_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="building" dest="building_sort"/>
-    <copyField source="building" dest="building_search"/>
+    <copyField source="equipment_building" dest="equipment_building_sort"/>
+    <copyField source="equipment_building" dest="equipment_building_search"/>
 
-    <field name="zone_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_zone_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_zone_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_zone_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_zone_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="zone_name" dest="zone_name_sort"/>
-    <copyField source="zone_name" dest="zone_name_search"/>
+    <copyField source="equipment_zone_name" dest="equipment_zone_name_sort"/>
+    <copyField source="equipment_zone_name" dest="equipment_zone_name_search"/>
 
-    <field name="zone_group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="zone_group_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_zone_group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_zone_group_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_zone_group_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_zone_group_name_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
 
-    <copyField source="zone_group_name" dest="zone_group_name_sort"/>
-    <copyField source="zone_group_name" dest="zone_group_name_search"/>
+    <copyField source="equipment_zone_group_name" dest="equipment_zone_group_name_sort"/>
+    <copyField source="equipment_zone_group_name" dest="equipment_zone_group_name_search"/>
 
-    <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="site_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_site" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_site_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_site_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="site" dest="site_sort"/>
-    <copyField source="site" dest="site_search"/>
+    <copyField source="equipment_site" dest="equipment_site_sort"/>
+    <copyField source="equipment_site" dest="equipment_site_search"/>
+
+    <field name="reservation_room_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_room" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_room_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_room_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="reservation_room" dest="reservation_room_sort"/>
+    <copyField source="reservation_room" dest="reservation_room_search"/>
+
+    <field name="reservation_building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_building" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_building_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_building_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="reservation_building" dest="reservation_building_sort"/>
+    <copyField source="reservation_building" dest="reservation_building_search"/>
+
+    <field name="reservation_site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_site" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_site_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_site_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="reservation_site" dest="reservation_site_sort"/>
+    <copyField source="reservation_site" dest="reservation_site_search"/>
+
 
     <field name="reservation_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="reservation_type_name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="reservation_type_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="reservation_type_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="reservation_type_name" dest="reservation_type_name_sort"/>
-    <copyField source="reservation_type_name" dest="reservation_type_name_search"/>
+    <field name="reservation_type" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="trained_users_id" type="pint" indexed="true" stored="true" multiValued="true"/>
     <field name="trained_users_name" type="string" indexed="true" stored="true" multiValued="true"/>
@@ -206,6 +229,30 @@
     <field name="preventive_maintenance_description" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="preventive_maintenance_is_planned" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="preventive_maintenance_is_executed" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="service_event_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="service_name" dest="service_name_sort"/>
+    <copyField source="service_name" dest="service_name_search"/>
+
+    <field name="service_service_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_service_type_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_service_type_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_service_type_name_search" type="text_en_splitting" indexed="true" stored="true"
+           omitNorms="true"/>
+
+    <copyField source="service_service_type_name" dest="service_service_type_name_sort"/>
+    <copyField source="service_service_type_name" dest="service_service_type_name_search"/>
+
+    <field name="rental_status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="rental_status" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="reservation_status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_status" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <uniqueKey>id</uniqueKey>
 
