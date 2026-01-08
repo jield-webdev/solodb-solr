@@ -41,6 +41,14 @@
 
     <copyField source="user" dest="user_search"/>
 
+    <field name="job_type_value" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="job_type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="job_type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="job_type_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="job_type" dest="job_type_sort"/>
+    <copyField source="job_type" dest="job_type_search"/>
+
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_code" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
