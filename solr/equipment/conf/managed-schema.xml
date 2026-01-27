@@ -166,18 +166,22 @@
 
     <field name="category_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="category" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="category_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="category_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
+    <copyField source="category" dest="category_sort"/>
     <copyField source="category" dest="category_search"/>
 
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="type_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="type_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
     <copyField source="type" dest="type_name"/>
+    <copyField source="type" dest="type_sort"/>
     <copyField source="type" dest="type_search"/>
 
     <field name="group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
