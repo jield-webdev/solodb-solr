@@ -216,6 +216,9 @@
     <field name="role_users_id" type="pint" indexed="true" stored="true" multiValued="true"/>
     <field name="role_users_name" type="string" indexed="true" stored="true" multiValued="true"/>
 
+    <field name="is_double_reservation" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_double_reservation_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="recurring" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="recurring_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_recurring" type="boolean" indexed="true" stored="true" omitNorms="true"/>
