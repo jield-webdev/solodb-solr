@@ -77,14 +77,6 @@
     <copyField source="service_description" dest="service_description_sort"/>
     <copyField source="service_description" dest="service_description_search"/>
 
-    <field name="service_department_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="service_department" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="service_department_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="service_department_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="service_department" dest="service_department_sort"/>
-    <copyField source="service_department" dest="service_department_search"/>
-
     <field name="service_team_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="service_team" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="service_team_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>

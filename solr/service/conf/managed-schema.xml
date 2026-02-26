@@ -47,14 +47,6 @@
     <copyField source="team" dest="team_search" />
     <copyField source="team" dest="team_sort" />
 
-    <field name="department_id" type="pint" indexed="true" stored="true" omitNorms="true" />
-    <field name="department" type="string" indexed="true" stored="true" omitNorms="true" />
-    <field name="department_search" type="text_general" indexed="true" stored="true" omitNorms="true" />
-    <field name="department_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true" />
-
-    <copyField source="department" dest="department_search" />
-    <copyField source="department" dest="department_sort" />
-
     <field name="external_company_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="external_company" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="external_company_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
