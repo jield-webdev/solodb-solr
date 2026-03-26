@@ -2,6 +2,8 @@ FROM solr:latest
 LABEL maintainer="info@jield.nl"
 LABEL org.opencontainers.image.source="https://github.com/jield-webdev/solodb/solr"
 
+CMD ["solr", "start", "-f", "--user-managed"]
+
 USER solr
 
 ADD --chown=solr:solr solr/building /var/solr/data/building
@@ -28,6 +30,7 @@ ADD --chown=solr:solr solr/monitor_step /var/solr/data/monitor_step
 ADD --chown=solr:solr solr/process /var/solr/data/process
 ADD --chown=solr:solr solr/process_module /var/solr/data/process_module
 ADD --chown=solr:solr solr/process_module_recipe /var/solr/data/process_module_recipe
+ADD --chown=solr:solr solr/project /var/solr/data/project
 ADD --chown=solr:solr solr/request /var/solr/data/request
 ADD --chown=solr:solr solr/run /var/solr/data/run
 ADD --chown=solr:solr solr/run_changelog /var/solr/data/run_changelog
