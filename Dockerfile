@@ -41,5 +41,6 @@ ADD --chown=solr:solr solr/scheduler_job /var/solr/data/scheduler_job
 ADD --chown=solr:solr solr/substrate /var/solr/data/substrate
 ADD --chown=solr:solr solr/template /var/solr/data/template
 ADD --chown=solr:solr solr/template_step /var/solr/data/template_step
+ADD --chown=solr:solr solr/wbs /var/solr/data/wbs
 ADD --chown=solr:solr solr/zone /var/solr/data/zone
 ADD --chown=solr:solr solr/zone_reservation /var/solr/data/zone_reservation

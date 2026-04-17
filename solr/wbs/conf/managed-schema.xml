@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<schema name="project" version="1.6">
+<schema name="wbs" version="1.6">
 
 
     <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
@@ -19,36 +19,25 @@
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
-    <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="wbs_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="default_name" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <copyField source="name" dest="name_sort"/>
-    <copyField source="name" dest="name_search"/>
-
-    <field name="abbr" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="abbr_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="abbr_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <copyField source="abbr" dest="abbr_sort"/>
-    <copyField source="abbr" dest="abbr_search"/>
-
-    <field name="wbs" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="wbs_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="wbs_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <copyField source="wbs" dest="wbs_sort"/>
-    <copyField source="wbs" dest="wbs_search"/>
-
-    <field name="wbs_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="wbs_code" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="code" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="code_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="code" dest="code_sort"/>
+    <copyField source="code" dest="code_search"/>
 
     <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_private" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="approval_required" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_wbs" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_projects" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="project_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="project_abbr" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <field name="purpose_value" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="purpose" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
@@ -58,18 +47,18 @@
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
-    <dynamicField name="project_property_integer_*" type="pint" indexed="true" stored="true"/>
-    <dynamicField name="project_property_float_*" type="pfloat" indexed="true" stored="true"/>
-    <dynamicField name="project_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="project_property_date_*" type="pdate" indexed="true" stored="true"/>
-    <dynamicField name="project_property_min_*" type="pint" indexed="true" stored="true"/>
-    <dynamicField name="project_property_max_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="wbs_property_integer_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="wbs_property_float_*" type="pfloat" indexed="true" stored="true"/>
+    <dynamicField name="wbs_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="wbs_property_date_*" type="pdate" indexed="true" stored="true"/>
+    <dynamicField name="wbs_property_min_*" type="pint" indexed="true" stored="true"/>
+    <dynamicField name="wbs_property_max_*" type="pint" indexed="true" stored="true"/>
 
-    <dynamicField name="project_property_friendly_value_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="project_property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
-    <dynamicField name="project_property_friendly_value_sort_*" type="text_general" indexed="true" stored="true"/>
-    <copyField source="project_property_friendly_value_*" dest="project_property_friendly_value_search_*"/>
-    <copyField source="project_property_friendly_value_*" dest="project_property_friendly_value_sort_*"/>
+    <dynamicField name="wbs_property_friendly_value_*" type="string" indexed="true" stored="true"/>
+    <dynamicField name="wbs_property_friendly_value_search_*" type="text_general" indexed="true" stored="true"/>
+    <dynamicField name="wbs_property_friendly_value_sort_*" type="text_general" indexed="true" stored="true"/>
+    <copyField source="wbs_property_friendly_value_*" dest="wbs_property_friendly_value_search_*"/>
+    <copyField source="wbs_property_friendly_value_*" dest="wbs_property_friendly_value_sort_*"/>
 
     <uniqueKey>id</uniqueKey>
 
