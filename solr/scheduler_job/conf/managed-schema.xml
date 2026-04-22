@@ -53,12 +53,12 @@
     <field name="job_with_accessories" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="quota_rule_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="quota_rule_names" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="quota_rule_names" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <field name="quota_rule_project_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="quota_rule_project_names" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="quota_rule_project_names" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="quota_rule_team_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="quota_rule_team_names" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="quota_rule_team_names" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_code" type="string" indexed="true" stored="true" omitNorms="true"/>
