@@ -86,6 +86,9 @@
     <copyField source="after_office_hours" dest="after_office_hours_sort"/>
     <copyField source="after_office_hours" dest="after_office_hours_search"/>
 
+    <field name="opening_hour" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="closing_hour" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
