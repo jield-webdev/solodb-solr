@@ -49,6 +49,17 @@
     <copyField source="job_type" dest="job_type_sort"/>
     <copyField source="job_type" dest="job_type_search"/>
 
+    <field name="job_with_rental_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="job_with_accessories" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="quota_rule_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="quota_rule_names" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
+    <field name="quota_rule_project_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="quota_rule_project_names" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="quota_rule_team_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="quota_rule_team_names" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_code" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
