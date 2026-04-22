@@ -71,12 +71,12 @@
     <copyField source="original_purchase_order" dest="original_purchase_order_sort"/>
     <copyField source="original_purchase_order" dest="original_purchase_order_search"/>
 
-    <field name="vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <copyField source="vendor" dest="vendor_sort"/>
-    <copyField source="vendor" dest="vendor_search"/>
+    <field name="manufacturer_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="manufacturer" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="manufacturer_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="manufacturer_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="manufacturer" dest="manufacturer_sort"/>
+    <copyField source="manufacturer" dest="manufacturer_search"/>
 
     <field name="ownership" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="ownership_text" type="string" indexed="true" stored="true" omitNorms="true"/>
