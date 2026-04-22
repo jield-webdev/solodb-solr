@@ -73,19 +73,7 @@
     <copyField source="tags" dest="tags_search"/>
 
     <field name="opening_hours" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="opening_hours_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="opening_hours_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="opening_hours" dest="opening_hours_sort"/>
-    <copyField source="opening_hours" dest="opening_hours_search"/>
-
     <field name="after_office_hours" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="after_office_hours_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="after_office_hours_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="after_office_hours" dest="after_office_hours_sort"/>
-    <copyField source="after_office_hours" dest="after_office_hours_search"/>
-
     <field name="opening_hour" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="closing_hour" type="string" indexed="true" stored="true" omitNorms="true"/>
 
