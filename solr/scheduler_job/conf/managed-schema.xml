@@ -67,7 +67,6 @@
 
     <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="project" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="project_wbs" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="project_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 

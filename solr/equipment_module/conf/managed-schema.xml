@@ -49,12 +49,12 @@
     <copyField source="module_serial_number" dest="module_serial_number_sort"/>
     <copyField source="module_serial_number" dest="module_serial_number_search"/>
 
-    <field name="module_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="module_vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="module_vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_manufacturer" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_manufacturer_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="module_manufacturer_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="module_vendor" dest="module_vendor_sort"/>
-    <copyField source="module_vendor" dest="module_vendor_search"/>
+    <copyField source="module_manufacturer" dest="module_manufacturer_sort"/>
+    <copyField source="module_manufacturer" dest="module_manufacturer_search"/>
 
 
     <field name="module_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -112,11 +112,11 @@
     <copyField source="equipment_serial_number" dest="equipment_serial_number_sort"/>
     <copyField source="equipment_serial_number" dest="equipment_serial_number_search"/>
 
-    <field name="equipment_vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <copyField source="equipment_vendor" dest="equipment_vendor_sort"/>
-    <copyField source="equipment_vendor" dest="equipment_vendor_search"/>
+    <field name="equipment_manufacturer" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_manufacturer_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_manufacturer_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="equipment_manufacturer" dest="equipment_manufacturer_sort"/>
+    <copyField source="equipment_manufacturer" dest="equipment_manufacturer_search"/>
 
     <field name="equipment_category_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment_category" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
@@ -147,7 +147,6 @@
     <field name="equipment_project_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_project_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_project_name_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_project_wbs" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="equipment_project_name" dest="equipment_project_name_sort"/>
     <copyField source="equipment_project_name" dest="equipment_project_name_search"/>
