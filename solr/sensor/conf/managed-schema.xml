@@ -75,16 +75,16 @@
     <copyField source="site" dest="site_sort"/>
     <copyField source="site" dest="site_search"/>
 
-    <field name="has_vendor" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_vendor_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_manufacturer" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_manufacturer_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="manufacturer_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="manufacturer" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="manufacturer_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="manufacturer_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
 
-    <copyField source="vendor" dest="vendor_sort"/>
-    <copyField source="vendor" dest="vendor_search"/>
+    <copyField source="manufacturer" dest="manufacturer_sort"/>
+    <copyField source="manufacturer" dest="manufacturer_search"/>
 
     <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_status" type="string" indexed="true" stored="true" omitNorms="true"/>
