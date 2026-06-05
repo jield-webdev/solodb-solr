@@ -211,12 +211,11 @@
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="reservation_type" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="reservation_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="reservation_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="training_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="scheduler_enabled" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="scheduler_enabled_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_available_for_rental" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_available_for_rental_text" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -233,7 +232,8 @@
     <field name="amount_of_modules" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="has_workstation_components" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="workstation_components" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="workstation_components" type="string" indexed="true" stored="true" omitNorms="true"
+           multiValued="true"/>
 
     <field name="has_scheduler_quota_header" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_scheduler_quota_header_text" type="string" indexed="true" stored="true" omitNorms="true"/>
