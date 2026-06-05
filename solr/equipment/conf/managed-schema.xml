@@ -211,7 +211,7 @@
     <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="reservation_type" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="setup_reservation_type" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="reservation_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="reservation_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
