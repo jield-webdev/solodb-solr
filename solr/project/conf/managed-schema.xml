@@ -28,6 +28,12 @@
     <copyField source="name" dest="name_sort"/>
     <copyField source="name" dest="name_search"/>
 
+    <field name="external_reference" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="external_reference_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="external_reference_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="external_reference" dest="external_reference_sort"/>
+    <copyField source="external_reference" dest="external_reference_search"/>
+
     <field name="abbr" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="abbr_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="abbr_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -49,6 +55,12 @@
     <field name="is_private" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="approval_required" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_wbs" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="amount_of_wbs" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_roles" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_active_roles" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_active_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="purpose_value" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="purpose" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
