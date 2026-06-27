@@ -27,6 +27,14 @@
     <copyField source="name" dest="name_sort"/>
     <copyField source="name" dest="name_search"/>
 
+    <field name="display_name" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="display_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="display_name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="display_name" dest="display_name_sort"/>
+    <copyField source="display_name" dest="display_name_search"/>
+
+
     <field name="code" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="code_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="code_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
@@ -48,6 +56,15 @@
 
     <copyField source="site_code" dest="site_code_sort"/>
     <copyField source="site_code" dest="site_code_search"/>
+
+    <field name="hierarchy_path" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="hierarchy_path_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="hierarchy_path_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="hierarchy_path" dest="hierarchy_path_sort"/>
+    <copyField source="hierarchy_path" dest="hierarchy_path_search"/>
+
+    <field name="location_level" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="building_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="building_name" type="string" indexed="true" stored="true" omitNorms="true"/>

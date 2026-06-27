@@ -364,20 +364,11 @@
             dest="method_of_use_description_search"
     />
 
-    <field
-            name="location_id"
-            type="pint"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-    <field
-            name="location_code"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
+
+    <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_hierarchy_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_hierarchy_path" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_code" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field
             name="location_name"
