@@ -110,10 +110,7 @@
     <copyField source="label" dest="label_search"/>
 
     <field name="has_requirement" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_requirement_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="has_measurement" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_measurement_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <uniqueKey>id</uniqueKey>
 

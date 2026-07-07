@@ -30,12 +30,9 @@
     <field name="date_approved" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="require_approval" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="require_approval_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_approved" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_approved_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_block" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_block_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="block_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="project_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -115,9 +112,7 @@
     <copyField source="equipment_default_name" dest="equipment_default_name_search"/>
 
     <field name="equipment_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_active_in_mes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment_module_mes_name" type="string" indexed="true" stored="true" omitNorms="true"
@@ -233,16 +228,12 @@
     <field name="role_users_name" type="string" indexed="true" stored="true" multiValued="true"/>
 
     <field name="is_double_reservation" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_double_reservation_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="recurring" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="recurring_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_recurring" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_recurring_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_recurring_link" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_preventive_maintenance" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_preventive_maintenance_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="preventive_maintenance_title" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="preventive_maintenance_status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="preventive_maintenance_description" type="string" indexed="true" stored="true" omitNorms="true"/>

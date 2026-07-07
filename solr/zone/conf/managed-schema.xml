@@ -58,12 +58,8 @@
     <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_equipment" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_equipment_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_active_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_inactive_users" type="pint" indexed="true" stored="true" omitNorms="true"/>

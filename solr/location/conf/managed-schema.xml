@@ -108,23 +108,14 @@
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_chemical_containers" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_chemical_containers" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_chemical_containers_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_equipment" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_equipment_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_substrates" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_substrates" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_substrates_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_consumables" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_consumables" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_consumables_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <uniqueKey>id</uniqueKey>
 

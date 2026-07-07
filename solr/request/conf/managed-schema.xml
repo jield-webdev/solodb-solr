@@ -52,11 +52,8 @@
     <field name="end_date" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_granted" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_granted_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_open" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_open_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_denied" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_denied_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="status" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_text" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -77,7 +74,6 @@
     <copyField source="mentor" dest="mentor_search"/>
 
     <field name="has_mentor_approval" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_mentor_approval_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="facility_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="facility_name" type="string" indexed="true" stored="true" omitNorms="true"/>

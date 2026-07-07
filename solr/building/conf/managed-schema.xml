@@ -48,9 +48,7 @@
     <field name="rooms" type="pint" indexed="true" stored="true"/>
 
     <field name="has_rooms" type="boolean" indexed="true" stored="true"/>
-    <field name="has_rooms_text" type="string" indexed="true" stored="true"/>
     <field name="is_active" type="boolean" indexed="true" stored="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true"/>
 
     <uniqueKey>id</uniqueKey>
 

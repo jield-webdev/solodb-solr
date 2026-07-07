@@ -24,8 +24,6 @@
     <field name="date_finished" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="is_finished" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_finished_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="external_company_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="external_company" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="external_company_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
@@ -177,7 +175,6 @@
     <field name="equipment_ownership_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_group" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -188,20 +185,14 @@
     <copyField source="equipment_group" dest="equipment_group_search"/>
 
     <field name="equipment_is_available_for_rental" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_is_available_for_rental_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_main_equipment_in_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_main_equipment_in_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_in_active_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_in_active_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_amount_of_modules" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_active_in_mes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_reservation_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_reservation_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_training_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_room_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_room_name" type="string" indexed="true" stored="true" omitNorms="true"/>

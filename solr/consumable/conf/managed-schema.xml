@@ -49,10 +49,7 @@
     <copyField source="location" dest="location_search"/>
 
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_approval_required" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_approval_required_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -69,8 +66,6 @@
     <copyField source="type" dest="type_search"/>
 
     <field name="type_can_be_substrate" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_can_be_substrate_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <dynamicField name="property_*" type="string" indexed="true" stored="true"/>

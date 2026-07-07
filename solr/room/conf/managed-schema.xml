@@ -108,27 +108,18 @@
     <copyField source="status" dest="status_sort"/>
 
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_equipment" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_equipment_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_chemical_containers" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_chemical_containers" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_chemical_containers_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_zone_groups" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_zone_groups" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_zone_groups_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="amount_of_zones" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_zones" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_zones_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="amount_of_locations" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_locations" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_locations_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="amount_of_trained_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_trained_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>

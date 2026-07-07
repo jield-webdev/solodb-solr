@@ -62,8 +62,6 @@
     <field name="has_unfinished_steps" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="has_batch_card" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_batch_card_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="keywords" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="parts" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
@@ -136,8 +134,6 @@
     <field name="hold_code_description" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="has_hold_code" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_hold_code_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="priority_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="priority" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="priority_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>

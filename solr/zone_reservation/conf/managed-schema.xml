@@ -74,7 +74,6 @@
     <field name="recurring" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="recurring_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_recurring" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_recurring_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <uniqueKey>id</uniqueKey>
 

@@ -31,9 +31,7 @@
     <copyField source="number" dest="number_search"/>
 
     <field name="information" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -52,15 +50,12 @@
            multiValued="true"/>
     <field name="amount_of_equipment" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_equipment_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <copyField source="equipment" dest="equipment_search"/>
 
     <field name="equipment_module_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="equipment_module" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="amount_of_equipment_module" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_equipment_module" type="boolean" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="has_equipment_module_text" type="string" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
     <field name="equipment_module_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>

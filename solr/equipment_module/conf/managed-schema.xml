@@ -66,7 +66,6 @@
     <copyField source="module_type" dest="module_type_search"/>
 
     <field name="module_is_main_tool" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="module_is_main_tool_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_name" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -100,12 +99,7 @@
     <copyField source="equipment_default_name" dest="equipment_default_name_search"/>
 
     <field name="equipment_main_equipment_in_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_main_equipment_in_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="equipment_is_active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="equipment_in_active_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_in_active_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_serial_number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
@@ -160,15 +154,11 @@
     <copyField source="equipment_cost_center" dest="equipment_cost_center_sort"/>
     <copyField source="equipment_cost_center" dest="equipment_cost_center_search"/>
 
-    <field name="active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="active_in_mes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="setup_reservation_type" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="reservation_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="reservation_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="training_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_process_module" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="facility_id" type="pint" indexed="true" stored="true" omitNorms="true"/>

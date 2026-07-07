@@ -130,13 +130,6 @@
             omitNorms="true"
     />
     <field
-            name="chemical_has_cmr_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-    <field
             name="chemical_cmr"
             type="string"
             indexed="true"
@@ -146,8 +139,6 @@
     />
 
     <field name="chemical_is_zzs" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="chemical_is_zzs_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field
             name="has_cas_number"
             type="boolean"
@@ -156,28 +147,12 @@
             omitNorms="true"
     />
     <field
-            name="has_cas_number_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
-    <field
             name="has_adr_classes"
             type="boolean"
             indexed="true"
             stored="true"
             omitNorms="true"
     />
-    <field
-            name="has_adr_classes_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
     <field
             name="cas_number"
             type="string"
@@ -845,43 +820,12 @@
             omitNorms="true"
     />
     <field
-            name="chemical_is_standard_product_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
-    <field
             name="is_expired"
             type="boolean"
             indexed="true"
             stored="true"
             omitNorms="true"
     />
-    <field
-            name="is_expired_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
-    <field
-            name="status_id"
-            type="pint"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-    <field
-            name="status_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
     <field
             name="is_active"
             type="boolean"
@@ -890,14 +834,6 @@
             omitNorms="true"
     />
     <field
-            name="is_active_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
-    <field
             name="is_marked_for_removal"
             type="boolean"
             indexed="true"
@@ -905,29 +841,12 @@
             omitNorms="true"
     />
     <field
-            name="is_marked_for_removal_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
-
-    <field
             name="is_deleted"
             type="boolean"
             indexed="true"
             stored="true"
             omitNorms="true"
     />
-    <field
-            name="is_deleted_text"
-            type="string"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-
     <field
             name="amount_of_users"
             type="pint"
@@ -952,13 +871,6 @@
     <field
             name="has_active_users"
             type="boolean"
-            indexed="true"
-            stored="true"
-            omitNorms="true"
-    />
-    <field
-            name="has_active_users_text"
-            type="string"
             indexed="true"
             stored="true"
             omitNorms="true"

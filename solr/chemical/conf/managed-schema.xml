@@ -170,28 +170,14 @@
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="contains_metals" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="contains_metals_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="is_standard_product" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_standard_product_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="is_zzs" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_zzs_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="has_cmr" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_cmr_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="cmr_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="cmr" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
     <field name="cmr_search" type="text_en" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
     <field name="has_cas_number" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_cas_number_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="has_adr_classes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_adr_classes_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
     <field name="amount_of_role_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="role_users_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="role_users_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
@@ -202,7 +188,6 @@
     <field name="has_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_active_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_active_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_active_users_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_inactive_users" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_inactive_users" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 

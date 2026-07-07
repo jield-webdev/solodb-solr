@@ -113,9 +113,7 @@
     <copyField source="mailing_mail_subject" dest="mailing_mail_subject_sort"/>
     <copyField source="mailing_mail_subject" dest="mailing_mail_subject_search"/>
 
-
     <field name="has_mailing" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_mailing_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="mailing_user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="mailing_user" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -140,8 +138,7 @@
     <copyField source="distribution_list_mail_subject" dest="distribution_list_mail_subject_search"/>
 
     <field name="has_distribution_list" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_distribution_list_text" type="string" indexed="true" stored="true" omitNorms="true"/>
-
+    
     <field name="distribution_list_user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="distribution_list_user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="distribution_list_user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>

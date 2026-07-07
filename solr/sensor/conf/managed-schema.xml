@@ -76,7 +76,6 @@
     <copyField source="site" dest="site_search"/>
 
     <field name="has_manufacturer" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_manufacturer_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="manufacturer_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="manufacturer" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -89,9 +88,7 @@
     <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_status" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-
     <field name="has_calibrations" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="has_calibrations_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="latest_calibration_type_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="latest_calibration_type" type="string" indexed="true" stored="true" omitNorms="true"/>
