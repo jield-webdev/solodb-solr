@@ -219,6 +219,7 @@
 
     <field name="in_active_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="setup_type" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="setup_type_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_modules" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_workstation_components" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="workstation_components" type="string" indexed="true" stored="true" omitNorms="true"
