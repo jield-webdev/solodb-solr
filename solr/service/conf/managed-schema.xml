@@ -143,7 +143,7 @@
     <field name="equipment_ownership" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_ownership_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="equipment_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_group_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_group" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -158,7 +158,7 @@
     <field name="equipment_in_active_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="equipment_amount_of_modules" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="equipment_active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="equipment_is_active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_setup_reservation_type" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_reservation_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>

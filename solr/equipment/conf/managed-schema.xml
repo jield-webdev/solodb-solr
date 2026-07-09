@@ -214,7 +214,6 @@
     <field name="setup_reservation_type" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="reservation_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="training_possible" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="training_possible_text" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="is_available_for_rental" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="main_equipment_in_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
