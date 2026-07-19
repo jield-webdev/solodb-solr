@@ -175,6 +175,7 @@
     <copyField source="group" dest="group_search"/>
 
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="process_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="process" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
