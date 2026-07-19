@@ -32,10 +32,19 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PAT }}
 
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/jield-webdev/solodb/solr
+          tags: |
+            type=raw,value=latest,enable=${{ github.ref_name == 'main' }}
+            type=raw,value=${{ github.head_ref || github.ref_name }},enable=${{ github.ref_name != 'main' }}
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jield-webdev/solodb/solr:latest
+          tags: ${{ steps.meta.outputs.tags }}
