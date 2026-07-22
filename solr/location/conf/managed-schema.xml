@@ -42,6 +42,9 @@
     <copyField source="code" dest="code_sort"/>
     <copyField source="code" dest="code_search"/>
 
+    <field name="amount_of_children" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="has_children" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
