@@ -102,6 +102,8 @@
     <field name="equipment_main_equipment_in_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_main_equipment_in_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="equipment_is_active_in_mes" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="equipment_in_active_setup" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="equipment_in_active_setup_text" type="string" indexed="true" stored="true" omitNorms="true"/>
 
