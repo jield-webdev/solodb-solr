@@ -118,7 +118,7 @@
     <copyField source="zone_group_name" dest="zone_group_name_search"/>
 
     <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
-    <field name="location_hierarchy_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="location_hierarchy_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="location_hierarchy_path" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="location_code" type="string" indexed="true" stored="true" omitNorms="true"/>
 
