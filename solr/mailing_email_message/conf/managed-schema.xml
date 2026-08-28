@@ -146,6 +146,8 @@
 
     <copyField source="distribution_list_user" dest="distribution_list_user_search"/>
 
+    <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <uniqueKey>id</uniqueKey>
 
     <!-- field type definitions. The "name" attribute is
