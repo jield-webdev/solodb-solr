@@ -20,6 +20,9 @@
 
     <field name="zone_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_int_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>

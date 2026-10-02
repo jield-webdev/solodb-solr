@@ -20,6 +20,10 @@
 
     <field name="room_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+
+    <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="site_code" type="text_en" indexed="true" stored="true" omitNorms="true"/>
     <field name="site" type="string" indexed="true" stored="true" omitNorms="true"/>
