@@ -146,7 +146,7 @@
 
     <copyField source="distribution_list_user" dest="distribution_list_user_search"/>
 
-    <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="service_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
 
     <uniqueKey>id</uniqueKey>
 
