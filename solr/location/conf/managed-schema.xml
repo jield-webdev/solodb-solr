@@ -48,7 +48,7 @@
     <field name="amount_of_children" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="has_children" type="boolean" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="is_storage_equipment" type="bool" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_storage_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="storage_equipment_equipment_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="site_id" type="pint" indexed="true" stored="true" omitNorms="true"/>

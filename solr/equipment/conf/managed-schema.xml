@@ -58,7 +58,7 @@
     <copyField source="default_name" dest="default_name_sort"/>
     <copyField source="default_name" dest="default_name_search"/>
 
-    <field name="is_storage_equipment" type="bool" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_storage_equipment" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="storage_equipment_location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="serial_number" type="string" indexed="true" stored="true" omitNorms="true"/>
