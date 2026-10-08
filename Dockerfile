@@ -9,6 +9,7 @@ USER solr
 ADD --chown=solr:solr solr/building /var/solr/data/building
 ADD --chown=solr:solr solr/room /var/solr/data/room
 ADD --chown=solr:solr solr/location /var/solr/data/location
+ADD --chown=solr:solr solr/location_reservation /var/solr/data/location_reservation
 ADD --chown=solr:solr solr/chemical /var/solr/data/chemical
 ADD --chown=solr:solr solr/chemical_container /var/solr/data/chemical_container
 ADD --chown=solr:solr solr/consumable /var/solr/data/consumable
