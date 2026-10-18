@@ -2,7 +2,8 @@
 <schema name="chemical" version="1.6">
     <!--
         One flat document per chemical. Environment membership is derived from active containers.
-        Application queries must filter environment_ids AND use the matching environment fields.
+        Application queries use global fields for all chemicals, or filter environment_ids AND
+        use the matching environment fields for chemicals in the selected environment.
         A wildcard is a schema definition, not an isolation boundary or a query across environments.
 
         Keep the PHP contract: <field>_environment_<id>. Solr permits a single leading or trailing
@@ -53,7 +54,7 @@
     <field name="last_update" type="pdate" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
     <field name="environment_ids" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
 
-    <!-- Global container values are still emitted by ChemicalDocument; preserve their field names. -->
+    <!-- Global container values used by the all-chemicals search. -->
     <field name="location_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
     <field name="location_code" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
     <field name="location_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
@@ -92,7 +93,7 @@
     <!-- Legacy JSON payload: retain for compatibility, never index or sort on serialized JSON. -->
     <field name="amount_of_containers_per_environment" type="string" indexed="false" stored="true" multiValued="false" docValues="false" useDocValuesAsStored="false"/>
 
-    <!-- Only the generated global fields actually queried by ChemicalSearchService.
+    <!-- Chemical metadata search/sort fields queried by ChemicalSearchService.
          name_sort and main_chemical_sort are also searched, so keep their original text analyzer.
          SortableTextField sorts on original values in DocValues, not on lowercased tokens. -->
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="false" docValues="true" multiValued="false" omitNorms="true" useDocValuesAsStored="false"/>
@@ -101,8 +102,15 @@
     <field name="description_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="false" omitNorms="true" useDocValuesAsStored="false"/>
     <field name="cmr_search" type="text_en" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true" useDocValuesAsStored="false"/>
 
+    <!-- Global container search fields are supplied directly by ChemicalDocument.
+         The room sort field is copied from whole codes below, matching environment sorting. -->
+    <field name="location_name_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
+    <field name="room_code_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
+    <field name="room_description_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
+    <field name="room_code_sort" type="string" indexed="false" stored="false" docValues="true" multiValued="true" useDocValuesAsStored="false"/>
+
     <!-- The existing solrconfig.xml uses this for default search and spellcheck.
-         Include only chemical metadata; location/user data must stay in environment fields. -->
+         Container fields are queried explicitly in the selected global or environment scope. -->
     <field name="_text_" type="text_general" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
 
     <!-- Environment source fields: an ID such as 7 or 12345 needs no schema change.
@@ -143,7 +151,7 @@
     <dynamicField name="active_users_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
     <dynamicField name="inactive_users_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
 
-    <!-- The three analyzed environment fields read by setSearch().
+    <!-- Analyzed environment fields supplied directly by ChemicalDocument and read by setSearch().
          Each source value is separated by the analyzer's positionIncrementGap=100. -->
     <dynamicField name="location_name_search_environment_*" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
     <dynamicField name="room_code_search_environment_*" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
@@ -153,14 +161,13 @@
          Ascending sorts select the minimum code; descending sorts select the maximum. -->
     <dynamicField name="room_code_sort_environment_*" type="string" indexed="false" stored="false" docValues="true" multiValued="true" useDocValuesAsStored="false"/>
 
-    <!-- Copy only fields used in search/sort. The same wildcard preserves the environment ID. -->
+    <!-- Copy generated search/sort fields. The wildcard preserves the environment ID.
+         ChemicalDocument supplies container search fields directly to avoid duplicate values. -->
     <copyField source="name" dest="name_sort"/>
     <copyField source="name" dest="name_search"/>
     <copyField source="description" dest="description_search"/>
     <copyField source="main_chemical" dest="main_chemical_sort"/>
-    <copyField source="location_name_environment_*" dest="location_name_search_environment_*"/>
-    <copyField source="room_code_environment_*" dest="room_code_search_environment_*"/>
-    <copyField source="room_description_environment_*" dest="room_description_search_environment_*"/>
+    <copyField source="room_code" dest="room_code_sort"/>
     <copyField source="room_code_environment_*" dest="room_code_sort_environment_*"/>
     <copyField source="name" dest="_text_"/>
     <copyField source="description" dest="_text_"/>
