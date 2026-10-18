@@ -29,6 +29,7 @@
 
     <!-- Chemical identity and searchable source values. -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
+    <field name="number_sort" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
     <field name="chemical_id" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
     <field name="name" type="string" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
     <field name="description" type="string" indexed="false" stored="true" multiValued="false" docValues="false" useDocValuesAsStored="false"/>
@@ -38,6 +39,7 @@
 
     <!-- Classification and chemical-level responsibility. -->
     <field name="adr_classes" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
+    <field name="number" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
     <field name="is_standard_product" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
     <field name="is_zzs" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
     <field name="has_cmr" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
