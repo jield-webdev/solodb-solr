@@ -1,257 +1,236 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
 <schema name="chemical" version="1.6">
-    <!--
-        One flat document per chemical. Environment membership is derived from active containers.
-        Application queries use global fields for all chemicals, or filter environment_ids AND
-        use the matching environment fields for chemicals in the selected environment.
-        A wildcard is a schema definition, not an isolation boundary or a query across environments.
-
-        Keep the PHP contract: <field>_environment_<id>. Solr permits a single leading or trailing
-        wildcard, so each typed field family has its own <field>_environment_* rule below.
-        Wildcard copyField rules substitute only that ID; never copy environment values to _text_.
-
-        Exact values, IDs, booleans and counts use DocValues for facets, sorting and retrieval.
-        They are not also stored, except the required unique key. Multi-valued DocValues return
-        sorted values and may deduplicate values; consumers must not depend on input array order.
-        Long descriptions and compatibility JSON are stored-only source payloads. Analyzed copies
-        are indexed-only and omit norms, preserving the existing search analysis and scoring.
-        Full document replacement is used; this schema is not intended for atomic partial updates.
-
-        Apply to a NEW/EMPTY index and fully rebuild chemical documents. Existing stored values,
-        DocValues and token streams are not rewritten by a core reload. No generic catch-all rules.
-        For a strict schema also set update.autoCreateFields=false in the core properties; that
-        setting belongs to solrconfig.xml/core.properties, not managed-schema.xml.
-    -->
-
-    <uniqueKey>id</uniqueKey>
-    <field name="_version_" type="plong" indexed="false" stored="false" docValues="true"
-           multiValued="false" useDocValuesAsStored="false"/>
-
-    <!-- Chemical identity and searchable source values. -->
-    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="number_sort" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="chemical_id" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="name" type="string" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="description" type="string" indexed="false" stored="true" multiValued="false" docValues="false" useDocValuesAsStored="false"/>
-    <field name="cas_number" type="string" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="main_chemical_id" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="main_chemical" type="string" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-
-    <!-- Classification and chemical-level responsibility. -->
-    <field name="adr_classes" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="number" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="is_standard_product" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="is_zzs" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="has_cmr" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="cmr_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="cmr" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="has_cas_number" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="has_adr_classes" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="amount_of_role_users" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="role_users_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="role_users_name" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-
-    <!-- Timestamps and environment membership. -->
-    <field name="date_created" type="pdate" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="last_update" type="pdate" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="environment_ids" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-
-    <!-- Global container values used by the all-chemicals search. -->
-    <field name="location_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="location_code" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="location_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="zone_group_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="zone_group_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="room_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="room_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="room_code" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="room_description" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-    <field name="site_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="site_code" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="site_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="building_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="building_code" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="building_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="project_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="project_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="project_description" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-    <field name="purpose_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="purpose_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="purpose_description" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-    <field name="method_of_use_id" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="method_of_use_name" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="method_of_use_description" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-    <field name="amount_of_containers" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="amount_of_users" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="has_users" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="amount_of_active_users" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="has_active_users" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="amount_of_inactive_users" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="has_inactive_users" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <field name="users" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="active_users" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <field name="inactive_users" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-
-    <!-- Legacy JSON payload: retain for compatibility, never index or sort on serialized JSON. -->
-    <field name="amount_of_containers_per_environment" type="string" indexed="false" stored="true" multiValued="false" docValues="false" useDocValuesAsStored="false"/>
-
-    <!-- Chemical metadata search/sort fields queried by ChemicalSearchService.
-         name_sort and main_chemical_sort are also searched, so keep their original text analyzer.
-         SortableTextField sorts on original values in DocValues, not on lowercased tokens. -->
-    <field name="name_sort" type="text_gen_sort" indexed="true" stored="false" docValues="true" multiValued="false" omitNorms="true" useDocValuesAsStored="false"/>
-    <field name="name_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="false" omitNorms="true" useDocValuesAsStored="false"/>
-    <field name="main_chemical_sort" type="text_gen_sort" indexed="true" stored="false" docValues="true" multiValued="false" omitNorms="true" useDocValuesAsStored="false"/>
-    <field name="description_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="false" omitNorms="true" useDocValuesAsStored="false"/>
-    <field name="cmr_search" type="text_en" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true" useDocValuesAsStored="false"/>
-
-    <!-- Global container search fields are supplied directly by ChemicalDocument.
-         The room sort field is copied from whole codes below, matching environment sorting. -->
-    <field name="location_name_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
-    <field name="room_code_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
-    <field name="room_description_search" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
-    <field name="room_code_sort" type="string" indexed="false" stored="false" docValues="true" multiValued="true" useDocValuesAsStored="false"/>
-
-    <!-- The existing solrconfig.xml uses this for default search and spellcheck.
-         Container fields are queried explicitly in the selected global or environment scope. -->
-    <field name="_text_" type="text_general" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
-
-    <!-- Environment source fields: an ID such as 7 or 12345 needs no schema change.
-         Explicit types/cardinality prevent a broad environment catch-all from confusing counters,
-         ID arrays, names and booleans. No queryable global copies are made from these fields. -->
-    <dynamicField name="location_id_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="location_code_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="location_name_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="zone_group_id_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="zone_group_name_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="room_id_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="room_name_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="room_code_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="room_description_environment_*" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-    <dynamicField name="site_id_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="site_code_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="site_name_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="building_id_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="building_code_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="building_name_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="project_id_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="project_name_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="project_description_environment_*" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-    <dynamicField name="purpose_id_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="purpose_name_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="purpose_description_environment_*" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-    <dynamicField name="method_of_use_id_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="method_of_use_name_environment_*" type="string" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="method_of_use_description_environment_*" type="string" indexed="false" stored="true" multiValued="true" docValues="false" useDocValuesAsStored="false"/>
-    <dynamicField name="amount_of_containers_environment_*" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="amount_of_users_environment_*" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="has_users_environment_*" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="amount_of_active_users_environment_*" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="has_active_users_environment_*" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="amount_of_inactive_users_environment_*" type="pint" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="has_inactive_users_environment_*" type="boolean" indexed="true" stored="false" multiValued="false" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="users_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="active_users_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-    <dynamicField name="inactive_users_environment_*" type="pint" indexed="true" stored="false" multiValued="true" docValues="true" useDocValuesAsStored="true"/>
-
-    <!-- Analyzed environment fields supplied directly by ChemicalDocument and read by setSearch().
-         Each source value is separated by the analyzer's positionIncrementGap=100. -->
-    <dynamicField name="location_name_search_environment_*" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
-    <dynamicField name="room_code_search_environment_*" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
-    <dynamicField name="room_description_search_environment_*" type="text_en_splitting" indexed="true" stored="false" docValues="false" multiValued="true" omitNorms="true"/>
-
-    <!-- Room sorting needs original whole codes and DocValues, not another analyzed index.
-         Ascending sorts select the minimum code; descending sorts select the maximum. -->
-    <dynamicField name="room_code_sort_environment_*" type="string" indexed="false" stored="false" docValues="true" multiValued="true" useDocValuesAsStored="false"/>
-
-    <!-- Copy generated search/sort fields. The wildcard preserves the environment ID.
-         ChemicalDocument supplies container search fields directly to avoid duplicate values. -->
-    <copyField source="name" dest="name_sort"/>
-    <copyField source="name" dest="name_search"/>
-    <copyField source="description" dest="description_search"/>
-    <copyField source="main_chemical" dest="main_chemical_sort"/>
-    <copyField source="room_code" dest="room_code_sort"/>
-    <copyField source="room_code_environment_*" dest="room_code_sort_environment_*"/>
-    <copyField source="name" dest="_text_"/>
-    <copyField source="description" dest="_text_"/>
-    <copyField source="cas_number" dest="_text_"/>
-    <copyField source="main_chemical" dest="_text_"/>
-    <copyField source="cmr" dest="_text_"/>
-
-    <!-- Keep only types used above or referenced by the current solrconfig.xml.
-         booleans/plongs/pdoubles/pdates remain for its AddSchemaFieldsUpdateProcessor mappings.
-         Analysis is unchanged; removing duplicate stored copies does not change token matching. -->
-    <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
-    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" docValues="true"/>
-    <fieldType name="pint" class="solr.IntPointField" docValues="true"/>
-    <fieldType name="plong" class="solr.LongPointField" docValues="true"/>
-    <fieldType name="pdate" class="solr.DatePointField" docValues="true"/>
-    <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" multiValued="true" docValues="true"/>
-    <fieldType name="plongs" class="solr.LongPointField" docValues="true" multiValued="true"/>
-    <fieldType name="pdoubles" class="solr.DoublePointField" docValues="true" multiValued="true"/>
-    <fieldType name="pdates" class="solr.DatePointField" docValues="true" multiValued="true"/>
-    <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
-        <analyzer type="index">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="lowercase"/>
-        </analyzer>
-        <analyzer type="query">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="lowercase"/>
-        </analyzer>
-    </fieldType>
-    <fieldType name="text_gen_sort" class="solr.SortableTextField" positionIncrementGap="100">
-        <analyzer type="index">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="lowercase"/>
-        </analyzer>
-        <analyzer type="query">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="stopwords.txt"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="lowercase"/>
-        </analyzer>
-    </fieldType>
-    <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
-        <analyzer type="index">
-            <tokenizer name="standard"/>
-            <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-            <filter name="lowercase"/>
-            <filter name="englishPossessive"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
-            <filter name="porterStem"/>
-        </analyzer>
-        <analyzer type="query">
-            <tokenizer name="standard"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-            <filter name="lowercase"/>
-            <filter name="englishPossessive"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
-            <filter name="porterStem"/>
-        </analyzer>
-    </fieldType>
-    <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="true">
-        <analyzer type="index">
-            <tokenizer name="whitespace"/>
-            <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-            <filter name="wordDelimiterGraph" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0" splitOnCaseChange="1"/>
-            <filter name="lowercase"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
-            <filter name="porterStem"/>
-            <filter name="flattenGraph"/>
-        </analyzer>
-        <analyzer type="query">
-            <tokenizer name="whitespace"/>
-            <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
-            <filter name="stop" ignoreCase="true" words="lang/stopwords_en.txt"/>
-            <filter name="wordDelimiterGraph" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0" splitOnCaseChange="1"/>
-            <filter name="lowercase"/>
-            <filter name="keywordMarker" protected="protwords.txt"/>
-            <filter name="porterStem"/>
-        </analyzer>
-    </fieldType>
+  <uniqueKey>id</uniqueKey>
+  <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" docValues="true"/>
+  <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" docValues="true" multiValued="true"/>
+  <fieldType name="pdate" class="solr.DatePointField" docValues="true"/>
+  <fieldType name="pdates" class="solr.DatePointField" docValues="true" multiValued="true"/>
+  <fieldType name="pdoubles" class="solr.DoublePointField" docValues="true" multiValued="true"/>
+  <fieldType name="pint" class="solr.IntPointField" docValues="true"/>
+  <fieldType name="plong" class="solr.LongPointField" docValues="true"/>
+  <fieldType name="plongs" class="solr.LongPointField" docValues="true" multiValued="true"/>
+  <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true"/>
+  <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer name="standard"/>
+      <filter words="lang/stopwords_en.txt" ignoreCase="true" name="stop"/>
+      <filter name="lowercase"/>
+      <filter name="englishPossessive"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="porterStem"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+      <filter words="lang/stopwords_en.txt" ignoreCase="true" name="stop"/>
+      <filter name="lowercase"/>
+      <filter name="englishPossessive"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="porterStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100" autoGeneratePhraseQueries="true">
+    <analyzer type="index">
+      <tokenizer name="whitespace"/>
+      <filter words="lang/stopwords_en.txt" ignoreCase="true" name="stop"/>
+      <filter splitOnCaseChange="1" name="wordDelimiterGraph" catenateAll="0" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1"/>
+      <filter name="lowercase"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="porterStem"/>
+      <filter name="flattenGraph"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="whitespace"/>
+      <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+      <filter words="lang/stopwords_en.txt" ignoreCase="true" name="stop"/>
+      <filter splitOnCaseChange="1" name="wordDelimiterGraph" catenateAll="0" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0"/>
+      <filter name="lowercase"/>
+      <filter protected="protwords.txt" name="keywordMarker"/>
+      <filter name="porterStem"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_gen_sort" class="solr.SortableTextField" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer name="standard"/>
+      <filter words="stopwords.txt" ignoreCase="true" name="stop"/>
+      <filter name="lowercase"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter words="stopwords.txt" ignoreCase="true" name="stop"/>
+      <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+      <filter name="lowercase"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
+    <analyzer type="index">
+      <tokenizer name="standard"/>
+      <filter words="stopwords.txt" ignoreCase="true" name="stop"/>
+      <filter name="lowercase"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter words="stopwords.txt" ignoreCase="true" name="stop"/>
+      <filter name="synonymGraph" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+      <filter name="lowercase"/>
+    </analyzer>
+  </fieldType>
+  <field name="_text_" type="text_general" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <field name="_version_" type="plong" docValues="true" multiValued="false" indexed="false" stored="false" useDocValuesAsStored="false"/>
+  <field name="active_users" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="adr_classes" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="amount_of_active_users" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="amount_of_containers" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="amount_of_containers_per_environment" type="string" docValues="false" multiValued="false" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <field name="amount_of_inactive_users" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="amount_of_role_users" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="amount_of_users" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="building_code" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="building_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="building_name" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="cas_number" type="string" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="chemical_id" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="cmr" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="cmr_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="cmr_search" type="text_en" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="false"/>
+  <field name="date_created" type="pdate" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="description" type="string" docValues="false" multiValued="false" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <field name="description_search" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="false"/>
+  <field name="environment_ids" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="has_active_users" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="has_adr_classes" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="has_cas_number" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="has_cmr" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="has_inactive_users" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="has_users" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="id" type="string" docValues="true" multiValued="false" indexed="true" required="true" stored="true" useDocValuesAsStored="true"/>
+  <field name="inactive_users" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="is_standard_product" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="is_zzs" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="last_update" type="pdate" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="location_code" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="location_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="location_name" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="location_name_search" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <field name="main_chemical" type="string" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="main_chemical_id" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="main_chemical_sort" type="text_gen_sort" omitNorms="true" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="false"/>
+  <field name="method_of_use_description" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <field name="method_of_use_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="method_of_use_name" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="name" type="string" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="name_search" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="false"/>
+  <field name="name_sort" type="text_gen_sort" omitNorms="true" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="false"/>
+  <field name="number" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="number_sort" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="project_description" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <field name="project_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="project_name" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="purpose_description" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <field name="purpose_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="purpose_name" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="role_users_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="role_users_name" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <field name="room_code" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="room_code_search" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <field name="room_code_sort" type="string" docValues="true" multiValued="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
+  <field name="room_description" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <field name="room_description_search" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <field name="room_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="room_name" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="site_code" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="site_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="site_name" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="users" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="zone_group_id" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <field name="zone_group_name" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="method_of_use_description_environment_*" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <dynamicField name="amount_of_inactive_users_environment_*" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_description_search_environment_*" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <dynamicField name="amount_of_active_users_environment_*" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="amount_of_containers_environment_*" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="location_name_search_environment_*" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <dynamicField name="project_description_environment_*" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <dynamicField name="purpose_description_environment_*" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <dynamicField name="method_of_use_name_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="has_inactive_users_environment_*" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="method_of_use_description_room_*" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <dynamicField name="amount_of_inactive_users_room_*" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_description_environment_*" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <dynamicField name="method_of_use_id_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="has_active_users_environment_*" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_code_search_environment_*" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <dynamicField name="room_description_search_room_*" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <dynamicField name="zone_group_name_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="amount_of_users_environment_*" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="amount_of_active_users_room_*" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="inactive_users_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_code_sort_environment_*" type="string" docValues="true" multiValued="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
+  <dynamicField name="location_code_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="location_name_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="zone_group_id_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="building_code_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="building_name_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="amount_of_containers_room_*" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="location_name_search_room_*" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <dynamicField name="project_name_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="purpose_name_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="active_users_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="project_description_room_*" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <dynamicField name="purpose_description_room_*" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <dynamicField name="location_id_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="building_id_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="has_inactive_users_room_*" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="method_of_use_name_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="project_id_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="purpose_id_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_name_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_code_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="site_code_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="site_name_environment_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="has_users_environment_*" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="has_active_users_room_*" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="method_of_use_id_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_code_search_room_*" type="text_en_splitting" omitNorms="true" docValues="false" multiValued="true" indexed="true" stored="false"/>
+  <dynamicField name="room_description_room_*" type="string" docValues="false" multiValued="true" indexed="false" stored="true" useDocValuesAsStored="false"/>
+  <dynamicField name="amount_of_users_room_*" type="pint" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="zone_group_name_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_id_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="site_id_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="inactive_users_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_code_sort_room_*" type="string" docValues="true" multiValued="true" indexed="false" stored="false" useDocValuesAsStored="false"/>
+  <dynamicField name="building_code_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="building_name_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="location_code_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="location_name_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="zone_group_id_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="users_environment_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="active_users_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="project_name_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="purpose_name_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="building_id_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="location_id_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="project_id_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="purpose_id_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="has_users_room_*" type="boolean" docValues="true" multiValued="false" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_code_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_name_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="site_code_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="site_name_room_*" type="string" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="room_id_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="site_id_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <dynamicField name="users_room_*" type="pint" docValues="true" multiValued="true" indexed="true" stored="false" useDocValuesAsStored="true"/>
+  <copyField source="cas_number" dest="_text_"/>
+  <copyField source="cmr" dest="_text_"/>
+  <copyField source="description" dest="_text_"/>
+  <copyField source="description" dest="description_search"/>
+  <copyField source="main_chemical" dest="_text_"/>
+  <copyField source="main_chemical" dest="main_chemical_sort"/>
+  <copyField source="name" dest="_text_"/>
+  <copyField source="name" dest="name_search"/>
+  <copyField source="name" dest="name_sort"/>
+  <copyField source="room_code" dest="room_code_sort"/>
+  <copyField source="room_code_environment_*" dest="room_code_sort_environment_*"/>
+  <copyField source="room_code_room_*" dest="room_code_sort_room_*"/>
 </schema>
