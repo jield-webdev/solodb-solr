@@ -41,6 +41,16 @@
     <field name="location_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="location_hierarchy_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="location_hierarchy_path" type="string" indexed="true" stored="true" omitNorms="true"/>
+
+    <!-- Storage hierarchy levels are zero-based. Suffix wildcards support every depth. -->
+    <field name="location_hierarchy_path_sort" type="text_gen_sort" indexed="true" stored="true"/>
+    <field name="location_hierarchy_path_search" type="text_en_splitting" indexed="true" stored="true"/>
+    <dynamicField name="*_id" type="pint" indexed="true" stored="true" multiValued="false"/>
+    <dynamicField name="*_name" type="string" indexed="true" stored="true" multiValued="false"/>
+    <dynamicField name="*_code" type="string" indexed="true" stored="true" multiValued="false"/>
+    <dynamicField name="*_name_sort" type="text_gen_sort" indexed="true" stored="true" multiValued="false"/>
+    <dynamicField name="*_name_search" type="text_en_splitting" indexed="true" stored="true" multiValued="false"/>
+
     <field name="location" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="location_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="location_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
