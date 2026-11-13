@@ -18,8 +18,15 @@
     <field name="amount_of_runs" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="stock" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="solodb_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="solodb_number_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="number_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="number" dest="number_search"/>
+    <copyField source="number" dest="number_sort"/>
 
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
