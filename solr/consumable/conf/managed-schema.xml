@@ -17,10 +17,17 @@
 
     <field name="consumable_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
 
+    <!-- a consumable already has a number, so for the autogen number we use solodb_ as prefix -->
+    <field name="solodb_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="solodb_number_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
     <field name="number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
 
     <copyField source="number" dest="number_sort"/>
+    <copyField source="number" dest="number_search"/>
+
 
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>

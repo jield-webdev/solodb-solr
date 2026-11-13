@@ -14,19 +14,12 @@
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
 
+    <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="substrate_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="amount_of_runs" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="stock" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="solodb_number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="solodb_number_sort" type="pint" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="number" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="number_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
-    <field name="number_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
-
-    <copyField source="number" dest="number_search"/>
-    <copyField source="number" dest="number_sort"/>
 
     <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="label_search" type="text_en_splitting" indexed="true" stored="true" omitNorms="true"/>
@@ -65,8 +58,11 @@
     <copyField source="location" dest="location_sort"/>
     <copyField source="location" dest="location_search"/>
 
+    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_approval_required" type="boolean" indexed="true" stored="true" omitNorms="true"/>
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="stock_managed" type="string" indexed="true" stored="true" omitNorms="true"/>
+
 
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
